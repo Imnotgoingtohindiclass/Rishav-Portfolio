@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   const navItems = [
-    { title: 'Home', href: '#home' },
+    { title: 'Home', href: '#hero' },
     { title: 'Gallery', href: '#gallery' },
     { title: 'Projects', href: '#project' },
   ];

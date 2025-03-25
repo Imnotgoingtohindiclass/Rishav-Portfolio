@@ -14,7 +14,7 @@ import Background from './scene/Background';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [currentView, setCurrentView] = useState<'home' | 'project'>('home');
+  const [currentView, setCurrentView] = useState<'hero' | 'project'>('hero');
 
   // Monitor URL hash changes to determine the view
   useEffect(() => {
@@ -23,7 +23,7 @@ const App = () => {
       if (hash.startsWith('#project/')) {
         setCurrentView('project');
       } else {
-        setCurrentView('home');
+        setCurrentView('hero');
       }
     };
 
@@ -71,10 +71,10 @@ const App = () => {
 
             <div className="absolute inset-0 z-10">
               <AnimatePresence mode="wait">
-                {currentView === 'home' ? (
-                  // Home view with Hero and Gallery
+                {currentView === 'hero' ? (
+                  // hero view with Hero and Gallery
                   <motion.div
-                    key="home"
+                    key="hero"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
