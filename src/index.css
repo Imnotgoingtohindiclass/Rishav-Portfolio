@@ -13,8 +13,8 @@
   }
   
   ::selection {
-    background-color: hsl(var(--secondary));
-    color: hsl(var(--secondary));
+    background-color: #8a00c440;
+    color: white;
   }
 
   :root {
