@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import TerminalText from "@/components/ui/terminal-text";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Button } from "../ui/button.tsx";
+import TerminalText from "../ui/terminal-text.tsx";
+import { Github, Linkedin, Instagram } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -43,8 +43,8 @@ const Hero = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-secondary">
               <Linkedin size={24} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-accent">
-              <Twitter size={24} />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-accent">
+              <Instagram size={24} />
             </a>
           </div>
         </div>

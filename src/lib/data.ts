@@ -1,5 +1,5 @@
-import { ProjectProps } from "@/components/ui/project-card";
-import { ArticleProps } from "@/components/ui/article-card";
+import { ProjectProps } from "src/components/ui/project-card.tsx";
+import { ArticleProps } from "src/components/ui/article-card.tsx";
 
 // Static abstract SVG patterns
 const getPatternSvg = (index: number) => {

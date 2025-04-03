@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Label } from "@/components/ui/label";
-import { apiRequest } from "@/lib/queryClient";
+import { Button } from "src/components/ui/button";
+import { Card, CardContent } from "src/components/ui/card";
+import { Input } from "src/components/ui/input";
+import { Textarea } from "src/components/ui/textarea";
+import { useToast } from "src/hooks/use-toast";
+import { Label } from "src/components/ui/label";
+import { apiRequest } from "src/lib/queryClient";
 import { Mail, MapPin, Calendar, Github, Linkedin, Twitter, FileText } from "lucide-react";
 
 const Contact = () => {
