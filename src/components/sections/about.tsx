@@ -66,7 +66,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg transform -rotate-3"></div>
               <div className="relative z-10 rounded-lg overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=450&q=80" 
+                  src="public/Item-1_SUTD-Camp_Team-3.jpg" 
                   alt="Profile"
                   className="w-full h-auto object-cover aspect-[4/3]"
                 />

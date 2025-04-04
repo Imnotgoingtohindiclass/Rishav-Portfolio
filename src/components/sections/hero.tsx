@@ -7,16 +7,18 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-6 overflow-hidden">
-            <div className="w-24 h-24 rounded-full border-2 border-primary flex items-center justify-center">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 6v12" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6 12h12" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17 3a4 4 0 0 1 4 4" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 21a4 4 0 0 1-4-4" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M3 7a4 4 0 0 1 4-4" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M21 17a4 4 0 0 1-4 4" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+          <div className="mb-8 relative group">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full relative">
+              <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-spin"></div>
+              <div className="relative w-full h-full rounded-full p-0.5">
+                <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                  <img 
+                    src="/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg" 
+                    alt="Rishav Ganguly"
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="mb-6">

@@ -1,5 +1,5 @@
-import SkillBar from "@/components/ui/skill-bar";
-import { technicalSkills, toolsAndLanguages } from "@/lib/data";
+import SkillBar from "../ui/skill-bar";
+import { technicalSkills, toolsAndLanguages } from "../../lib/data";
 
 const Skills = () => {
   const getColorClassByLevel = (level: string) => {
