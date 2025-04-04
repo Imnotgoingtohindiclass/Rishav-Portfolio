@@ -25,7 +25,7 @@ const Hero = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">
               <TerminalText text="Rishav Ganguly" typingDelay={1} />
             </h1>
-            <p className="text-muted-foreground text-xl mt-2 font-sans opacity-75">
+            <p className="text-primary text-xl mt-2 font-sans opacity-95">
               ENGINEER
             </p>
           </div>

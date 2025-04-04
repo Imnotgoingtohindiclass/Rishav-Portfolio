@@ -110,70 +110,44 @@ export const projectsData: ProjectProps[] = [
 
 export const technicalSkills = [
   {
-    name: "Cybersecurity",
+    name: "Programming",
     level: "Advanced",
-    percentage: 90,
+    percentage: 95,
+  },
+  {
+    name: "Data Science",
+    level: "Advanced",
+    percentage: 87,
   },
   {
     name: "Web Development",
-    level: "Advanced",
-    percentage: 85,
-  },
-  {
-    name: "Electronics",
     level: "Intermediate",
-    percentage: 75,
+    percentage: 83,
   },
   {
-    name: "Embedded Systems",
-    level: "Intermediate",
-    percentage: 70,
-  },
-  {
-    name: "Cloud Architecture",
+    name: "Hardware and Embedded Systems",
     level: "Proficient",
-    percentage: 65,
+    percentage: 73,
+  },
+  {
+    name: "Machine Learning",
+    level: "Proficient",
+    percentage: 72,
   },
 ];
 
 export const toolsAndLanguages = [
-  {
-    name: "Python",
-    icon: "code",
-  },
-  {
-    name: "JavaScript",
-    icon: "code",
-  },
-  {
-    name: "React",
-    icon: "code",
-  },
-  {
-    name: "Node.js",
-    icon: "server",
-  },
-  {
-    name: "SQL",
-    icon: "database",
-  },
-  {
-    name: "Linux",
-    icon: "server",
-  },
-  {
-    name: "Arduino",
-    icon: "cpu",
-  },
-  {
-    name: "AWS",
-    icon: "server",
-  },
-  {
-    name: "Docker",
-    icon: "server",
-  },
+  { name: "Python", icon: "code" },
+  { name: "Git", icon: "code" },
+  { name: "React", icon: "code" },
+  { name: "OpenCV", icon: "code" },
+  { name: "Matplotlib", icon: "code" },
+  { name: "TensorFlow", icon: "code" },
+  { name: "NumPy", icon: "code" },
+  { name: "Raspberry Pi", icon: "code" },
+  { name: "Arduino", icon: "cpu" },
 ];
+
 
 export const articlesData: ArticleProps[] = [
   {

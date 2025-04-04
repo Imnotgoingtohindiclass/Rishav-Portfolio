@@ -60,7 +60,7 @@ const About = () => {
               When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community. I believe in making technology more accessible through clear documentation and tutorials.
             </p>
           </div>
-          
+
           <div className="order-1 md:order-2">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg transform -rotate-3"></div>
@@ -89,7 +89,7 @@ const About = () => {
                       <GraduationCap size={20} className="text-primary" />
                     </div>
                   </div>
-                  <div className="bg-card/30 rounded-lg p-6 border border-primary/10 shadow-md">
+                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
                     <div className="flex items-center text-primary font-mono text-sm mb-2">
                       <Calendar size={16} className="mr-2" />
                       <span>{item.period}</span>
@@ -113,7 +113,7 @@ const About = () => {
             </h3>
             <div className="grid gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-card/30 rounded-lg p-6 border border-primary/10 shadow-md">
+                <div key={index} className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
                   <h4 className="text-foreground font-bold text-lg mb-2">{cert.title}</h4>
                   <p className="text-muted-foreground">{cert.issuer}</p>
                   <p className="text-muted-foreground text-sm">{cert.year}</p>

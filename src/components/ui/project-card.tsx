@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "./badge";
+import { Card, CardContent } from "./card";
 import { Github, ExternalLink, FileText, Trophy, Clock } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -38,14 +38,17 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Cybersecurity":
-        return "bg-primary/20 text-primary";
+        return "bg-violet-900/10 text-primary";
       case "Web Dev":
-        return "bg-secondary/20 text-secondary";
+        return "bg-violet-900/10 text-primary";
+      case "MUN":
+        return "bg-violet-900/10 text-secondary";
       case "Electronics":
+        return "bg-violet-900/10 text-secondary";
       case "Engineering":
-        return "bg-accent/20 text-accent";
+        return "bg-violet-900/10 text-accent";
       default:
-        return "bg-muted/20 text-muted";
+        return "bbg-violet-900/10 text-muted";
     }
   };
 
@@ -150,7 +153,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
     <div className="h-full">
       <Link href={`/project/${project.title.toLowerCase().replace(/\s+/g, '-')}`} className="cursor-pointer block h-full">
         <Card 
-          className="project-card h-full bg-card/30 border-transparent hover:border-primary/30 overflow-hidden 
+          className="project-card h-full bg-purple-500/10 border-transparent hover:border-primary overflow-hidden 
                       transition-all duration-300 hover:shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
           onMouseEnter={handleMouseEnter} 
           onMouseLeave={handleMouseLeave}
