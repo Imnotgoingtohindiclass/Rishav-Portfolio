@@ -1,5 +1,5 @@
-import ArticleCard, { ArticleProps } from "@/components/ui/article-card";
-import { articlesData } from "@/lib/data";
+import ArticleCard, { ArticleProps } from "../ui/article-card";
+import { articlesData } from "../../lib/data";
 
 const Writing = () => {
   return (

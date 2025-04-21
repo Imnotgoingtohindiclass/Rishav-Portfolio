@@ -48,7 +48,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       case "Engineering":
         return "bg-violet-900/10 text-accent";
       default:
-        return "bbg-violet-900/10 text-muted";
+        return "bg-violet-900/10 text-muted";
     }
   };
 
