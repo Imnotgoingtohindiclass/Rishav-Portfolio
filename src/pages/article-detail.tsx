@@ -1,32 +1,43 @@
 import { useEffect, useState } from "react";
-import { useRoute } from "wouter";
+import { useNavigate, useParams } from "react-router-dom";
 import { articlesData } from "@/lib/data";
 import { ArticleProps } from "@/components/ui/article-card";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft } from "lucide-react";
-import { Link } from "wouter";
 
 const ArticleDetail = () => {
-  const [, params] = useRoute("/article/:slug");
+  const navigate = useNavigate();
+  const { slug } = useParams();
   const [article, setArticle] = useState<ArticleProps | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const slug = params?.slug || "";
-    
-    // Find the article in the data
-    const foundArticle = articlesData.find(
-      (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
-    );
-    
-    if (foundArticle) {
-      setArticle(foundArticle);
+    // Instant scroll to top
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto'
+    });
+
+    if (slug) {
+      // Find the article in the data
+      const foundArticle = articlesData.find(
+        (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
+      );
+      
+      if (foundArticle) {
+        setArticle(foundArticle);
+      }
     }
     
     setLoading(false);
-  }, [params]);
+  }, [slug]);
+
+  const handleBackClick = () => {
+    navigate("/#writing");
+  };
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -61,12 +72,13 @@ const ArticleDetail = () => {
             <p className="text-muted-foreground mb-6">
               The article you're looking for doesn't exist or has been removed.
             </p>
-            <Link href="/#writing">
-              <span className="text-primary hover:text-primary/80 inline-flex items-center cursor-pointer">
-                <ChevronLeft size={16} className="mr-1" />
-                Back to Articles
-              </span>
-            </Link>
+            <button 
+              onClick={handleBackClick}
+              className="text-primary hover:text-primary/80 inline-flex items-center cursor-pointer"
+            >
+              <ChevronLeft size={16} className="mr-1" />
+              Back to Articles
+            </button>
           </div>
         </main>
         <Footer />
@@ -129,12 +141,13 @@ const ArticleDetail = () => {
       <Header />
       <main className="container mx-auto px-6 py-20">
         <div className="max-w-3xl mx-auto">
-          <Link href="/#writing">
-            <span className="text-primary hover:text-primary/80 inline-flex items-center mb-6 cursor-pointer">
-              <ChevronLeft size={16} className="mr-1" />
-              Back to Articles
-            </span>
-          </Link>
+          <button 
+            onClick={handleBackClick}
+            className="text-primary hover:text-primary/80 inline-flex items-center mb-6 cursor-pointer"
+          >
+            <ChevronLeft size={16} className="mr-1" />
+            Back to Articles
+          </button>
           
           <article className="bg-card/30 border border-card rounded-lg p-8 md:p-10">
             <Badge
