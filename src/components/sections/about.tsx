@@ -13,7 +13,7 @@ const About = () => {
       period: "2017 - 2021",
       duration: "4.5 years",
       degree: "Primary School Student",
-      institution: "Xingnang Primary School",
+      institution: "Xingnan Primary School",
       type: "education"
     },
     {
