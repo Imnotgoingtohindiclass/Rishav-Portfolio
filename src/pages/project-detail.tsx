@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useNavigate, useParams } from "react-router-dom";
 import { projectsData } from "@/lib/data";
 import { ProjectProps } from "@/components/ui/project-card";
 import { ArrowLeft, Clock, Code, Lightbulb } from "lucide-react";
@@ -7,15 +7,22 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 
 const ProjectDetail = () => {
-  const [location] = useLocation();
+  const navigate = useNavigate();
+  const { slug } = useParams();
   const [project, setProject] = useState<ProjectProps | null>(null);
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    // Extract slug from location
-    const slug = location.split("/").pop();
-    
+    // Instant scroll to top
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto'
+    });
+
     if (slug) {
       // Find the matching project
       const foundProject = projectsData.find(p => 
@@ -26,7 +33,13 @@ const ProjectDetail = () => {
         setProject(foundProject);
       }
     }
-  }, [location]);
+    
+    setLoading(false);
+  }, [slug]);
+  
+  const handleBackClick = () => {
+    navigate("/");
+  };
   
   if (!project) {
     return (
@@ -34,8 +47,8 @@ const ProjectDetail = () => {
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
           <p className="text-muted-foreground mb-6">The project you're looking for doesn't exist or has been moved.</p>
-          <Button asChild>
-            <Link href="/">Go Back Home</Link>
+          <Button onClick={handleBackClick}>
+            Go Back Home
           </Button>
         </div>
       </div>
@@ -62,10 +75,8 @@ const ProjectDetail = () => {
       <main className="pt-20">
         <div className="container mx-auto px-6 py-12">
           <div className="mb-8">
-            <Button variant="ghost" className="mb-6" asChild>
-              <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-foreground">
-                <ArrowLeft size={16} className="mr-2" /> Back to Projects
-              </Link>
+            <Button variant="ghost" className="mb-6" onClick={handleBackClick}>
+              <ArrowLeft size={16} className="mr-2" /> Back to Projects
             </Button>
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
