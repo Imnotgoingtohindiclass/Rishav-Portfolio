@@ -42,7 +42,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background/30">
       <div className="container mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center">
-          <User size={24} className="mr-2 text-primary" /> About Me
+          <User size={24} className="mr-2 text-primary" /> ABOUT ME
         </h2>
         <p className="text-muted-foreground mb-12 font-sans">
           Background and experience

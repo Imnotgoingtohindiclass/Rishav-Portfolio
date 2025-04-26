@@ -5,6 +5,7 @@ import About from "@/components/sections/about";
 import Projects from "@/components/sections/projects";
 import Skills from "@/components/sections/skills";
 import Writing from "@/components/sections/writing";
+import Achievements from "@/components/sections/achievements";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <main>
         <Hero />
         <About />
+        <Achievements />
         <Projects />
         <Skills />
         <Writing />

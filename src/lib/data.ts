@@ -1,6 +1,24 @@
 import { ProjectProps } from "src/components/ui/project-card.tsx";
 import { ArticleProps } from "src/components/ui/article-card.tsx";
 
+export const achievements = [
+  {
+    title: "Top 3, National STEM Olympiad",
+    issuer: "Singapore Science Centre",
+    year: "2023",
+  },
+  {
+    title: "Best IoT Hack - HackinSG",
+    issuer: "Hackathon (Singapore)",
+    year: "2022",
+  },
+  {
+    title: "Dean’s List",
+    issuer: "School of Science and Technology, Singapore",
+    year: "2023",
+  },
+];
+
 // Static abstract SVG patterns
 const getPatternSvg = (index: number) => {
   const patterns = [
@@ -17,12 +35,12 @@ const getPatternSvg = (index: number) => {
 
 export const projectsData: ProjectProps[] = [
   {
-    title: "SecureNet Framework",
-    description: "Advanced network security monitoring tool with real-time threat detection and visualization dashboard.",
-    fullDescription: "SecureNet Framework is a comprehensive cyber security monitoring solution designed to detect, analyze, and respond to network threats in real-time. The platform combines machine learning algorithms with traditional signature-based detection to provide a multi-layered security approach. The visualization dashboard gives security professionals an intuitive interface to monitor network activity and investigate potential security breaches.",
-    category: "Cybersecurity",
+    title: "ReBL Detection using AI",
+    description: "Analysed the effetiveness of AI in detecting Ring-enhancng Brain Lesions using medical imaging.",
+    fullDescription: "ReBL Detection using AI is a research project focused on the application of artificial intelligence in the detection of Ring-enhancing Brain Lesions (ReBL) in medical imaging. The project involved the development of a machine learning model trained on a large dataset of MRI scans to identify and classify ReBLs, which are often indicative of serious neurological conditions.",
+    category: "Engineering",
     image: getPatternSvg(0),
-    technologies: ["Python", "Elasticsearch", "Kibana", "Machine Learning", "TensorFlow"],
+    technologies: ["Python", "OpenCV", "TensorFlow", "Pillow", "Machine Learning"],
     durationHours: 320,
     challenges: "One of the main challenges was balancing the need for comprehensive threat detection with system performance. Initial implementations produced too many false positives and consumed excessive computational resources. We had to optimize our detection algorithms and implement a prioritization system for alerts to ensure security teams could focus on the most critical threats first.",
     outcomes: "The finished framework successfully detects 95% of common network intrusion attempts with a false positive rate of less than 5%. The project significantly improved my understanding of network security protocols, machine learning applications in cybersecurity, and large-scale data processing pipelines. The visualization components I developed are now being used as a template for other security dashboards.",
@@ -32,12 +50,12 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
-    title: "Quantum Dashboard",
-    description: "Next-generation analytics platform with realtime data processing and interactive visualizations.",
+    title: "Porfolio Creation",
+    description: "Helped create mutiple portfolios for students aspiring to matriculate into tertiary institutions.",
     fullDescription: "Quantum Dashboard is a data analytics platform that processes streaming data in real-time and presents insights through interactive visualizations. The dashboard uses modern web technologies to deliver a responsive and intuitive user experience, enabling users to explore complex datasets through customizable charts, graphs, and data tables.",
     category: "Web Dev",
     image: getPatternSvg(1),
-    technologies: ["React", "Node.js", "D3.js", "WebSockets", "MongoDB"],
+    technologies: ["React", "Next.js", "Astro", "Tailwindcss", "Git"],
     durationHours: 240,
     challenges: "Creating a system that could handle large volumes of streaming data while maintaining responsive visualizations was the greatest challenge. We had to implement efficient data aggregation and caching strategies to prevent the UI from becoming unresponsive. Browser memory management became critical as some users would keep the dashboard open for extended periods.",
     outcomes: "The completed dashboard successfully handles data streams of up to 10,000 events per second with minimal latency. This project deepened my expertise in real-time data visualization, state management in complex React applications, and WebSocket communication protocols. I also gained valuable experience in optimizing JavaScript performance for data-intensive web applications.",
@@ -47,8 +65,8 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
-    title: "NeoSense IoT",
-    description: "Smart environmental monitoring system with custom PCB design and wireless connectivity.",
+    title: "Disaster Management Bot",
+    description: "Remotely operated robot which assists in debris clearance post disaster for disaster management.",
     fullDescription: "NeoSense is an IoT environmental monitoring system with custom-designed PCBs and wireless connectivity. The system includes sensors for temperature, humidity, air quality, and light levels, all integrated into a compact, energy-efficient device. Data is transmitted wirelessly to a cloud platform where it can be analyzed and visualized.",
     category: "Electronics",
     image: getPatternSvg(2),

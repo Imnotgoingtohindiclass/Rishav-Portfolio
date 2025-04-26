@@ -10,7 +10,7 @@ const Footer = () => {
           
           <div>
             <p className="text-muted-foreground text-sm">
-              Designed & Built with <span className="text-primary">♥</span>
+              Designed & Built with <span className="text-primary">♥</span> using Vite.js
             </p>
           </div>
         </div>

@@ -38,17 +38,17 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Cybersecurity":
-        return "bg-violet-900/10 text-primary";
+        return "bg-violet-900/50 text-primary";
       case "Web Dev":
-        return "bg-violet-900/10 text-primary";
+        return "bg-violet-900/50 text-primary";
       case "MUN":
-        return "bg-violet-900/10 text-secondary";
+        return "bg-violet-900/50 text-primary";
       case "Electronics":
-        return "bg-violet-900/10 text-secondary";
+        return "bg-violet-900/50 text-primary";
       case "Engineering":
-        return "bg-violet-900/10 text-accent";
+        return "bg-violet-900/50 text-primary";
       default:
-        return "bg-violet-900/10 text-muted";
+        return "bg-violet-900/50 text-primary";
     }
   };
 
