@@ -1,5 +1,4 @@
 import { Button } from "../ui/button.tsx";
-import TerminalText from "../ui/terminal-text.tsx";
 import { Github, Linkedin, Instagram } from "lucide-react";
 
 const Hero = () => {
@@ -9,7 +8,7 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center">
           <div className="mb-8 relative group">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full relative">
-              <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-spin"></div>
+              <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
                   <img 
@@ -23,7 +22,7 @@ const Hero = () => {
           </div>
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">
-              <TerminalText text="Rishav Ganguly" typingDelay={1} />
+              Rishav Ganguly
             </h1>
             <p className="text-primary text-xl mt-2 font-sans opacity-95">
               ENGINEER
