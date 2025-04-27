@@ -22,7 +22,7 @@ const ProjectDetail = () => {
       left: 0,
       behavior: 'auto'
     });
-
+    
     if (slug) {
       // Find the matching project
       const foundProject = projectsData.find(p => 
@@ -76,7 +76,7 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-6 py-12">
           <div className="mb-8">
             <Button variant="ghost" className="mb-6" onClick={handleBackClick}>
-              <ArrowLeft size={16} className="mr-2" /> Back to Projects
+                <ArrowLeft size={16} className="mr-2" /> Back to Projects
             </Button>
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">

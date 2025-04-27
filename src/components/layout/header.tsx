@@ -10,8 +10,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "HOME", href: "#home" },
   { label: "ABOUT", href: "#about" },
+  {label: "ACHIEVEMENTS", href: "#achievements" },
   { label: "PROJECTS", href: "#projects" },
-  { label: "SKILLS", href: "#skills" },
   { label: "WRITE UP", href: "#writing" }
 ];
 

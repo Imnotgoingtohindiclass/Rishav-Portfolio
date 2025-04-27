@@ -5,7 +5,6 @@ import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Projects from "@/components/sections/projects";
-import Skills from "@/components/sections/skills";
 import Writing from "@/components/sections/writing";
 import Achievements from "@/components/sections/achievements";
 
@@ -53,9 +52,6 @@ const Home = () => {
         </section>
         <section id="projects">
           <Projects />
-        </section>
-        <section id="skills">
-          <Skills />
         </section>
         <section id="writing">
           <Writing />

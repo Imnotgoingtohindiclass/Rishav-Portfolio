@@ -22,13 +22,13 @@ const ArticleDetail = () => {
     });
 
     if (slug) {
-      // Find the article in the data
-      const foundArticle = articlesData.find(
-        (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
-      );
-      
-      if (foundArticle) {
-        setArticle(foundArticle);
+    // Find the article in the data
+    const foundArticle = articlesData.find(
+      (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
+    );
+    
+    if (foundArticle) {
+      setArticle(foundArticle);
       }
     }
     
@@ -76,8 +76,8 @@ const ArticleDetail = () => {
               onClick={handleBackClick}
               className="text-primary hover:text-primary/80 inline-flex items-center cursor-pointer"
             >
-              <ChevronLeft size={16} className="mr-1" />
-              Back to Articles
+                <ChevronLeft size={16} className="mr-1" />
+                Back to Articles
             </button>
           </div>
         </main>
@@ -145,8 +145,8 @@ const ArticleDetail = () => {
             onClick={handleBackClick}
             className="text-primary hover:text-primary/80 inline-flex items-center mb-6 cursor-pointer"
           >
-            <ChevronLeft size={16} className="mr-1" />
-            Back to Articles
+              <ChevronLeft size={16} className="mr-1" />
+              Back to Articles
           </button>
           
           <article className="bg-card/30 border border-card rounded-lg p-8 md:p-10">

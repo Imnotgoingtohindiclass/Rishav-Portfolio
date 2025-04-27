@@ -1,0 +1,12 @@
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.animate-progress {
+  animation: progress 1s ease-out forwards;
+} 

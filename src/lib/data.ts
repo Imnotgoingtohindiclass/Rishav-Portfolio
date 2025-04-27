@@ -6,21 +6,25 @@ export const achievements = [
     title: "Bronze Award, National Cybersecurity Olympiad",
     issuer: "National Cybersecurity Olympiad (Singapore)",
     year: "2025",
+    certificate: "public/certificates/NCO2025_COA_Bronze_19.jpg"
   },
   {
     title: "Best Article, RVMUN 2025 (Press Corps)",
     issuer: "River Valley Model United Nations",
     year: "2025",
+    certificate: "public/certificates/Item-2_SUTD-Camp_Presentation.jpg"
   },
   {
     title: "Second Place, SST CTF",
     issuer: "School of Science and Technology, Singapore",
     year: "2025",
+    certificate: "public/certificates/Item-4_Jakarta-Trip24_Sigmas-Ahoy.jpg"
   },
   {
     title: "Gold Award, Australian Mathematics Competition",
     issuer: "Australian Mathematics Trust",
     year: "2022, 2023, 2024",
+    certificate: "public/certificates/Item-5_Taiwan-Trip24.jpg"
   },
 ];
 
@@ -42,7 +46,7 @@ export const projectsData: ProjectProps[] = [
   {
     title: "RefrigeReminder",
     description: "IoT device + app to remind users of food expiry and reduce waste.",
-    fullDescription: "The RefrigeReminder project by Team Angus Cheezburgur (Caydran, Coen, Martin, and Rishav) aimed to solve the problem of food being forgotten and expiring in refrigerators. It’s an IoT device paired with a mobile app, allowing users to log food items and expiry dates. It detects fridge openings and sends reminders, emphasizing simplicity, reliability, accessibility, and reusability.",
+    fullDescription: "The RefrigeReminder project by Team Angus Cheezburgur (Caydran, Coen, Martin, and Rishav) aimed to solve the problem of food being forgotten and expiring in refrigerators. It's an IoT device paired with a mobile app, allowing users to log food items and expiry dates. It detects fridge openings and sends reminders, emphasizing simplicity, reliability, accessibility, and reusability.",
     category: "Engineering",
     image: getPatternSvg(0),
     technologies: ["Arduino", "IoT", "Mobile App Development"],
