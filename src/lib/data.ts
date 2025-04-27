@@ -366,50 +366,174 @@ This gives us the flag xsstctf{v1gen3re_15_the_be+t3r_ca3s4r_4lth0ugh_b0+h_ar3_i
 `
   },
   {
-    title: "Performance Optimization in Modern Web Applications",
-    description: "Techniques and strategies for improving web application performance, focusing on React and Next.js optimizations.",
-    category: "Web Development",
-    source: "Medium - 5K+ reads",
-    link: "https://github.com",
-    content: `<h2>Understanding Web Performance</h2>
+    title: "Solution for CyberCard NCO Challenge",
+    description: "Writeup of the CyberCard CTF challenge, focusing on AES and HMAC vulnerabilities.",
+    category: "Cybersecurity",
+    source: "Unpublished",
+    link: "",
+    content: `<h2>CyberCard CTF Challenge Writeup</h2>
+
+<h3>Introduction to the Challenge</h3>
 <p>
-  Web performance optimization has become increasingly critical as applications grow in complexity.
-  Slow-loading applications directly impact user engagement, conversion rates, and even search engine rankings.
-  In this article, we'll explore modern techniques for optimizing React and Next.js applications.
+    The "CyberCard" challenge provides participants with a pseudo-credit card system where you can either generate a test card or submit a card for validation. The goal is to submit a valid card with a balance of exactly <strong>13371337</strong> dollars to obtain the flag. 
 </p>
 
-<h2>Core Web Vitals: A Performance Framework</h2>
-<p>
-  Google's Core Web Vitals provide a structured approach to measuring web performance:
-</p>
-<ul>
-  <li><strong>Largest Contentful Paint (LCP):</strong> Measures loading performance</li>
-  <li><strong>First Input Delay (FID):</strong> Measures interactivity</li>
-  <li><strong>Cumulative Layout Shift (CLS):</strong> Measures visual stability</li>
-</ul>
+<h3>Key Technologies Explained</h3>
 
-<h2>JavaScript Optimization Techniques</h2>
-
-<h3>1. Code Splitting</h3>
+<h4>AES (Advanced Encryption Standard)</h4>
 <p>
-  Code splitting allows you to break your application into smaller chunks that can be loaded on demand.
-  This technique can significantly improve initial load times by only loading the code necessary
-  for the current view.
+    AES is a symmetric encryption algorithm widely used across the globe to secure data. In this challenge, AES is used in GCM (Galois/Counter Mode), which provides both confidentiality (encryption) and integrity (authentication) — although here, as we will soon laugh about, the integrity is handled elsewhere (and poorly).
 </p>
 
-<h3>2. Memoization</h3>
+<h4>HMAC (Hash-based Message Authentication Code)</h4>
 <p>
-  Using React's memoization features can prevent unnecessary re-renders and expensive recalculations,
-  resulting in smoother user experiences, especially in data-heavy applications.
+    HMAC is a mechanism to verify both the data integrity and authenticity of a message, typically using a cryptographic hash function like SHA-256. In CyberCard, the ciphertext is protected with an HMAC using a key derived from the number 1337. Ironically, the true number here is 1337 ways to break it.
 </p>
 
-<h2>Conclusion</h2>
+<h3>Identifying the Loophole</h3>
 <p>
-  Performance optimization is not a one-time task but an ongoing process. By implementing these techniques
-  and continuously monitoring your application, you can provide users with a fast, responsive experience
-  that keeps them engaged and coming back. Remember that each millisecond counts in today's competitive
-  web landscape.
-</p>`
+    Observant players would notice several critical flaws:
+    <ul>
+        <li>The AES key is random for the session but the nonce (normally random and unique) is <strong>fixed as the key itself</strong>. This is a massive cryptographic mistake because it allows predictability.</li>
+        <li>The system relies <em>only</em> on the HMAC for authentication, not on AES-GCM's internal authentication tag.</li>
+        <li>The HMAC key is <strong>known and constant</strong> — it's simply 1337 padded to 16 bytes, which is obviously insecure.</li>
+    </ul>
+</p>
+<p>
+    Because of these missteps, if you get a ciphertext and its corresponding plaintext, you can forge a valid new ciphertext for a modified plaintext of the <strong>same length</strong> and produce a valid HMAC tag yourself.
+</p>
+
+<h3>How the Exploit Was Forged</h3>
+<p>
+    First, we generated a valid card using option 1. This gave us:
+    <ul>
+        <li>The original plaintext (name and balance).</li>
+        <li>The original ciphertext and HMAC tag.</li>
+    </ul>
+    Now, since the HMAC key is known and the encryption is length-preserving, we could work some cryptographic wizardry:
+</p>
+
+<h3>Understanding the Exploit Script</h3>
+
+<h4>Step 1: Extract Original Ciphertext</h4>
+<p>
+    The script slices off the HMAC tag from the received hex string. Since the tag length is 32 bytes, it simply cuts the last 64 hex characters.
+</p>
+
+<h4>Step 2: Reconstruct Original Plaintext</h4>
+<p>
+    The plaintext is recreated using the printed name and balance. This needs to be <strong>exactly</strong> what was used originally.
+</p>
+
+<h4>Step 3: Create Target Plaintext</h4>
+<p>
+    To reach the "13371337" balance, the script crafts a new plaintext. The trick is that the new plaintext must be the <strong>same length</strong> as the original, otherwise the XOR trickery would not align.
+</p>
+<p>
+    It even intelligently adjusts the name length by trimming characters to fit if necessary. A short name, but a long flag-winning smile.
+</p>
+
+<h4>Step 4: Forge Target Ciphertext</h4>
+<p>
+    Now comes the magic: 
+    <code>C2 = C1 XOR P1 XOR P2</code> 
+    This works because of the nature of stream cipher-like modes (like AES-GCM encryption without auth). XORing the original ciphertext with the original plaintext removes the effect of the plaintext, and applying the target plaintext effectively "re-encrypts" it correctly.
+</p>
+
+<h4>Step 5: Forge Target HMAC</h4>
+<p>
+    Because the HMAC key is known, we simply generate a new HMAC of the new ciphertext. No dark arts needed.
+</p>
+
+<h4>Step 6: Combine and Submit</h4>
+<p>
+    The final forged card is the forged ciphertext concatenated with the forged tag. Submit this hex string into the program under option 2, and voilà, you win the flag.
+</p>
+
+<h3>Detailed Explanation of Challenge Code</h3>
+
+<h4>Card Generation and Encryption</h4>
+<code>
+aes_key = get_random_bytes(16)
+hmac_key = (1337).to_bytes(16, byteorder='big')
+</code>
+<p>Here, the AES key is random but the HMAC key is fixed. Immediate danger signs for any pentester worth their salt.</p>
+
+<code>
+cipher = AES.new(aes_key, AES.MODE_GCM, nonce=aes_key)
+card_ct = cipher.encrypt(card_pt)
+</code>
+<p>Using the AES key as the nonce is catastrophic. Nonces should never be predictable or reused, but here it's literally the key reused as a nonce.</p>
+
+<code>
+hmac = HMAC.new(hmac_key, digestmod=SHA256)
+tag = hmac.update(card_ct).hexdigest()
+</code>
+<p>Separate HMAC protects the ciphertext — but with a fixed, known key. It's like putting a lock on your bike but taping the key next to it.</p>
+
+<h4>Card Validation</h4>
+<code>
+card = bytes.fromhex(card)
+ct, tag = card[:-TAG_LEN], card[-TAG_LEN:]
+</code>
+<p>During validation, the HMAC is verified by recomputing it. No verification of AES-GCM's built-in authentication happens at all.</p>
+
+<code>
+cipher = AES.new(aes_key, AES.MODE_GCM, nonce=aes_key)
+pt = cipher.decrypt(ct).decode()
+</code>
+<p>Decrypts the ciphertext. Since the nonce is the same as the key, predictability leaks all over the place.</p>
+
+<h3>Detailed Walkthrough of the Exploit Script</h3>
+
+<h4>Setup Values</h4>
+<code>
+original_name = "Jane Soh"
+original_bal = "227"
+original_card_hex = "..."
+hmac_key = (1337).to_bytes(16, byteorder='big')
+</code>
+<p>Inputs from the printed card and the known HMAC key.</p>
+
+<h4>Extracting Ciphertext</h4>
+<code>
+original_ct_hex = original_card_hex[:-TAG_LEN_BYTES * 2]
+C1 = bytes.fromhex(original_ct_hex)
+</code>
+<p>Separates ciphertext from HMAC tag.</p>
+
+<h4>Creating New Plaintext</h4>
+<code>
+target_name = "A" * (len(original_name) - 5)
+P2 = (target_name + '\n' + "13371337").encode()
+</code>
+<p>Adjusts name length to keep everything perfectly aligned for XOR operations.</p>
+
+<h4>Forging Ciphertext</h4>
+<code>
+C2 = bytes(c ^ p1 ^ p2 for c, p1, p2 in zip(C1, P1, P2))
+</code>
+<p>Applies XOR to transform the ciphertext into one encrypting our target plaintext.</p>
+
+<h4>Generating New HMAC</h4>
+<code>
+hmac_calc = HMAC.new(hmac_key, digestmod=SHA256)
+hmac_calc.update(C2)
+T2 = hmac_calc.digest()
+</code>
+<p>New ciphertext needs a new valid HMAC, generated using the same fixed key.</p>
+
+<h4>Building Final Card</h4>
+<code>
+exploit_card_hex = C2.hex() + T2.hex()
+</code>
+<p>Simply combine and ready to submit.</p>
+
+<h3>Conclusion</h3>
+<p>
+    This challenge teaches important lessons: why random nonces matter, why relying on separate HMACs (with guessable keys!) is dangerous, and why cryptography is a "no half-measures" field. As they say, cryptography is like coding — you get it wrong, and suddenly your life savings are buying someone else a yacht.
+</p>
+`
   },
   {
     title: "Energy-Efficient IoT Protocols for Smart Buildings",
