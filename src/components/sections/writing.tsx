@@ -6,7 +6,7 @@ const Writing = () => {
     <section id="writing" className="py-20">
       <div className="container mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          <span className="text-primary">#</span> Write Up
+          <span className="text-primary">#</span> WRITE UP
         </h2>
         <p className="text-muted-foreground mb-12 font-sans">
           Technical articles and research papers
