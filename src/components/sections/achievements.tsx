@@ -1,8 +1,23 @@
 import React from "react";
 import { achievements } from "../../lib/data";
-import { Trophy } from "lucide-react";
+import { Trophy, Award } from "lucide-react";
 
 const Achievements = () => {
+    const certifications = [
+        {
+            title: "Cybersecurity Fundamentals",
+            issuer: "Cisco Networking Academy",
+            year: "2023",
+            certificate: "/certificates/cybersecurity-fundamentals.jpg"
+        },
+        {
+            title: "Embedded Systems Design",
+            issuer: "Coursera - University of Colorado Boulder",
+            year: "2022",
+            certificate: "/certificates/embedded-systems.jpg"
+        }
+    ];
+
     return (
         <section id="achievements" className="py-20">
             <div className="container mx-auto px-6">
@@ -27,7 +42,36 @@ const Achievements = () => {
                                 <img
                                     src={ach.certificate}
                                     alt={`Certificate for ${ach.title}`}
-                                    className="w-full h-auto rounded-lg"
+                                    className="w-75 h-auto rounded-lg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
+                    <Award className="mr-2 text-primary" /> CERTIFICATIONS
+                </h2>
+                <p className="text-muted-foreground mb-8 font-sans">Professional certifications</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {certifications.map((cert, idx) => (
+                    <div
+                        key={idx}
+                        className="relative group"
+                    >
+                        <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                            <h4 className="text-foreground font-bold text-lg mb-2">{cert.title}</h4>
+                            <p className="text-muted-foreground">{cert.issuer}</p>
+                            <p className="text-muted-foreground text-sm">{cert.year}</p>
+                        </div>
+                        
+                        <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
+                            <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2">
+                                <img
+                                    src={cert.certificate}
+                                    alt={`Certificate for ${cert.title}`}
+                                    className="w-75 h-auto rounded-lg"
                                 />
                             </div>
                         </div>
