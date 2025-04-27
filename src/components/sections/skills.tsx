@@ -2,18 +2,12 @@ import SkillBar from "../ui/skill-bar";
 import { technicalSkills, toolsAndLanguages } from "../../lib/data";
 import {
   Code2,
-  Server,
-  Cpu,
-  Github,
   GitBranch,
   CircuitBoard,
   Brain,
-  BookOpen,
   LineChart,
-  BarChart,
   Code,
   Atom,
-  Sparkles,
   Eye,
   Pi,
   Grape
