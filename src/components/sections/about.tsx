@@ -1,4 +1,4 @@
-import { User, GraduationCap, Calendar, MapPin, Code2, GitBranch, Atom, Pi, Brain, LineChart, Eye, Grape, CircuitBoard, Code } from "lucide-react";
+import { User, GraduationCap, Calendar, MapPin, Code2, GitBranch, Atom, Pi, Brain, LineChart, Eye, Grape, CircuitBoard, Code, HeartHandshake } from "lucide-react";
 import { technicalSkills, toolsAndLanguages } from "../../lib/data";
 import SkillBar from "../ui/skill-bar";
 
@@ -26,6 +26,37 @@ const About = () => {
       type: "education"
     }
   ];
+
+  const serviceLearningData = [
+    {
+      "period": "2025",
+      "duration": "7 Hours",
+      "role": "Volunteer",
+      "organization": "Race for Life 2025",
+      "type": "service"
+    },
+    {
+      "period": "2024",
+      "duration": "4 Hours",
+      "role": "Volunteer",
+      "organization": "SGBono (Laptop Refurbishment)",
+      "type": "service"
+    },
+    {
+      "period": "2024",
+      "duration": "7 Hours",
+      "role": "Volunteer",
+      "organization": "Race for Life 2024",
+      "type": "service"
+    },
+    {
+      "period": "2023",
+      "duration": "16 Hours",
+      "role": "Volunteer",
+      "organization": "Singapore Cancer Society (Race Against Cancer @ ACE)",
+      "type": "service"
+    }
+  ];  
 
   const getColorClassByLevel = (level: string) => {
     switch (level) {
@@ -102,34 +133,67 @@ const About = () => {
           </div>
         </div>
         
-        <div className="mt-32">
-          <h3 className="text-xl font-bold mb-6 flex items-center">
-            <GraduationCap size={22} className="mr-2 text-primary" /> Education
-          </h3>
-          <div className="relative">
-            <div className="absolute left-0 top-[3rem] h-[calc(100%_-_6rem)] w-0.5 bg-primary/30"></div>
-            {educationData.map((item, index) => (
-              <div key={index} className="relative z-10 mb-12 pl-8">
-                <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
-                    <GraduationCap size={20} className="text-primary" />
+        <div className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h3 className="text-xl font-bold mb-6 flex items-center">
+              <GraduationCap size={22} className="mr-2 text-primary" /> Education
+            </h3>
+            <div className="relative">
+              <div className="absolute left-0 top-[3rem] h-[calc(100%_-_6rem)] w-0.5 bg-primary/30"></div>
+              {educationData.map((item, index) => (
+                <div key={index} className="relative z-10 mb-12 pl-8">
+                  <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
+                      <GraduationCap size={20} className="text-primary" />
+                    </div>
+                  </div>
+                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                    <div className="flex items-center text-primary font-mono text-sm mb-2">
+                      <Calendar size={16} className="mr-2" />
+                      <span>{item.period}</span>
+                      <span className="mx-2">•</span>
+                      <span className="text-muted-foreground">{item.duration}</span>
+                    </div>
+                    <h4 className="text-foreground font-bold text-lg mb-2">{item.degree}</h4>
+                    <div className="flex items-center text-muted-foreground">
+                      <MapPin size={16} className="mr-2" />
+                      {item.institution}
+                    </div>
                   </div>
                 </div>
-                <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
-                  <div className="flex items-center text-primary font-mono text-sm mb-2">
-                    <Calendar size={16} className="mr-2" />
-                    <span>{item.period}</span>
-                    <span className="mx-2">•</span>
-                    <span className="text-muted-foreground">{item.duration}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-6 flex items-center">
+              <HeartHandshake size={22} className="mr-2 text-primary" /> Service Learning
+            </h3>
+            <div className="relative">
+              <div className="absolute left-0 top-[3rem] h-[calc(100%_-_6rem)] w-0.5 bg-primary/30"></div>
+              {serviceLearningData.map((item, index) => (
+                <div key={index} className="relative z-10 mb-12 pl-8">
+                  <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
+                      <HeartHandshake size={20} className="text-primary" />
+                    </div>
                   </div>
-                  <h4 className="text-foreground font-bold text-lg mb-2">{item.degree}</h4>
-                  <div className="flex items-center text-muted-foreground">
-                    <MapPin size={16} className="mr-2" />
-                    {item.institution}
+                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                    <div className="flex items-center text-primary font-mono text-sm mb-2">
+                      <Calendar size={16} className="mr-2" />
+                      <span>{item.period}</span>
+                      <span className="mx-2">•</span>
+                      <span className="text-muted-foreground">{item.duration}</span>
+                    </div>
+                    <h4 className="text-foreground font-bold text-lg mb-2">{item.organization}</h4>
+                    <div className="flex items-center text-muted-foreground">
+                      <MapPin size={16} className="mr-2" />
+                      {item.role}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
