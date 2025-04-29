@@ -37,7 +37,7 @@ const Achievements = () => {
                             <p className="text-muted-foreground text-sm">{ach.year}</p>
                         </div>
                         
-                        <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
+                        <div className="absolute top-full left-0 w-full opacity-0 opacity-100 transition-opacity duration-200 pointer-events-none z-50">
                             <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
                                 <img
                                     src={ach.certificate}
@@ -66,7 +66,7 @@ const Achievements = () => {
                             <p className="text-muted-foreground text-sm">{cert.year}</p>
                         </div>
                         
-                        <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
+                        <div className="absolute top-full left-0 w-full opacity-0 opacity-100 transition-opacity duration-200 pointer-events-none z-50">
                             <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
                                 <img
                                     src={cert.certificate}
