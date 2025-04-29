@@ -12,7 +12,7 @@ const Hero = () => {
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
                   <img 
-                    src="/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg" 
+                    src="images/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg" 
                     alt="Rishav Ganguly"
                     className="w-full h-full rounded-full object-cover"
                   />
