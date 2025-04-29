@@ -31,14 +31,14 @@ const Achievements = () => {
                         key={idx}
                         className="relative group"
                     >
-                        <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                        <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
                             <h4 className="text-foreground font-bold text-lg mb-2">{ach.title}</h4>
                             <p className="text-muted-foreground">{ach.issuer}</p>
                             <p className="text-muted-foreground text-sm">{ach.year}</p>
                         </div>
                         
                         <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
-                            <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2">
+                            <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
                                 <img
                                     src={ach.certificate}
                                     alt={`Certificate for ${ach.title}`}
@@ -51,7 +51,7 @@ const Achievements = () => {
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
-                    <Award className="mr-2 text-primary" /> CERTIFICATIONS
+                    <Award className="mr-2 text-primary" /> Certifications
                 </h2>
                 <p className="text-muted-foreground mb-8 font-sans">Professional certifications</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -60,14 +60,14 @@ const Achievements = () => {
                         key={idx}
                         className="relative group"
                     >
-                        <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                        <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
                             <h4 className="text-foreground font-bold text-lg mb-2">{cert.title}</h4>
                             <p className="text-muted-foreground">{cert.issuer}</p>
                             <p className="text-muted-foreground text-sm">{cert.year}</p>
                         </div>
                         
                         <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
-                            <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2">
+                            <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
                                 <img
                                     src={cert.certificate}
                                     alt={`Certificate for ${cert.title}`}

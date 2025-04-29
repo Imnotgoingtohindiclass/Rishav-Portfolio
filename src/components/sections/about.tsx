@@ -9,51 +9,58 @@ const About = () => {
       duration: "4 years",
       degree: "Engineering+ Student",
       institution: "School of Science and Technology, Singapore",
-      type: "education"
+      type: "education",
+      description: "Currently pursuing a specialized engineering program with focus on electronics and cybersecurity. Participating in advanced projects and research in embedded systems and network security."
     },
     {
       period: "2017 - 2021",
       duration: "4.5 years",
       degree: "Primary School Student",
       institution: "Xingnan Primary School",
-      type: "education"
+      type: "education",
+      description: "Completed primary education with distinction in mathematics and science. Participated in various STEM-related activities and competitions."
     },
     {
       period: "2016 - 2017",
       duration: "18 months",
       degree: "Primary School Student",
       institution: "Queenstown Primary School",
-      type: "education"
+      type: "education",
+      description: "Started primary education journey with focus on foundational subjects and extracurricular activities."
     }
   ];
 
   const serviceLearningData = [
     {
+      "event": "Race for Life 2023",
       "period": "2025",
       "duration": "7 Hours",
       "role": "Volunteer",
-      "organization": "Race for Life 2025",
+      "organization": "Singapore Cancer Society",
       "type": "service"
     },
     {
+      "event": "Laptop Refurbishment",
       "period": "2024",
       "duration": "4 Hours",
       "role": "Volunteer",
-      "organization": "SGBono (Laptop Refurbishment)",
+      "organization": "SGBono",
       "type": "service"
     },
     {
+      "event": "Race for Life 2024",
       "period": "2024",
       "duration": "7 Hours",
       "role": "Volunteer",
-      "organization": "Race for Life 2024",
+      "organization": "Singapore Cancer Society",
       "type": "service"
     },
     {
+      "event": "Race Against Cancer @ ACE)",
       "period": "2023",
       "duration": "16 Hours",
       "role": "Volunteer",
-      "organization": "Singapore Cancer Society (Race Against Cancer @ ACE)",
+      "organization": "Singapore Cancer Society",
       "type": "service"
     }
   ];  
@@ -139,15 +146,15 @@ const About = () => {
               <GraduationCap size={22} className="mr-2 text-primary" /> Education
             </h3>
             <div className="relative">
-              <div className="absolute left-0 top-[3rem] h-[calc(100%_-_6rem)] w-0.5 bg-primary/30"></div>
+              <div className="absolute left-0 top-[4rem] h-[calc(100%_-_8rem)] w-0.5 bg-primary/30"></div>
               {educationData.map((item, index) => (
-                <div key={index} className="relative z-10 mb-12 pl-8">
+                <div key={index} className="relative z-10 mb-12 pl-8 group">
                   <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
                       <GraduationCap size={20} className="text-primary" />
                     </div>
                   </div>
-                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
                     <div className="flex items-center text-primary font-mono text-sm mb-2">
                       <Calendar size={16} className="mr-2" />
                       <span>{item.period}</span>
@@ -164,13 +171,12 @@ const About = () => {
               ))}
             </div>
           </div>
-          
           <div>
             <h3 className="text-xl font-bold mb-6 flex items-center">
               <HeartHandshake size={22} className="mr-2 text-primary" /> Service Learning
             </h3>
             <div className="relative">
-              <div className="absolute left-0 top-[3rem] h-[calc(100%_-_6rem)] w-0.5 bg-primary/30"></div>
+              <div className="absolute left-0 top-[4rem] h-[calc(100%_-_8rem)] w-0.5 bg-primary/30"></div>
               {serviceLearningData.map((item, index) => (
                 <div key={index} className="relative z-10 mb-12 pl-8">
                   <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -178,17 +184,17 @@ const About = () => {
                       <HeartHandshake size={20} className="text-primary" />
                     </div>
                   </div>
-                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md">
+                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
                     <div className="flex items-center text-primary font-mono text-sm mb-2">
                       <Calendar size={16} className="mr-2" />
                       <span>{item.period}</span>
                       <span className="mx-2">•</span>
                       <span className="text-muted-foreground">{item.duration}</span>
                     </div>
-                    <h4 className="text-foreground font-bold text-lg mb-2">{item.organization}</h4>
+                    <h4 className="text-foreground font-bold text-lg mb-2">{item.event}</h4>
                     <div className="flex items-center text-muted-foreground">
                       <MapPin size={16} className="mr-2" />
-                      {item.role}
+                      {item.organization}
                     </div>
                   </div>
                 </div>
@@ -221,7 +227,7 @@ const About = () => {
                 {toolsAndLanguages.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center"
+                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center hover:border-primary/50 transition-all duration-300 border border-transparent"
                   >
                     <div className="mb-2 text-3xl">{getIconByName(item.name)}</div>
                     <p>{item.name}</p>

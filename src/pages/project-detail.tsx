@@ -38,7 +38,7 @@ const ProjectDetail = () => {
   }, [slug]);
   
   const handleBackClick = () => {
-    navigate("/");
+    navigate("/projects");
   };
   
   if (!project) {

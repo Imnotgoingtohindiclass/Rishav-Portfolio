@@ -6,7 +6,7 @@ export const achievements = [
     title: "Bronze Award, National Cybersecurity Olympiad",
     issuer: "National Cybersecurity Olympiad (Singapore)",
     year: "2025",
-    certificate: "/public/NCO2025_COA_Bronze_19.jpg"
+    certificate: "public/NCO2025_COA_Bronze_19.jpg"
   },
   {
     title: "Best Article, RVMUN 2025 (Press Corps)",
@@ -256,7 +256,7 @@ export const toolsAndLanguages = [
 
 export const articlesData: ArticleProps[] = [
   {
-    title: 'Solution for Super Secure System"',
+    title: 'Solution for Super Secure System',
     description: "An analysis and walkthrough of the solution for the challenge 'Super Secure System' from the SSTCTF 20225.",
     category: "Cybersecurity",
     source: "Published on Github",
