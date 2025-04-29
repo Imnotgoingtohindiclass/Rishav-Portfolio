@@ -12,6 +12,17 @@ import ArticleDetail from "./pages/article-detail";
 import AllProjects from "./pages/AllProjects.tsx"; 
 import LoadingScreen from "./components/layout/loading-screen";
 
+// List of all images to preload
+const imagesToPreload = [
+  "/NCO2025_COA_Bronze_19.jpg",
+  "/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg",
+  "/Item-5_Taiwan-Trip24.jpg",
+  "/Item-4_Jakarta-Trip24_Sigmas-Ahoy.jpg",
+  "/Item-3_PREPMUN24.jpg",
+  "/Item-2_SUTD-Camp_Presentation.jpg",
+  "/Item-1_SUTD-Camp_Team-3.jpg"
+];
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [minimumTimeElapsed, setMinimumTimeElapsed] = useState(false);
@@ -21,6 +32,37 @@ function App() {
     const minimumTimer = setTimeout(() => {
       setMinimumTimeElapsed(true);
     }, 1500);
+
+    // Function to preload images
+    const preloadImages = () => {
+      let loadedImages = 0;
+      
+      if (imagesToPreload.length === 0) {
+        if (minimumTimeElapsed) {
+          setLoading(false);
+        }
+        return;
+      }
+
+      imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        if (img.complete) {
+          loadedImages++;
+        } else {
+          img.onload = () => {
+            loadedImages++;
+            if (loadedImages === imagesToPreload.length && minimumTimeElapsed) {
+              setLoading(false);
+            }
+          };
+        }
+      });
+
+      if (loadedImages === imagesToPreload.length && minimumTimeElapsed) {
+        setLoading(false);
+      }
+    };
 
     // Function to check if all images are loaded
     const checkImagesLoaded = () => {
@@ -52,7 +94,10 @@ function App() {
       }
     };
 
-    // Initial check
+    // Preload images first
+    preloadImages();
+
+    // Initial check for DOM images
     checkImagesLoaded();
 
     // Also check when the window loads
