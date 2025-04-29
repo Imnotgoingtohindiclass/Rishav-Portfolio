@@ -6,7 +6,7 @@ export const achievements = [
     title: "Bronze Award, National Cybersecurity Olympiad",
     issuer: "National Cybersecurity Olympiad (Singapore)",
     year: "2025",
-    certificate: "public/NCO2025_COA_Bronze_19.jpg"
+    certificate: "../../public/NCO2025_COA_Bronze_19.jpg"
   },
   {
     title: "Best Article, RVMUN 2025 (Press Corps)",
