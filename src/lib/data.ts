@@ -6,25 +6,25 @@ export const achievements = [
     title: "Bronze Award, National Cybersecurity Olympiad",
     issuer: "National Cybersecurity Olympiad (Singapore)",
     year: "2025",
-    certificate: "public/NCO2025_COA_Bronze_19.jpg"
+    certificate: "images/NCO2025_COA_Bronze_19.jpg"
   },
   {
     title: "Best Article, RVMUN 2025 (Press Corps)",
     issuer: "River Valley Model United Nations",
     year: "2025",
-    certificate: "public/Item-2_SUTD-Camp_Presentation.jpg"
+    certificate: "images/Item-2_SUTD-Camp_Presentation.jpg"
   },
   {
     title: "Second Place, SST CTF",
     issuer: "School of Science and Technology, Singapore",
     year: "2025",
-    certificate: "public/Item-4_Jakarta-Trip24_Sigmas-Ahoy.jpg"
+    certificate: "images/Item-4_Jakarta-Trip24_Sigmas-Ahoy.jpg"
   },
   {
     title: "Gold Award, Australian Mathematics Competition",
     issuer: "Australian Mathematics Trust",
     year: "2022, 2023, 2024",
-    certificate: "public/Item-5_Taiwan-Trip24.jpg"
+    certificate: "images/Item-5_Taiwan-Trip24.jpg"
   },
 ];
 
