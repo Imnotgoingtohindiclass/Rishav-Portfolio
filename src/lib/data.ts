@@ -218,26 +218,31 @@ export const technicalSkills = [
     name: "Programming",
     level: "Advanced",
     percentage: 95,
+    explanation: "Extensive experience in Python, JavaScript, and TypeScript. Built multiple full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
   },
   {
     name: "Data Science",
     level: "Advanced",
     percentage: 87,
+    explanation: "Proficient in data analysis, visualization, and statistical modeling. Experience with pandas, NumPy, and Matplotlib. Completed projects in data-driven decision making and predictive analytics."
   },
   {
     name: "Web Development",
     level: "Intermediate",
     percentage: 83,
+    explanation: "Skilled in React, Next.js, and modern web development practices. Built responsive and accessible web applications with a focus on user experience and performance optimization."
   },
   {
     name: "Hardware and Embedded Systems",
     level: "Proficient",
     percentage: 73,
+    explanation: "Hands-on experience with Arduino, Raspberry Pi, and various sensors. Developed IoT devices and embedded systems for real-world applications, including home automation and robotics."
   },
   {
     name: "Machine Learning",
     level: "Proficient",
     percentage: 72,
+    explanation: "Practical experience with TensorFlow and OpenCV. Developed computer vision models and implemented machine learning algorithms for various applications, including medical image analysis."
   },
 ];
 

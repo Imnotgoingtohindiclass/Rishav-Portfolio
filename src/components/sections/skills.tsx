@@ -75,6 +75,7 @@ const Skills = () => {
                 level={skill.level}
                 percentage={skill.percentage}
                 colorClass={getColorClassByLevel(skill.level)}
+                explanation={skill.explanation}
               />
             ))}
           </div>

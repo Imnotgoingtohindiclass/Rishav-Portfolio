@@ -217,6 +217,7 @@ const About = () => {
                   level={skill.level}
                   percentage={skill.percentage}
                   colorClass={getColorClassByLevel(skill.level)}
+                  explanation={skill.explanation}
                 />
               ))}
             </div>
@@ -227,7 +228,7 @@ const About = () => {
                 {toolsAndLanguages.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center hover:border-primary/50 transition-all duration-300 border border-transparent"
+                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center"
                   >
                     <div className="mb-2 text-3xl">{getIconByName(item.name)}</div>
                     <p>{item.name}</p>
