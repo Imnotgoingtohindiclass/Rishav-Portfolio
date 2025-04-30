@@ -46,7 +46,7 @@ const SkillBar = ({ name, level, percentage, colorClass, explanation }: SkillBar
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
         visible: true,
-        text: explanation
+        text: explanation,
       });
     }
   };
@@ -57,15 +57,13 @@ const SkillBar = ({ name, level, percentage, colorClass, explanation }: SkillBar
 
   return (
     <div
-      className="relative group" // Group wrapper for hover effects
+      className="relative" // Ensures tooltip positioning is relative to this container
+      ref={skillRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Empty spacer with tooltip capabilities */}
-      <div className="h-4 w-full bg-transparent group-hover:bg-muted-light"></div>
-
       {/* Skill Bar */}
-      <div className="mb-6 relative" ref={skillRef}>
+      <div className="mb-6">
         <div className="flex justify-between mb-2">
           <span className="text-foreground font-mono">{name}</span>
           <span className={colorClass.replace("bg-", "text-")}>{level}</span>
@@ -85,8 +83,8 @@ const SkillBar = ({ name, level, percentage, colorClass, explanation }: SkillBar
           style={{
             left: `${tooltip.x}px`,
             top: `${tooltip.y}px`,
-            transform: "translate(-100%, -100%)", // Bottom-left of the tooltip is bound to the mouse
-            width: "200px", // Fixed width to ensure consistent box size
+            transform: "translate(0%, -100%)", // Keeps the tooltip above the cursor
+            width: "250px", // Fixed width for consistent appearance
           }}
         >
           <div className="font-medium mb-1 border-b border-white/20 pb-1">

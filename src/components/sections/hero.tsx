@@ -31,20 +31,20 @@ const Hero = () => {
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button 
               variant="outline" 
-              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary"
+              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-black"
               asChild
             >
               <a href="#projects">View Projects</a>
             </Button>
           </div>
           <div className="mt-16 flex space-x-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-primary">
+            <a href="https://github.com/imnotgoingtohindiclass" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-primary">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-secondary">
+            <a href="https://www.linkedin.com/in/rishav-ganguly-174960348/" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-secondary">
               <Linkedin size={24} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-accent">
+            <a href="https://instagram.com/r.15.hav" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-accent">
               <Instagram size={24} />
             </a>
           </div>
