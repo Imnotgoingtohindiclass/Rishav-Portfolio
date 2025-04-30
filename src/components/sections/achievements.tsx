@@ -50,7 +50,7 @@ const Achievements = () => {
                     ))}
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
+                {/* <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
                     <Award className="mr-2 text-primary" /> Certifications
                 </h2>
                 <p className="text-muted-foreground mb-8 font-sans">Professional certifications</p>
@@ -77,7 +77,7 @@ const Achievements = () => {
                         </div>
                     </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </section>
     );

@@ -56,7 +56,7 @@ const About = () => {
       "type": "service"
     },
     {
-      "event": "Race Against Cancer @ ACE)",
+      "event": "Race Against Cancer @ ACE",
       "period": "2023",
       "duration": "16 Hours",
       "role": "Volunteer",
