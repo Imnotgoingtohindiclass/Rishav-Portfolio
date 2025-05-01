@@ -4,28 +4,85 @@ import { ArticleProps } from "src/components/ui/article-card.tsx";
 export const achievements = [
   {
     title: "Bronze Award, National Cybersecurity Olympiad",
-    issuer: "National Cybersecurity Olympiad (Singapore)",
+    issuer: "National University of Singapore, NUS",
     year: "2025",
     certificate: "/NCO2025_COA_Bronze_19.jpg"
   },
   {
     title: "Best Article, RVMUN 2025 (Press Corps)",
-    issuer: "River Valley Model United Nations",
+    issuer: "River Valley High School, RVHS",
     year: "2025",
     certificate: "/Item-2_SUTD-Camp_Presentation.jpg"
   },
   {
-    title: "Second Place, SST CTF",
-    issuer: "School of Science and Technology, Singapore",
-    year: "2025",
-    certificate: "/Item-4_Jakarta-Trip24_Sigmas-Ahoy.jpg"
-  },
-  {
     title: "Gold Award, Australian Mathematics Competition",
-    issuer: "Australian Mathematics Trust",
+    issuer: "Australian Mathematics Trust, AMT",
     year: "2022, 2023, 2024",
     certificate: "/Item-5_Taiwan-Trip24.jpg"
   },
+  {
+    title: "Design Marvel Award, Marine and Offshore Challenge",
+    issuer: "Singapore Youth Flying Club, SYFC",
+    year: "2023",
+    certificate: ""
+  },
+  {
+    title: "Distinction, Illustratum",
+    issuer: "National University of Singapore, NUS",
+    year: "2023",
+    certificate: ""
+  },
+  {
+    title: "Honorable Mention, Singapore Physics League (SPhL)",
+    issuer: "Institute of Physics Singapore, ISP",
+    year: "2024",
+    certificate: "/SPHLcert_page-0001 (1).jpg"
+  }
+];
+export interface RepresentationRole {
+  title: string;
+  organization: string;
+  duration: string;
+  description: string;
+}
+
+export const representationRoles: RepresentationRole[] = [
+  {
+    title: "International Delegate, Taichung Cup Handball Championship",
+    organization: "Handball Federation Singapore, HFS",
+    duration: "2024",
+    description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship."
+  },
+  {
+    title: "Aeromodelling Expert (Level 3)",
+    organization: "Singapore Youth Flying Club, SYFC",
+    duration: "2022 - 2024",
+    description: "Completed progressive training from Level 1 to Level 3 in aeromodelling, showcasing advanced understanding in aircraft design, flight principles, and simulation.",
+  },
+  {
+    title: "Upper Sec House Committee Member",
+    organization: "Student Leadership Board (House)",
+    duration: "2024",
+    description: "Served as part of the Upper Sec House Committee, contributing to house events and promoting school spirit through leadership and coordination.",
+  },
+  {
+    title: "SYFC Inter-School Aeromodelling Competitor",
+    organization: "Singapore Youth Flying Club, SYFC",
+    duration: "2022 - 2024",
+    description: "Represented school in multiple SYFC inter-school competitions including Launch Glider and Flight Simulation events.",
+  },
+  {
+    title: "SYFC Top Gun Programme Participant",
+    organization: "Singapore Youth Flying Club, SYFC",
+    duration: "2024",
+    description: "Selected for and completed the elite Top Gun programme, enhancing practical aeronautical knowledge and team collaboration in advanced projects.",
+  },
+  {
+    title: "Leadership Module Graduate",
+    organization: "School of Science and Technology, Singapore, SST",
+    duration: "2023",
+    description: "Completed two school-recognized leadership development modules including OEE training on group dynamics and outdoor education expeditions.",
+  }
 ];
 
 // Static abstract SVG patterns
@@ -44,67 +101,25 @@ const getPatternSvg = (index: number) => {
 
 export const projectsData: ProjectProps[] = [
   {
-    title: "RefrigeReminder",
-    description: "IoT device + app to remind users of food expiry and reduce waste.",
-    fullDescription: "The RefrigeReminder project by Team Angus Cheezburgur (Caydran, Coen, Martin, and Rishav) aimed to solve the problem of food being forgotten and expiring in refrigerators. It's an IoT device paired with a mobile app, allowing users to log food items and expiry dates. It detects fridge openings and sends reminders, emphasizing simplicity, reliability, accessibility, and reusability.",
-    category: "Engineering",
+    title: "Personal Honeypot Project",
+    description: "Creating a custom honeypot to study malicious behavior and attack patterns 👻💻.",
+    fullDescription: "Designing and deploying a honeypot system to attract, log, and analyze cyber attacks. This personal cybersecurity project involves custom configuration, logging systems, and basic network monitoring to study common attack vectors and response strategies.",
+    category: "Cybersecurity",
     image: getPatternSvg(0),
-    technologies: ["Arduino", "IoT", "Mobile App Development"],
-    durationHours: 100,
-    challenges: "Making the system reliable without it becoming annoying AF 💀. Also keeping it simple for boomers who don't vibe with tech lol.",
-    outcomes: "Helped users reduce food waste, stay aware of expiry dates, and manage fridge contents more effectively!",
+    technologies: ["Python", "Linux", "Networking", "Cybersecurity"],
+    durationHours: 150,
+    challenges: "Making it look juicy enough for attackers to actually bite 😵 and not get my whole setup nuked 😭.",
+    outcomes: "Improved understanding of intrusion tactics, data logging, and incident response 🔥.",
     links: {
-      documentation: "https://github.com",
-    },
-  },
-  {
-    title: "Autonomous Life Buoy",
-    description: "Prototyped a life buoy that auto-detects and saves drowning people using heat sensors.",
-    fullDescription: "Designed a prototype of a smart life buoy that detects when someone falls overboard using heat sensors and automatically launches to save them. It navigates itself to the drowning victim and is winched back afterward.",
-    category: "Engineering",
-    image: getPatternSvg(1),
-    technologies: ["Sensors", "Arduino", "Prototype Engineering"],
-    durationHours: 120,
-    challenges: "Getting accurate heat detection without false alarms 🔥🚫 and making it stable in water 🌊.",
-    outcomes: "Created a concept that could literally save lives, making rescue faster and more reliable 💪.",
-    links: {
-      documentation: "https://github.com",
-    },
-  },
-  {
-    title: "Tsunagu Research Project",
-    description: "Researched plant-based pH indicators as safer alternatives for food industry.",
-    fullDescription: "Explored the use of natural pH indicators (butterfly pea flower and red cabbage) to replace synthetic, toxic pH indicators in the food industry. Found that natural extracts could predict pH changes effectively while being safe if ingested.",
-    category: "Research",
-    image: getPatternSvg(2),
-    technologies: ["Plant Chemistry", "Food Science", "Spectroscopy"],
-    durationHours: 90,
-    challenges: "Variability in plant samples 🌱 and inconsistent absorbance readings 🥴.",
-    outcomes: "Demonstrated that butterfly pea flower is sensitive enough for small pH changes and proposed future improvements for industrial use 🔬.",
-    links: {
-      documentation: "https://github.com",
-    },
-  },
-  {
-    title: "Illustratum",
-    description: "Showed how binaural beats work through sound generation and graphs.",
-    fullDescription: "Created a website that generated two sound waves with slightly different frequencies to demonstrate the pitching effect of binaural beats. Visualized the superposition of sound waves using Desmos graphs.",
-    category: "Other",
-    image: getPatternSvg(3),
-    technologies: ["Web Audio API", "Desmos Graphs", "JavaScript"],
-    durationHours: 50,
-    challenges: "Making the audio sound not like a mosquito in my ear 😭 and syncing frequencies correctly 🎧.",
-    outcomes: "Made an interactive tool to visualize and hear how binaural beats work. Super vibey 🔥.",
-    links: {
-      demo: "https://github.com",
+      code: "https://github.com",
     },
   },
   {
     title: "Colorectal Cancer Detection using CNN",
     description: "Developed AI model to detect colorectal cancer from medical images.",
     fullDescription: "Built a Convolutional Neural Network (CNN) using Python to detect colorectal cancer from histology images. Trained and evaluated the model for accuracy and reliability in identifying cancerous samples.",
-    category: "Other",
-    image: getPatternSvg(4),
+    category: "AI/ML",
+    image: getPatternSvg(1),
     technologies: ["Python", "TensorFlow", "CNNs", "Medical Imaging"],
     durationHours: 200,
     challenges: "Balancing model complexity vs overfitting 🤓, and working with messy-ass medical datasets 🧠.",
@@ -114,11 +129,81 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
+    title: "IDP Integrated Design Challenge",
+    description: "Created an autonomous robot that scans QR codes, line-traces, and handles objects.",
+    fullDescription: "Built a self-trained AI model for an autonomous robot that line-traces, picks up objects using computer vision, and performs inventory checks remotely using sensors and CV.",
+    category: "Robotics",
+    image: getPatternSvg(2),
+    technologies: ["Python", "OpenCV", "Arduino", "ML", "Sensors"],
+    durationHours: 250,
+    challenges: "Training our own CV models was literal hell 🔥👿 and QR codes being annoying af.",
+    outcomes: "Completed full prototype for competition. Major flex 👏.",
+    links: {
+      code: "https://github.com",
+    },
+  },
+  {
+    title: "Post-Disaster Management Robot",
+    description: "Created a robot for remote debris clearance after disasters.",
+    fullDescription: "Designed a remotely operated robot to clear debris in disaster zones, allowing rescuers to work without putting themselves at risk.",
+    category: "Robotics",
+    image: getPatternSvg(3),
+    technologies: ["Arduino", "Wireless Comms", "Mechanical Design"],
+    durationHours: 160,
+    challenges: "Maintaining control over rough terrain without flipping over like a turtle 🐢.",
+    outcomes: "Enhanced post-disaster safety through remote operations 🔥🚧.",
+    links: {
+      documentation: "https://github.com",
+    },
+  },
+  {
+    title: "Autonomous Life Buoy",
+    description: "Prototyped a life buoy that auto-detects and saves drowning people using heat sensors.",
+    fullDescription: "Designed a prototype of a smart life buoy that detects when someone falls overboard using heat sensors and automatically launches to save them. It navigates itself to the drowning victim and is winched back afterward.",
+    category: "Engineering",
+    image: getPatternSvg(4),
+    technologies: ["Sensors", "Arduino", "Prototype Engineering"],
+    durationHours: 120,
+    challenges: "Getting accurate heat detection without false alarms 🔥🚫 and making it stable in water 🌊.",
+    outcomes: "Created a concept that could literally save lives, making rescue faster and more reliable 💪.",
+    links: {
+      documentation: "https://github.com",
+    },
+  },
+  {
+    title: "Electronic Muscle Stimulator",
+    description: "Created a muscle stimulator for elderly people using pure hardware.",
+    fullDescription: "Built an electronic muscle stimulator with no programmable components, using varying frequencies to stimulate muscles safely for 30-second intervals, aimed at elderly therapy.",
+    category: "Electronics",
+    image: getPatternSvg(5),
+    technologies: ["Circuit Design", "Analog Electronics"],
+    durationHours: 110,
+    challenges: "Designing a safe but effective stimulator without frying someone 😬⚡.",
+    outcomes: "Delivered a working stimulator to aid in elderly rehabilitation and mobility improvement ❤️.",
+    links: {
+      documentation: "https://github.com",
+    },
+  },
+  {
+    title: "RefrigeReminder",
+    description: "IoT device + app to remind users of food expiry and reduce waste.",
+    fullDescription: "The RefrigeReminder project by Team Angus Cheezburgur (Caydran, Coen, Martin, and Rishav) aimed to solve the problem of food being forgotten and expiring in refrigerators. It's an IoT device paired with a mobile app, allowing users to log food items and expiry dates. It detects fridge openings and sends reminders, emphasizing simplicity, reliability, accessibility, and reusability.",
+    category: "Engineering",
+    image: getPatternSvg(6),
+    technologies: ["Arduino", "IoT", "Mobile App Development"],
+    durationHours: 100,
+    challenges: "Making the system reliable without it becoming annoying AF 💀. Also keeping it simple for boomers who don't vibe with tech lol.",
+    outcomes: "Helped users reduce food waste, stay aware of expiry dates, and manage fridge contents more effectively!",
+    links: {
+      documentation: "https://github.com",
+    },
+  },
+  {
     title: "Smart Ball Launcher",
     description: "Prototyped a ball launcher for football training drills.",
     fullDescription: "Designed a ball launcher that assists football players and goalkeepers in passing, shooting, and receiving drills. Focused on mechanical consistency and safety.",
     category: "Engineering",
-    image: getPatternSvg(5),
+    image: getPatternSvg(7),
     technologies: ["Arduino", "Mechanical Design", "Motors"],
     durationHours: 90,
     challenges: "Making it shoot straight and not launch balls into orbit 🚀⚽.",
@@ -132,7 +217,7 @@ export const projectsData: ProjectProps[] = [
     description: "Arduino system for automatic lighting and cooling control based on environment.",
     fullDescription: "Developed a smart home system using Arduino that uses light-dependent resistors and temperature sensors to control lighting and cooling automatically.",
     category: "Engineering",
-    image: getPatternSvg(6),
+    image: getPatternSvg(8),
     technologies: ["Arduino", "Sensors", "Smart Home Tech"],
     durationHours: 80,
     challenges: "Accurately detecting light levels without it being a drama queen 💡🥵.",
@@ -142,43 +227,15 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
-    title: "Electronic Muscle Stimulator",
-    description: "Created a muscle stimulator for elderly people using pure hardware.",
-    fullDescription: "Built an electronic muscle stimulator with no programmable components, using varying frequencies to stimulate muscles safely for 30-second intervals, aimed at elderly therapy.",
-    category: "Electronics",
-    image: getPatternSvg(7),
-    technologies: ["Circuit Design", "Analog Electronics"],
-    durationHours: 110,
-    challenges: "Designing a safe but effective stimulator without frying someone 😬⚡.",
-    outcomes: "Delivered a working stimulator to aid in elderly rehabilitation and mobility improvement ❤️.",
-    links: {
-      documentation: "https://github.com",
-    },
-  },
-  {
-    title: "Tech Divide Research",
-    description: "Studied how technological gaps cause miscommunication between generations.",
-    fullDescription: "Conducted primary and secondary research into how technological divides impact communication between generations. Proposed individual and organizational solutions to bridge the gap.",
+    title: "Tsunagu Research Project",
+    description: "Researched plant-based pH indicators as safer alternatives for food industry.",
+    fullDescription: "Explored the use of natural pH indicators (butterfly pea flower and red cabbage) to replace synthetic, toxic pH indicators in the food industry. Found that natural extracts could predict pH changes effectively while being safe if ingested.",
     category: "Research",
-    image: getPatternSvg(8),
-    technologies: ["Survey Analysis", "Secondary Research"],
-    durationHours: 60,
-    challenges: "Boomers not wanting to learn tech... like pls grandma 😭📱.",
-    outcomes: "Proposed workshops, individual coaching, and workforce integration to help reduce the tech divide ✨.",
-    links: {
-      documentation: "https://github.com",
-    },
-  },
-  {
-    title: "Post-Disaster Management Robot",
-    description: "Created a robot for remote debris clearance after disasters.",
-    fullDescription: "Designed a remotely operated robot to clear debris in disaster zones, allowing rescuers to work without putting themselves at risk.",
-    category: "Robotics",
     image: getPatternSvg(9),
-    technologies: ["Arduino", "Wireless Comms", "Mechanical Design"],
-    durationHours: 160,
-    challenges: "Maintaining control over rough terrain without flipping over like a turtle 🐢.",
-    outcomes: "Enhanced post-disaster safety through remote operations 🔥🚧.",
+    technologies: ["Plant Chemistry", "Food Science", "Spectroscopy"],
+    durationHours: 90,
+    challenges: "Variability in plant samples 🌱 and inconsistent absorbance readings 🥴.",
+    outcomes: "Demonstrated that butterfly pea flower is sensitive enough for small pH changes and proposed future improvements for industrial use 🔬.",
     links: {
       documentation: "https://github.com",
     },
@@ -198,19 +255,33 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
-    title: "IDP Integrated Design Challenge",
-    description: "Created an autonomous robot that scans QR codes, line-traces, and handles objects.",
-    fullDescription: "Built a self-trained AI model for an autonomous robot that line-traces, picks up objects using computer vision, and performs inventory checks remotely using sensors and CV.",
-    category: "Robotics",
+    title: "Tech Divide Research",
+    description: "Studied how technological gaps cause miscommunication between generations.",
+    fullDescription: "Conducted primary and secondary research into how technological divides impact communication between generations. Proposed individual and organizational solutions to bridge the gap.",
+    category: "Research",
     image: getPatternSvg(11),
-    technologies: ["Python", "OpenCV", "Arduino", "ML", "Sensors"],
-    durationHours: 250,
-    challenges: "Training our own CV models was literal hell 🔥👿 and QR codes being annoying af.",
-    outcomes: "Completed full prototype for competition. Major flex 👏.",
+    technologies: ["Survey Analysis", "Secondary Research"],
+    durationHours: 60,
+    challenges: "Boomers not wanting to learn tech... like pls grandma 😭📱.",
+    outcomes: "Proposed workshops, individual coaching, and workforce integration to help reduce the tech divide ✨.",
     links: {
-      code: "https://github.com",
+      documentation: "https://github.com",
     },
   },
+  {
+    title: "Illustratum",
+    description: "Showed how binaural beats work through sound generation and graphs.",
+    fullDescription: "Created a website that generated two sound waves with slightly different frequencies to demonstrate the pitching effect of binaural beats. Visualized the superposition of sound waves using Desmos graphs.",
+    category: "Other",
+    image: getPatternSvg(12),
+    technologies: ["Web Audio API", "Desmos Graphs", "JavaScript"],
+    durationHours: 50,
+    challenges: "Making the audio sound not like a mosquito in my ear 😭 and syncing frequencies correctly 🎧.",
+    outcomes: "Made an interactive tool to visualize and hear how binaural beats work. Super vibey 🔥.",
+    links: {
+      demo: "https://github.com",
+    },
+  }
 ];
 
 export const technicalSkills = [
