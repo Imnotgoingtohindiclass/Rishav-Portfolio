@@ -6,7 +6,7 @@ import { queryClient } from "./lib/queryClient";
 import ScrollRestoration from "./components/layout/scroll-restoration";
 
 import Home from "./pages/home";
-import NotFound from "./pages/not-found";
+import NotFound from "./pages/404.tsx";
 import ProjectDetail from "./pages/project-detail";
 import ArticleDetail from "./pages/article-detail";
 import AllProjects from "./pages/AllProjects.tsx"; 

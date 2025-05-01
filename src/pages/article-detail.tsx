@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { articlesData } from "@/lib/data";
-import { ArticleProps } from "@/components/ui/article-card";
-import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
-import { Badge } from "@/components/ui/badge";
+import { articlesData } from "../lib/data";
+import { ArticleProps } from "../components/ui/article-card";
+import Header from "../components/layout/header";
+import Footer from "../components/layout/footer";
+import { Badge } from "../components/ui/badge";
 import { ChevronLeft } from "lucide-react";
 
 const ArticleDetail = () => {
