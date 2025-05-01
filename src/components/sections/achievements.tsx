@@ -78,6 +78,25 @@ const Achievements = () => {
                     </div>
                     ))}
                 </div> */}
+
+                <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
+                    <Award className="mr-2 text-primary" /> REPRESENTATION
+                </h2>
+                <p className="text-muted-foreground mb-8 font-sans">Leadership and representation roles</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300">
+                        <h4 className="text-foreground font-bold text-lg mb-2">Student Representative</h4>
+                        <p className="text-muted-foreground">School of Computer Science</p>
+                        <p className="text-muted-foreground text-sm">2022 - Present</p>
+                        <p className="text-muted-foreground mt-2">Represented student interests in academic meetings and helped bridge communication between students and faculty.</p>
+                    </div>
+                    <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300">
+                        <h4 className="text-foreground font-bold text-lg mb-2">Tech Club President</h4>
+                        <p className="text-muted-foreground">University Tech Society</p>
+                        <p className="text-muted-foreground text-sm">2021 - 2022</p>
+                        <p className="text-muted-foreground mt-2">Led a team of 15 members, organized tech workshops, and represented the club in inter-university events.</p>
+                    </div>
+                </div>
             </div>
         </section>
     );
