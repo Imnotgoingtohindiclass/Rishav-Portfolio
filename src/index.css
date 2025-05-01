@@ -175,7 +175,7 @@ html {
   box-shadow: 0 10px 25px -5px hsl(var(--primary) / 0.15);
 }
 
-/* Add glow effect on hover */
+/* Add glow effect on hover
 @keyframes subtle-glow {
   0% {
     box-shadow: 0 0 5px 0px hsl(var(--primary) / 0.1);
@@ -186,7 +186,7 @@ html {
   100% {
     box-shadow: 0 0 5px 0px hsl(var(--primary) / 0.1);
   }
-}
+} */
 
 .project-card:hover {
   animation: subtle-glow 3s infinite;
