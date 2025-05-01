@@ -1,55 +1,53 @@
-import ProjectCard, { ProjectProps } from "../components/ui/project-card.tsx";
-import { projectsData } from "../lib/data.ts";
+import React, { useState, useMemo, useCallback } from "react";
 import { Button } from "../components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useState, useMemo } from "react";
+import ProjectCard, { ProjectProps } from "../components/ui/project-card";
+import { projectsData } from "../lib/data";
 
-const AllProjects = () => {
+const getAllTags = (projects: typeof projectsData): string[] => {
+  const tags = new Set<string>();
+  projects.forEach((project) => {
+    project.technologies.forEach((tag) => tags.add(tag));
+  });
+  return Array.from(tags);
+};
+
+const getTagCounts = (projects: typeof projectsData, tags: string[]): Record<string, number> => {
+  const counts: Record<string, number> = {};
+  tags.forEach((tag) => {
+    counts[tag] = projects.filter((project) => project.technologies.includes(tag)).length;
+  });
+  return counts;
+};
+
+const getTopTags = (tags: string[], counts: Record<string, number>, limit = 3): string[] => {
+  return tags.sort((a, b) => counts[b] - counts[a]).slice(0, limit);
+};
+
+const AllProjects: React.FC = () => {
   const navigate = useNavigate();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  // Get all unique tags from projects
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    projectsData.forEach(project => {
-      project.technologies.forEach(tag => tags.add(tag));
-    });
-    return Array.from(tags);
-  }, []);
+  const allTags = useMemo(() => getAllTags(projectsData), []);
+  const tagCounts = useMemo(() => getTagCounts(projectsData, allTags), [allTags]);
+  const topTags = useMemo(() => getTopTags(allTags, tagCounts), [allTags, tagCounts]);
 
-  // Count tag occurrences
-  const tagCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    allTags.forEach(tag => {
-      counts[tag] = projectsData.filter(project => 
-        project.technologies.includes(tag)
-      ).length;
-    });
-    return counts;
-  }, [allTags]);
-
-  // Get top 4 most used tags
-  const topTags = useMemo(() => {
-    return allTags
-      .sort((a, b) => tagCounts[b] - tagCounts[a])
-      .slice(0, 4);
-  }, [allTags, tagCounts]);
-
-  // Filter projects based on selected tag
   const filteredProjects = useMemo(() => {
     if (!selectedTag) return projectsData;
-    return projectsData.filter(project => 
-      project.technologies.includes(selectedTag)
-    );
+    return projectsData.filter((project) => project.technologies.includes(selectedTag));
   }, [selectedTag]);
 
-  const handleBackClick = () => {
+  const handleBackClick = useCallback(() => {
     navigate("/");
-  };
+  }, [navigate]);
+
+  const handleTagClick = useCallback((tag: string | null) => {
+    setSelectedTag(tag);
+  }, []);
 
   return (
-    <section className="py-20">
+    <section className="py-20 min-h-screen">
       <div className="container mx-auto px-6">
         <Button variant="ghost" className="mb-6" onClick={handleBackClick}>
           <ArrowLeft size={16} className="mr-2" /> Back to Home
@@ -62,11 +60,13 @@ const AllProjects = () => {
         </p>
 
         {/* Tag Filter */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-4 mb-8 justify-center">
           <Button
             variant={selectedTag === null ? "default" : "outline"}
             size="sm"
-            onClick={() => setSelectedTag(null)}
+            onClick={() => handleTagClick(null)}
+            aria-pressed={selectedTag === null}
+            className="hover:bg-secondary/80 transition-colors border-secondary/50 hover:border-secondary"
           >
             All Projects ({projectsData.length})
           </Button>
@@ -75,7 +75,9 @@ const AllProjects = () => {
               key={tag}
               variant={selectedTag === tag ? "default" : "outline"}
               size="sm"
-              onClick={() => setSelectedTag(tag)}
+              onClick={() => handleTagClick(tag)}
+              aria-pressed={selectedTag === tag}
+              className="hover:bg-secondary/80 transition-colors border-secondary/50 hover:border-secondary"
             >
               {tag} ({tagCounts[tag]})
             </Button>
