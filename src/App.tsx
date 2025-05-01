@@ -124,13 +124,17 @@ function App() {
       <Router>
         <div className="scrollbar-hide">
           <ScrollRestoration />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:slug" element={<ProjectDetail />} />
-          <Route path="/article/:slug" element={<ArticleDetail />} />
-          <Route path="/projects" element={<AllProjects />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Home />
+              </>
+            } />
+            <Route path="/project/:slug" element={<ProjectDetail />} />
+            <Route path="/article/:slug" element={<ArticleDetail />} />
+            <Route path="/projects" element={<AllProjects />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </Router>
       <Toaster />
