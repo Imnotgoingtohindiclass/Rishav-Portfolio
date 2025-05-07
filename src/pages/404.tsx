@@ -2,14 +2,12 @@ import { Card, CardContent } from "../components/ui/card";
 import { AlertCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useLocation } from "wouter";
-import SpaceBackground from "../components/space-background";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
-      <SpaceBackground />
       <Card className="w-full max-w-md mx-4 border-primary/20 bg-background/80 backdrop-blur-sm">
         <CardContent className="pt-6">
           <div className="flex flex-col items-center text-center">

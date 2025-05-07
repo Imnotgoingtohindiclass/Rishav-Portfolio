@@ -1,7 +1,46 @@
-import { Button } from "../ui/button.tsx";
+import React, { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 import { Github, Linkedin, Instagram } from "lucide-react";
 
+interface Song {
+  title: string;
+  artist: string;
+  album: string;
+  progress: number;
+  duration: number;
+  url: string;
+  image: string;
+}
+
 const Hero = () => {
+  const [song, setSong] = useState<Song | null>(null);
+
+  useEffect(() => {
+    fetch('/api/spotify')
+      .then(res => res.json())
+      .then(data => {
+        console.log('🎵 Access Token:', data.access_token);
+      });
+  }, []);
+
+  useEffect(() => {
+    const fetchSong = async () => {
+      try {
+        const res = await fetch('/api/spotify/current');
+        const data = await res.json();
+        setSong(data.playing ? data.song : null);
+      } catch (error) {
+        console.error('Error fetching current song:', error);
+        setSong(null);
+      }
+    };
+
+    fetchSong();
+    // Set up polling every 30 seconds
+    const interval = setInterval(fetchSong, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20">
       <div className="container mx-auto px-6">
@@ -23,6 +62,7 @@ const Hero = () => {
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">
               Rishav Ganguly
+              
             </h1>
             <p className="text-primary text-xl mt-2 font-sans opacity-95">
               ENGINEER
