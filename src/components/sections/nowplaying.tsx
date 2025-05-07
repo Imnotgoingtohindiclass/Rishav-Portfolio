@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
-
-type SongData = {
-  isPlaying: boolean;
-  title?: string;
-  artist?: string;
-  album?: string;
-  albumImageUrl?: string;
-  songUrl?: string;
-};
+import type { SongData } from "../../lib/data"
 
 export default function NowPlaying() {
   const [song, setSong] = useState<SongData | null>(null);

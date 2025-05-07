@@ -1,90 +1,155 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Github, Linkedin, Instagram } from "lucide-react";
-
-interface Song {
-  title: string;
-  artist: string;
-  album: string;
-  progress: number;
-  duration: number;
-  url: string;
-  image: string;
-}
+import { FaPlay, FaPause } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
+import type { SongData } from "../../lib/data";
 
 const Hero = () => {
-  const [song, setSong] = useState<Song | null>(null);
+  const [song, setSong] = useState<SongData | null>(null);
+  const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    fetch('/api/spotify')
-      .then(res => res.json())
-      .then(data => {
-        console.log('🎵 Access Token:', data.access_token);
+    fetch("/api/spotify")
+      .then((res) => res.json())
+      .then((data) => setSong(data))
+      .catch((err) => {
+        console.error("Spotify fetch failed 💔", err);
+        setSong(null);
       });
   }, []);
 
-  useEffect(() => {
-    const fetchSong = async () => {
-      try {
-        const res = await fetch('/api/spotify/current');
-        const data = await res.json();
-        setSong(data.playing ? data.song : null);
-      } catch (error) {
-        console.error('Error fetching current song:', error);
-        setSong(null);
-      }
-    };
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setHoverPosition({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
+  };
 
-    fetchSong();
-    // Set up polling every 30 seconds
-    const interval = setInterval(fetchSong, 30000);
-    return () => clearInterval(interval);
-  }, []);
+  const handleMouseLeave = () => {
+    setHoverPosition(null);
+  };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-8 relative group">
+          <div
+            className="mb-8 relative group"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full relative">
               <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                  <img 
-                    src="Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg" 
+                  <img
+                    src="Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg"
                     alt="Rishav Ganguly"
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
               </div>
             </div>
+            {hoverPosition && (
+              <div
+                className={`
+                  absolute pointer-events-none rounded-2xl shadow-lg overflow-hidden
+                  transition-all duration-300 ease-out
+                  backdrop-blur-md border border-white/20
+                  bg-black/30
+                `}
+                style={{
+                  top: hoverPosition.y + 20,
+                  left: hoverPosition.x,
+                  transform: "translate(0%, -100%)",
+                  width: "17rem",
+                }}
+              >
+                {/* Header */}
+                <div className="bg-purple-700/50 text-white text-xs font-semibold flex items-center px-3 py-1.5 backdrop-blur-md">
+                  <span className="mr-1">🎧</span>
+                  Current Spotify Song:
+                </div>
+
+                {/* Main Content */}
+                <div className="flex p-3">
+                  {/* Album Art - Only show when song is playing */}
+                  {song && song.isPlaying && (
+                    <img
+                      src={song.albumImageUrl}
+                      alt={`Album cover for ${song.title}`}
+                      className="w-16 h-16 rounded-lg object-cover shadow-sm"
+                    />
+                  )}
+
+                  {/* Song Info + Controls */}
+                  <div className={`flex flex-col justify-between w-full ${song && song.isPlaying ? 'ml-3' : ''}`}>
+                    {song && song.isPlaying ? (
+                      <>
+                        <div className="truncate text-left">
+                          <p className="text-white text-sm font-bold truncate">{song.title}</p>
+                          <p className="text-zinc-300 text-xs truncate">{song.artist}</p>
+                        </div>
+                        <div className="flex justify-end mt-2 items-center justify-center">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              // play/pause logic here
+                            }}
+                            className="w-5 h-5 flex items-center justify-center bg-white rounded-full hover:scale-105 transition-transform shadow-md"
+                          >
+                            <FaPause className="w-2.5 h-2.5 text-black" />
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="flex items-center justify-center h-full w-full">
+                        <p className="text-zinc-400 text-xs">Not playing anything rn 😔</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div className="mb-6">
-            <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">
-              Rishav Ganguly
-              
-            </h1>
-            <p className="text-primary text-xl mt-2 font-sans opacity-95">
-              ENGINEER
-            </p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">Rishav Ganguly</h1>
+            <p className="text-primary text-xl mt-2 font-sans opacity-95">ENGINEER</p>
           </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button 
-              variant="outline" 
+          {/* <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Button
+              variant="outline"
               className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-black"
               asChild
             >
               <a href="#projects">View Projects</a>
             </Button>
-          </div>
+          </div> */}
           <div className="mt-16 flex space-x-6">
-            <a href="https://github.com/imnotgoingtohindiclass" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-primary">
+            <a
+              href="https://github.com/imnotgoingtohindiclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon text-muted-foreground hover:text-primary"
+            >
               <Github size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/rishav-ganguly-174960348/" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-secondary">
+            <a
+              href="https://www.linkedin.com/in/rishav-ganguly-174960348/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon text-muted-foreground hover:text-secondary"
+            >
               <Linkedin size={24} />
             </a>
-            <a href="https://instagram.com/r.15.hav" target="_blank" rel="noopener noreferrer" className="social-icon text-muted-foreground hover:text-accent">
+            <a
+              href="https://instagram.com/r.15.hav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon text-muted-foreground hover:text-accent"
+            >
               <Instagram size={24} />
             </a>
           </div>

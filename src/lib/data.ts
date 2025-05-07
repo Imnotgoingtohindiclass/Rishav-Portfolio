@@ -1,5 +1,15 @@
-import { ProjectProps } from "src/components/ui/project-card.tsx";
-import { ArticleProps } from "src/components/ui/article-card.tsx";
+import { ProjectProps } from "src/components/ui/project-card";
+import { ArticleProps } from "src/components/ui/article-card";
+
+export type SongData = {
+  isPlaying: boolean;
+  title?: string;
+  artist?: string;
+  album?: string;
+  albumImageUrl?: string;
+  songProgress?: number
+  songUrl?: string;
+};
 
 export const achievements = [
   {

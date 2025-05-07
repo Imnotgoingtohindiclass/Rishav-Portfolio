@@ -42,6 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     artist: song.item?.artists.map((a: any) => a.name).join(", "),
     album: song.item?.album.name,
     albumImageUrl: song.item?.album.images[0]?.url,
+    songProgress: song.item?.progress_ms , 
     songUrl: song.item?.external_urls.spotify,
   };
 
