@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import { Github, Linkedin, Instagram } from "lucide-react";
-import { FaPlay, FaPause } from "react-icons/fa";
-import { ChevronDown } from "lucide-react";
+import { FaPause } from "react-icons/fa";
+import { Button } from "../ui/button";
 import type { SongData } from "../../lib/data";
 
 const Hero = () => {
@@ -47,7 +46,7 @@ const Hero = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full relative">
+            <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative">
               <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
@@ -71,11 +70,13 @@ const Hero = () => {
                   top: hoverPosition.y + 20,
                   left: hoverPosition.x,
                   transform: "translate(0%, -100%)",
-                  width: "17rem",
-                }}
+                  minWidth: "17rem",
+                  width: "max-content",
+                  maxWidth: "24rem", // Optional cap to avoid excessive width
+                }}                
               >
                 {/* Header */}
-                <div className="bg-purple-700/50 text-white text-xs font-semibold flex items-center px-3 py-1.5 backdrop-blur-md">
+                <div className="bg-purple-700/50 text-white text-xs font-semibold border-none flex items-center px-3 py-1.5 backdrop-blur-md">
                   <span className="mr-1">🎧</span>
                   Current Spotify Song:
                 </div>
@@ -113,7 +114,7 @@ const Hero = () => {
                       </>
                     ) : (
                       <div className="flex items-center justify-center h-full w-full">
-                        <p className="text-zinc-400 text-xs">Not playing anything rn 😔</p>
+                        <p className="text-zinc-400 text-xs">not playing anyth rn...</p>
                       </div>
                     )}
                   </div>
