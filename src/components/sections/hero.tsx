@@ -21,7 +21,7 @@ const Hero = () => {
     };
 
     fetchSong();
-    const interval = setInterval(fetchSong, 15000); // refresh every 15 sec
+    const interval = setInterval(fetchSong, 30000); // refresh every 30 sec
 
     return () => clearInterval(interval);
   }, []);
