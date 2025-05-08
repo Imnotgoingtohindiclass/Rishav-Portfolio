@@ -10,13 +10,20 @@ const Hero = () => {
   const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    fetch("/api/spotify")
-      .then((res) => res.json())
-      .then((data) => setSong(data))
-      .catch((err) => {
-        console.error("Spotify fetch failed 💔", err);
-        setSong(null);
-      });
+    const fetchSong = async () => {
+      try {
+        const res = await fetch('/api/spotify');
+        const data: SongData = await res.json();
+        setSong(data);
+      } catch (err) {
+        console.error('Failed to fetch song 💀:', err);
+      }
+    };
+
+    fetchSong();
+    const interval = setInterval(fetchSong, 15000); // refresh every 15 sec
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
