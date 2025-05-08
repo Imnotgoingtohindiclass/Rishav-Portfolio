@@ -6,14 +6,13 @@ import { queryClient } from "./lib/queryClient";
 import ScrollRestoration from "./components/layout/scroll-restoration";
 
 import Home from "./pages/home";
-import NotFound from "./pages/404.tsx";
+import NotFound from "./pages/404";
 import ProjectDetail from "./pages/project-detail";
 import ArticleDetail from "./pages/article-detail";
-import AllProjects from "./pages/AllProjects.tsx"; 
+import AllProjects from "./pages/AllProjects"; 
 import LoadingScreen from "./components/layout/loading-screen";
 
-// List of all images to preload
-const imagesToPreload = [
+const imagesToPreload: string[] = [
   "/NCO2025_COA_Bronze_19.jpg",
   "/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg",
   "/Item-5_Taiwan-Trip24.jpg",
@@ -23,117 +22,119 @@ const imagesToPreload = [
   "/Item-1_SUTD-Camp_Team-3.jpg"
 ];
 
-function App() {
+function App(): JSX.Element {
   const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
   const [minimumTimeElapsed, setMinimumTimeElapsed] = useState(false);
+  const [showApp, setShowApp] = useState(false);
 
   useEffect(() => {
-    // Start minimum time timer
-    const minimumTimer = setTimeout(() => {
-      setMinimumTimeElapsed(true);
-    }, 1500);
+    const minimumTimer = setTimeout(() => setMinimumTimeElapsed(true), 5000);
 
-    // Function to preload images
     const preloadImages = () => {
       let loadedImages = 0;
-      
+
       if (imagesToPreload.length === 0) {
-        if (minimumTimeElapsed) {
-          setLoading(false);
-        }
+        if (minimumTimeElapsed) setFadeOut(true);
         return;
       }
 
-      imagesToPreload.forEach(src => {
+      imagesToPreload.forEach((src) => {
         const img = new Image();
         img.src = src;
+
         if (img.complete) {
           loadedImages++;
         } else {
           img.onload = () => {
             loadedImages++;
             if (loadedImages === imagesToPreload.length && minimumTimeElapsed) {
-              setLoading(false);
+              setFadeOut(true);
             }
           };
         }
       });
 
       if (loadedImages === imagesToPreload.length && minimumTimeElapsed) {
-        setLoading(false);
+        setFadeOut(true);
       }
     };
 
-    // Function to check if all images are loaded
     const checkImagesLoaded = () => {
-      const images = document.getElementsByTagName('img');
+      const images = document.getElementsByTagName("img");
       let loadedImages = 0;
-      
+
       if (images.length === 0) {
-        if (minimumTimeElapsed) {
-          setLoading(false);
-        }
+        if (minimumTimeElapsed) setFadeOut(true);
         return;
       }
 
-      Array.from(images).forEach(img => {
+      Array.from(images).forEach((img) => {
         if (img.complete) {
           loadedImages++;
         } else {
-          img.addEventListener('load', () => {
+          img.addEventListener("load", () => {
             loadedImages++;
             if (loadedImages === images.length && minimumTimeElapsed) {
-              setLoading(false);
+              setFadeOut(true);
             }
           });
         }
       });
 
       if (loadedImages === images.length && minimumTimeElapsed) {
-        setLoading(false);
+        setFadeOut(true);
       }
     };
 
-    // Preload images first
     preloadImages();
-
-    // Initial check for DOM images
     checkImagesLoaded();
+    window.addEventListener("load", checkImagesLoaded);
 
-    // Also check when the window loads
-    window.addEventListener('load', checkImagesLoaded);
-
-    // Fallback timeout in case something goes wrong
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    const timeout = setTimeout(() => setFadeOut(true), 7000);
 
     return () => {
       clearTimeout(minimumTimer);
       clearTimeout(timeout);
-      window.removeEventListener('load', checkImagesLoaded);
+      window.removeEventListener("load", checkImagesLoaded);
     };
   }, [minimumTimeElapsed]);
 
+  useEffect(() => {
+    if (fadeOut) {
+      const delay = setTimeout(() => {
+        setLoading(false);
+        setShowApp(true); // 👈 Fade in App
+      }, 250);
+      return () => clearTimeout(delay);
+    }
+  }, [fadeOut]);
+
   if (loading) {
-    return <LoadingScreen />;
+    return <LoadingScreen fadeOut={fadeOut} />;
   }
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <div className="scrollbar-hide">
-          <ScrollRestoration />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:slug" element={<ProjectDetail />} />
-          <Route path="/article/:slug" element={<ArticleDetail />} />
-          <Route path="/projects" element={<AllProjects />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        </div>
-      </Router>
-      <Toaster />
+      <div
+        className={`transition-opacity duration-1000 ${
+          showApp ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Router>
+          <div className="scrollbar-hide">
+            <ScrollRestoration />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/project/:slug" element={<ProjectDetail />} />
+              <Route path="/article/:slug" element={<ArticleDetail />} />
+              <Route path="/projects" element={<AllProjects />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </Router>
+        <Toaster />
+      </div>
     </QueryClientProvider>
   );
 }

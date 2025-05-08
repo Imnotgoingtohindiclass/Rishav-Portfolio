@@ -42,11 +42,11 @@ const Hero = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
           <div
-            className="mb-8 relative group"
+            className="mb-8 relative group animate-fade-in"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative">
+            <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative animate-scale-in">
               <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
@@ -122,9 +122,9 @@ const Hero = () => {
               </div>
             )}
           </div>
-          <div className="mb-6">
-            <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono">Rishav Ganguly</h1>
-            <p className="text-primary text-xl mt-2 font-sans opacity-95">ENGINEER</p>
+          <div className="mb-6 animate-fade-in-delay">
+            <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono animate-slide-up">Rishav Ganguly</h1>
+            <p className="text-primary text-xl mt-2 font-sans opacity-95 animate-slide-up-delay">ENGINEER</p>
           </div>
           {/* <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button
@@ -135,7 +135,7 @@ const Hero = () => {
               <a href="#projects">View Projects</a>
             </Button>
           </div> */}
-          <div className="mt-16 flex space-x-6">
+          <div className="mt-16 flex space-x-6 animate-fade-in-delay-2">
             <a
               href="https://github.com/imnotgoingtohindiclass"
               target="_blank"
@@ -163,6 +163,58 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-scale-in {
+          animation: scaleIn 1.2s ease-out forwards;
+        }
+        .animate-fade-in-delay {
+          animation: fadeIn 1s ease-out 0.3s forwards;
+          opacity: 0;
+        }
+        .animate-fade-in-delay-2 {
+          animation: fadeIn 1s ease-out 0.6s forwards;
+          opacity: 0;
+        }
+        .animate-slide-up {
+          animation: slideUp 1s ease-out 0.4s forwards;
+          opacity: 0;
+        }
+        .animate-slide-up-delay {
+          animation: slideUp 1s ease-out 0.5s forwards;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   );
 };
