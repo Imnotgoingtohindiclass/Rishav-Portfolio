@@ -1,10 +1,14 @@
 import { Card, CardContent } from "../components/ui/card";
 import { AlertCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { useLocation } from "wouter";
+import { useCallback } from "react";
+import {useNavigate } from "react-router-dom";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
+  const navigate = useNavigate();
+  const handleBackClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
@@ -25,7 +29,7 @@ export default function NotFound() {
               <Button
                 variant="outline"
                 className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-black"
-                onClick={() => setLocation("/")}
+                onClick={handleBackClick}
               >
                 Return to Home
               </Button>
