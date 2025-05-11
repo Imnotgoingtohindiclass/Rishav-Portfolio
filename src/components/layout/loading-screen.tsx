@@ -52,6 +52,14 @@ const quotes = [
   {
     text: "I wanted the world to know that no one would ever again be able to hurt me. That my spirit had triumphed, even if my body hadn't.",
     author: "Elie Wiesel",
+  },
+  {
+    text: "“I wish it need not have happened in my time,“ said Frodo. “So do I,“ said Gandalf, “and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given us.”",
+    author: "J.R.R. Tolkien, The Fellowship of the Ring",
+  },
+  {
+    text: "“What if I fail?”\n“You will. That’s what makes you strong.”",
+    author: "Cressida Cowell, How to Cheat a Dragon's Curse"
   }
 ];
 
