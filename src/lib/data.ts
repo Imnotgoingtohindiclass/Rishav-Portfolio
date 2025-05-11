@@ -167,6 +167,20 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
+    title: "LeBron Quotes API",
+    description: "Web Crawler which scrapes Brain-Quotes for quotes by my glorius kinng",
+    fullDescription: "I used Python, and a python libraries such as Selenium and web driver to create a web crawler. This web crawler scrapes 'https://www.brainyquote.com/authors/lebron-james-quotes' for quotes by LeBron. It gets the HTML from the website, and then filters out all unrelated content (pagination, headers, footers) and returns the quotes in a JSON which can be deployed using FastAPI. This API is hosted on Render. ",
+    category: "Other",
+    image: getPatternSvg(4),
+    technologies: ["Python", "Selenium", "Render"],
+    durationHours: 5,
+    challenges: "Fitering out unrelated content, as it was returned to me in a bunch of text, hard to read for humans.",
+    outcomes: "Deepened my understanding of how API's and web crawlers work.",
+    links: {
+      documentation: "https://github.com/Imnotgoingtohindiclass/Lebron_Api",
+    },
+  },
+  {
     title: "Autonomous Life Buoy",
     description: "Prototyped a life buoy that auto-detects and saves drowning people using heat sensors.",
     fullDescription: "Designed a prototype of a smart life buoy that detects when someone falls overboard using heat sensors and automatically launches to save them. It navigates itself to the drowning victim and is winched back afterward.",
@@ -177,7 +191,7 @@ export const projectsData: ProjectProps[] = [
     challenges: "Getting accurate heat detection without false alarms 🔥🚫 and making it stable in water 🌊.",
     outcomes: "Created a concept that could literally save lives, making rescue faster and more reliable 💪.",
     links: {
-      documentation: "https://github.com",
+      documentation: "",
     },
   },
   {
@@ -298,31 +312,31 @@ export const technicalSkills = [
   {
     name: "Programming",
     level: "Advanced",
-    percentage: 95,
-    explanation: "Extensive experience in Python, JavaScript, and TypeScript. Built multiple full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
+    percentage: 79,
+    explanation: "Extensive experience in Python, and TypeScript. Built multiple full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
   },
   {
     name: "Data Science",
     level: "Advanced",
-    percentage: 87,
+    percentage: 77,
     explanation: "Proficient in data analysis, visualization, and statistical modeling. Experience with pandas, NumPy, and Matplotlib. Completed projects in data-driven decision making and predictive analytics."
   },
   {
-    name: "Web Development",
+    name: "Cybersecurity",
     level: "Intermediate",
-    percentage: 83,
+    percentage: 70,
     explanation: "Skilled in React, Next.js, and modern web development practices. Built responsive and accessible web applications with a focus on user experience and performance optimization."
   },
   {
     name: "Hardware and Embedded Systems",
     level: "Proficient",
-    percentage: 73,
+    percentage: 63,
     explanation: "Hands-on experience with Arduino, Raspberry Pi, and various sensors. Developed IoT devices and embedded systems for real-world applications, including home automation and robotics."
   },
   {
     name: "Machine Learning",
     level: "Proficient",
-    percentage: 72,
+    percentage: 62,
     explanation: "Practical experience with TensorFlow and OpenCV. Developed computer vision models and implemented machine learning algorithms for various applications, including medical image analysis."
   },
 ];
