@@ -93,6 +93,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ fadeOut }) => {
         </div>
       </div>
       <style jsx>{`
+        * {
+          user-select: none;
+        }
         @font-face {
           font-family: "Centaur";
           src: url("/fonts/Centaur-Regular.ttf") format("truetype");
