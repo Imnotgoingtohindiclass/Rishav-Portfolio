@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
+
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Hero from "../components/sections/hero";
@@ -14,45 +15,44 @@ const konamiCode = [
   "a", "b"
 ];
 
+const arraysEqual = (a: string[], b: string[]) =>
+  a.length === b.length && a.every((val, i) => val === b[i]);
+
 const Home = () => {
   const [location, setLocation] = useLocation();
-  const [inputSequence, setInputSequence] = useState<string[]>([]);
+  const inputSequence = useRef<string[]>([]);
 
   useEffect(() => {
-    if (location === "/") {
-      const handleHashChange = () => {
-        const hash = window.location.hash;
-        if (hash) {
-          const element = document.querySelector(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
         }
-      };
+      }
+    };
 
-      const handleKeyDown = (e: KeyboardEvent) => {
-        setInputSequence((prev) => {
-          const newSequence = [...prev, e.key];
-          if (newSequence.length > konamiCode.length) {
-            newSequence.shift();
-          }
-          if (JSON.stringify(newSequence) === JSON.stringify(konamiCode)) {
-            setLocation("/secret/secret");
-          }
-          return newSequence;
-        });
-      };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      inputSequence.current.push(e.key);
+      if (inputSequence.current.length > konamiCode.length) {
+        inputSequence.current.shift();
+      }
 
-      handleHashChange();
-      window.addEventListener('hashchange', handleHashChange);
-      window.addEventListener("keydown", handleKeyDown);
+      if (arraysEqual(inputSequence.current, konamiCode)) {
+        setLocation("/secret/secret");
+      }
+    };
 
-      return () => {
-        window.removeEventListener('hashchange', handleHashChange);
-        window.removeEventListener("keydown", handleKeyDown);
-      };
-    }
-  }, [location, setLocation]);
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setLocation]);
 
   return (
     <div className="min-h-screen text-foreground font-mono">

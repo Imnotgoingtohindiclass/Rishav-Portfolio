@@ -14,7 +14,6 @@ const ScrollRestoration = () => {
       }
     }
 
-    // For all other cases (page changes), scroll instantly to top
     window.scrollTo({
       top: 0,
       left: 0,

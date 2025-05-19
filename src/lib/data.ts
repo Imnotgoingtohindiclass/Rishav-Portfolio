@@ -31,10 +31,10 @@ export const achievements = [
     certificate: "/Item-5_Taiwan-Trip24.jpg"
   },
   {
-    title: "Design Marvel Award, Marine and Offshore Challenge",
-    issuer: "Singapore Youth Flying Club, SYFC",
-    year: "2023",
-    certificate: ""
+    title: "School of Science and Technology Capture the Flag 2025",
+    issuer: "Computing+ Department, SST",
+    year: "2025",
+    certificate: "/SSTCTFRishavGanguly.jpg"
   },
   {
     title: "Distinction, Illustratum",

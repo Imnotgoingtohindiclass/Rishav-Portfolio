@@ -23,7 +23,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const tokenData = await tokenResponse.json();
   const access_token = tokenData.access_token;
 
-  // 🎶 Get currently playing track
   const nowPlayingRes = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     headers: {
       Authorization: `Bearer ${access_token}`,
