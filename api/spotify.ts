@@ -7,7 +7,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 
-  // 🎫 Get access token from refresh token
   const tokenResponse = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
