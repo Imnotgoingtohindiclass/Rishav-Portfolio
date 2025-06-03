@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import { FaPause } from "react-icons/fa";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import type { SongData } from "../../lib/data";
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
     };
 
     fetchSong();
-    const interval = setInterval(fetchSong, 30000); // refresh every 30 sec
+    const interval = setInterval(fetchSong, 15000); // refresh every 30 sec
 
     return () => clearInterval(interval);
   }, []);
