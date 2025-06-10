@@ -60,6 +60,10 @@ const quotes = [
   {
     text: "“What if I fail?”\n“You will. That’s what makes you strong.”",
     author: "Cressida Cowell, How to Cheat a Dragon's Curse"
+  },
+  {
+    text: "I have loved the stars too fondly to be fearful of the night.",
+    author: "Sarah Williams, The Old Astronomer to His Pupil"
   }
 ];
 
