@@ -29,7 +29,6 @@ const Header = () => {
   };
 
   const handleNavClick = (href: string) => {
-    // Close mobile menu when a nav link is clicked
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
@@ -42,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full backdrop-blur-md bg-background/80 z-50">
+    <header className="fixed top-0 w-full backdrop-blur-md bg-background/50 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-primary font-bold text-xl">

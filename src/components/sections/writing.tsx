@@ -3,7 +3,7 @@ import { articlesData } from "../../lib/data";
 
 const Writing = () => {
   return (
-    <section id="writing" className="py-20">
+    <section id="writing" className="py-20 bg-background/30">
       <div className="container mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
           <span className="text-primary">#</span> WRITE UP

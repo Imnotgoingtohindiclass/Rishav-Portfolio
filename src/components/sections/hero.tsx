@@ -15,7 +15,7 @@ const Hero = () => {
         const data: SongData = await res.json();
         setSong(data);
       } catch (err) {
-        console.error('Failed to fetch song 💀:', err);
+        console.error('Failed to fetch song:', err);
       }
     };
 
@@ -38,7 +38,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative bg-background/30">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
           <div
@@ -49,7 +49,7 @@ const Hero = () => {
             <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative animate-scale-in">
               <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
-                <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                <div className="w-full h-full rounded-full overflow-hidden bg-black">
                   <img
                     src="Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg"
                     alt="Rishav Ganguly"
