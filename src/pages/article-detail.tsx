@@ -86,56 +86,6 @@ const ArticleDetail = () => {
     );
   }
 
-  // Sample article content - In a real app, this would come from a database
-  const sampleContent = article.content || `
-  <p>
-    This is a sample article content for <strong>${article.title}</strong>. In a real application, 
-    this content would be stored in a database and retrieved when the article is accessed.
-  </p>
-  
-  <h2>Introduction</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel libero euismod, 
-    efficitur nisi a, finibus urna. Sed tincidunt eros vel arcu ultrices, 
-    eget ultrices nisi malesuada. Proin a volutpat dui, non venenatis justo.
-  </p>
-  
-  <h2>Main Concepts</h2>
-  <p>
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-    Suspendisse potenti. Donec vel metus vel neque volutpat tincidunt. Vivamus dapibus risus a 
-    purus finibus, in efficitur augue efficitur.
-  </p>
-  <ul>
-    <li>First important point about ${article.category}</li>
-    <li>Second critical concept to understand</li>
-    <li>Third element that ties everything together</li>
-  </ul>
-  
-  <h2>Implementation Details</h2>
-  <p>
-    Praesent tincidunt purus a nunc condimentum, vel facilisis libero sollicitudin. Cras eget 
-    dapibus nulla. Integer ac felis non est lacinia ultrices. Suspendisse potenti. 
-    Suspendisse vel dui vel nulla iaculis ultricies.
-  </p>
-  
-  <pre><code>
-  // Sample code block relevant to the article topic
-  function secureDataTransfer(data) {
-    // Implementation details would go here
-    const encryptedData = encrypt(data);
-    return sendSecurely(encryptedData);
-  }
-  </code></pre>
-  
-  <h2>Conclusion</h2>
-  <p>
-    Curabitur hendrerit nisi in lectus lobortis, vel malesuada dolor rhoncus. Suspendisse vel 
-    semper sapien. Nulla facilisi. Donec malesuada arcu eget gravida cursus. Nulla mollis 
-    nisl nec nisl aliquam, at dapibus mi consectetur.
-  </p>
-  `;
-
   return (
     <div className="min-h-screen text-foreground">
       <Header />
@@ -164,12 +114,6 @@ const ArticleDetail = () => {
               <span className="mx-2">•</span>
               <span>Published: March 2025</span>
             </div>
-            
-            <div 
-              className="prose prose-invert prose-pre:bg-background/50 prose-pre:border prose-pre:border-card 
-                        prose-headings:text-foreground prose-headings:font-bold prose-a:text-primary max-w-none"
-              dangerouslySetInnerHTML={{ __html: sampleContent }}
-            />
           </article>
         </div>
       </main>
