@@ -140,6 +140,42 @@ const About = () => {
           </div>
         </div>
         
+
+        <div className="mt-16">
+          <h3 className="text-xl font-bold mb-6 flex items-center">
+            <Code2 size={22} className="mr-2 text-primary" /> Skills
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <h4 className="text-foreground font-bold text-lg mb-6">Technical Skills</h4>
+              {technicalSkills.map((skill, index) => (
+                <SkillBar
+                  key={index}
+                  name={skill.name}
+                  level={skill.level}
+                  percentage={skill.percentage}
+                  colorClass={getColorClassByLevel(skill.level)}
+                  explanation={skill.explanation}
+                />
+              ))}
+            </div>
+
+            <div>
+              <h4 className="text-foreground font-bold text-lg mb-6">Languages & Tools</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {toolsAndLanguages.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center"
+                  >
+                    <div className="mb-2 text-3xl">{getIconByName(item.name)}</div>
+                    <p>{item.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div>
             <h3 className="text-xl font-bold mb-6 flex items-center">
@@ -199,42 +235,6 @@ const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16">
-          <h3 className="text-xl font-bold mb-6 flex items-center">
-            <Code2 size={22} className="mr-2 text-primary" /> Skills
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-              <h4 className="text-foreground font-bold text-lg mb-6">Technical Skills</h4>
-              {technicalSkills.map((skill, index) => (
-                <SkillBar
-                  key={index}
-                  name={skill.name}
-                  level={skill.level}
-                  percentage={skill.percentage}
-                  colorClass={getColorClassByLevel(skill.level)}
-                  explanation={skill.explanation}
-                />
-              ))}
-            </div>
-
-            <div>
-              <h4 className="text-foreground font-bold text-lg mb-6">Languages & Tools</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {toolsAndLanguages.map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-card/20 p-4 rounded text-center flex flex-col items-center"
-                  >
-                    <div className="mb-2 text-3xl">{getIconByName(item.name)}</div>
-                    <p>{item.name}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
