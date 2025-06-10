@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export interface ArticleProps {
   title: string;
   description: string;
-  category: "Cybersecurity" | "Web Development" | "Research" | "Tutorial";
+  category: "Cybersecurity" | "Research" ;
   source: string;
   link: string;
   content?: string;
