@@ -43,16 +43,6 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "Cybersecurity":
-        return "bg-violet-900/50 text-primary";
-      case "Web Dev":
-        return "bg-violet-900/50 text-primary";
-      case "MUN":
-        return "bg-violet-900/50 text-primary";
-      case "Electronics":
-        return "bg-violet-900/50 text-primary";
-      case "Engineering":
-        return "bg-violet-900/50 text-primary";
       default:
         return "bg-violet-900/50 text-primary";
     }
@@ -168,7 +158,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <img
             src={project.image}
             alt={project.title}
-            className={`w-full h-full object-cover ${isHovering ? 'opacity-90 scale-105' : 'opacity-70 scale-100'} 
+            className={`w-full h-full object-cover ${isHovering ? 'opacity-90' : 'opacity-70'} 
                         transition-all duration-500 ease-in-out`}
           />
         </div>
