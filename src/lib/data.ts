@@ -13,6 +13,12 @@ export type SongData = {
 
 export const achievements = [
   {
+    title: "Silver Award, International Cybersecurity Olympiad",
+    issuer: "National University of Singapore, NUS",
+    year: "2025",
+    certificate: "/ICO2025_COA_Silver_11.png"
+  },
+  {
     title: "Bronze Award, National Cybersecurity Olympiad",
     issuer: "National University of Singapore, NUS",
     year: "2025",
@@ -22,7 +28,7 @@ export const achievements = [
     title: "Best Article, RVMUN 2025 (Press Corps)",
     issuer: "River Valley High School, RVHS",
     year: "2025",
-    certificate: ""
+    certificate: "/best_article.jpg"
   },
   {
     title: "Gold Award, Australian Mathematics Competition",
@@ -36,12 +42,12 @@ export const achievements = [
     year: "2025",
     certificate: "/SSTCTFRishavGanguly.jpg"
   },
-  {
-    title: "Distinction, Illustratum",
-    issuer: "National University of Singapore, NUS",
-    year: "2023",
-    certificate: ""
-  },
+  // {
+  //   title: "Distinction, Illustratum",
+  //   issuer: "National University of Singapore, NUS",
+  //   year: "2023",
+  //   certificate: "/illustratum.jpg"
+  // },
   {
     title: "Honorable Mention, Singapore Physics League (SPhL)",
     issuer: "Institute of Physics Singapore, ISP",
@@ -335,9 +341,9 @@ export const technicalSkills = [
   },
     {
     name: "Cybersecurity",
-    level: "Novice",
+    level: "Intermediate",
     percentage: 55,
-    explanation: ""
+    explanation: "Im bad at ts"
   },
 ];
 
