@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { articlesData } from "../lib/data";
-import { ArticleProps } from "../components/ui/article-card";
-import Header from "../components/layout/header";
-import Footer from "../components/layout/footer";
-import { Badge } from "../components/ui/badge";
+import { articlesData } from "@/lib/data";
+import { ArticleProps } from "@/components/ui/article-card";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import { Badge } from "@/components/ui/badge";
 import { ChevronLeft } from "lucide-react";
 
 const ArticleDetail = () => {
@@ -14,24 +14,18 @@ const ArticleDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Instant scroll to top
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto'
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
     if (slug) {
-    // Find the article in the data
-    const foundArticle = articlesData.find(
-      (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
-    );
-    
-    if (foundArticle) {
-      setArticle(foundArticle);
+      const foundArticle = articlesData.find(
+        (a) => a.title.toLowerCase().replace(/\s+/g, "-") === slug
+      );
+
+      if (foundArticle) {
+        setArticle(foundArticle);
       }
     }
-    
+
     setLoading(false);
   }, [slug]);
 
@@ -72,12 +66,12 @@ const ArticleDetail = () => {
             <p className="text-muted-foreground mb-6">
               The article you're looking for doesn't exist or has been removed.
             </p>
-            <button 
+            <button
               onClick={handleBackClick}
               className="text-primary hover:text-primary/80 inline-flex items-center cursor-pointer"
             >
-                <ChevronLeft size={16} className="mr-1" />
-                Back to Articles
+              <ChevronLeft size={16} className="mr-1" />
+              Back to Articles
             </button>
           </div>
         </main>
@@ -91,28 +85,37 @@ const ArticleDetail = () => {
       <Header />
       <main className="container mx-auto px-6 py-20">
         <div className="max-w-3xl mx-auto">
-          <button 
+          <button
             onClick={handleBackClick}
             className="text-primary hover:text-primary/80 inline-flex items-center mb-6 cursor-pointer"
           >
-              <ChevronLeft size={16} className="mr-1" />
-              Back to Articles
+            <ChevronLeft size={16} className="mr-1" />
+            Back to Articles
           </button>
-          
+
           <article className="bg-card/30 border border-card rounded-lg p-8 md:p-10">
             <Badge
               variant="outline"
-              className={`font-mono text-xs ${getCategoryColor(article.category)} mb-4 inline-block`}
+              className={`font-mono text-xs ${getCategoryColor(
+                article.category
+              )} mb-4 inline-block`}
             >
               {article.category}
             </Badge>
-            
+
             <h1 className="text-2xl md:text-3xl font-bold mb-4">{article.title}</h1>
-            
+
             <div className="flex items-center mb-8 text-sm text-muted-foreground">
               <span>{article.source}</span>
               <span className="mx-2">•</span>
               <span>Published: March 2025</span>
+            </div>
+
+            {/* ✅ Content Display */}
+            <div className="prose prose-neutral dark:prose-invert max-w-none">
+              <div className="prose max-w-none prose-headings:text-white prose-a:text-white prose-strong:text-white prose-em:text-white prose-code:text-white prose-pre:bg-zinc-900 prose-pre:text-white prose-blockquote:text-white prose-li:text-white prose-p:text-white">
+                <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              </div>
             </div>
           </article>
         </div>

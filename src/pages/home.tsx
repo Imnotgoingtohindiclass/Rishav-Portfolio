@@ -62,7 +62,7 @@ const Home = () => {
         <section id="about"><About /></section>
         <section id="achievements"><Achievements /></section>
         <section id="projects"><Projects /></section>
-        {/* <section id="writing"><Writing /></section> */}
+        <section id="writing"><Writing /></section>
       </main>
       <Footer />
     </div>
