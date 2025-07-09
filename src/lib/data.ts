@@ -22,13 +22,13 @@ export const achievements = [
     title: "Best Article, RVMUN 2025 (Press Corps)",
     issuer: "River Valley High School, RVHS",
     year: "2025",
-    certificate: "/Item-2_SUTD-Camp_Presentation.jpg"
+    certificate: ""
   },
   {
     title: "Gold Award, Australian Mathematics Competition",
     issuer: "Australian Mathematics Trust, AMT",
     year: "2022, 2023, 2024",
-    certificate: "/Item-5_Taiwan-Trip24.jpg"
+    certificate: ""
   },
   {
     title: "School of Science and Technology Capture the Flag 2025",
@@ -116,7 +116,7 @@ export const projectsData: ProjectProps[] = [
     fullDescription: "Designing and deploying a honeypot system to attract, log, and analyze cyber attacks. This personal cybersecurity project involves custom configuration, logging systems, and basic network monitoring to study common attack vectors and response strategies.",
     category: "Cybersecurity",
     image: getPatternSvg(0),
-    technologies: ["Python", "Linux", "Networking", "Cybersecurity"],
+    technologies: ["Python", "Docker", "Networking", "Cybersecurity"],
     durationHours: 150,
     challenges: "Making it look juicy enough for attackers to actually bite 😵 and not get my whole setup nuked 😭.",
     outcomes: "Improved understanding of intrusion tactics, data logging, and incident response 🔥.",
@@ -311,33 +311,33 @@ export const projectsData: ProjectProps[] = [
 export const technicalSkills = [
   {
     name: "Programming",
-    level: "Advanced",
+    level: "Proficient",
     percentage: 79,
-    explanation: "Extensive experience in Python, and TypeScript. Built multiple full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
+    explanation: "Proficient experience in Python. Built a few full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
   },
   {
     name: "Data Science",
-    level: "Advanced",
+    level: "Proficient",
     percentage: 77,
     explanation: "Proficient in data analysis, visualization, and statistical modeling. Experience with pandas, NumPy, and Matplotlib. Completed projects in data-driven decision making and predictive analytics."
   },
   {
-    name: "Cybersecurity",
-    level: "Intermediate",
-    percentage: 70,
-    explanation: "Skilled in React, Next.js, and modern web development practices. Built responsive and accessible web applications with a focus on user experience and performance optimization."
-  },
-  {
     name: "Hardware and Embedded Systems",
-    level: "Proficient",
+    level: "Intermediate",
     percentage: 63,
-    explanation: "Hands-on experience with Arduino, Raspberry Pi, and various sensors. Developed IoT devices and embedded systems for real-world applications, including home automation and robotics."
+    explanation: "Hands-on experience with Arduino, Raspberry Pi, and various sensors. Developed IoT devices and embedded systems for real-world applications"
   },
   {
     name: "Machine Learning",
-    level: "Proficient",
+    level: "Intermediate",
     percentage: 62,
-    explanation: "Practical experience with TensorFlow and OpenCV. Developed computer vision models and implemented machine learning algorithms for various applications, including medical image analysis."
+    explanation: "Practical experience with TensorFlow and OpenCV. Developed computer vision models and implemented machine learning algorithms for some applications"
+  },
+    {
+    name: "Cybersecurity",
+    level: "Novice",
+    percentage: 55,
+    explanation: ""
   },
 ];
 
