@@ -1,6 +1,6 @@
 import React from "react";
 import { achievements, representationRoles } from "../../lib/data";
-import { Trophy, Award } from "lucide-react";
+import { Trophy, Award, Users, Plane, Award as AwardIcon, Medal, BookOpen, Rocket } from "lucide-react";
 
 const Achievements = () => {
     const certifications = [
@@ -85,17 +85,31 @@ const Achievements = () => {
                     Leadership and representation roles
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {representationRoles.map((role, index) => (
-                    <div
-                        key={index}
-                        className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300"
-                    >
-                        <h4 className="text-foreground font-bold text-lg mb-2">{role.title}</h4>
-                        <p className="text-muted-foreground">{role.organization}</p>
-                        <p className="text-muted-foreground text-sm">{role.duration}</p>
-                        <p className="text-muted-foreground mt-2">{role.description}</p>
-                    </div>
-                    ))}
+                    {representationRoles.map((role, index) => {
+                        let Icon = Users; // Default icon
+                        
+                        // Choose icon based on role content
+                        if (role.organization.includes('Handball')) Icon = Medal;
+                        else if (role.organization.includes('SYFC') && role.title.includes('Aeromodelling')) Icon = Plane;
+                        else if (role.title.includes('Top Gun')) Icon = Rocket;
+                        else if (role.title.includes('Leadership')) Icon = BookOpen;
+                        else if (role.title.includes('House Committee')) Icon = Users;
+                        
+                        return (
+                        <div
+                            key={index}
+                            className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative group"
+                        >
+                            <div className="absolute top-4 right-4 p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+                                <Icon className="h-5 w-5 text-primary" />
+                            </div>
+                            <h4 className="text-foreground font-bold text-lg mb-2 pr-8">{role.title}</h4>
+                            <p className="text-muted-foreground">{role.organization}</p>
+                            <p className="text-muted-foreground text-sm">{role.duration}</p>
+                            <p className="text-muted-foreground mt-2">{role.description}</p>
+                        </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>
