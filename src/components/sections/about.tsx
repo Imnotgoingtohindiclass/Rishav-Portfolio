@@ -32,9 +32,9 @@ const About = () => {
 
   const serviceLearningData = [
     {
-      "event": "Race for Life 2023",
-      "period": "2025",
-      "duration": "7 Hours",
+      "event": "Race for Life",
+      "period": "2024/2025",
+      "duration": "14 Hours",
       "role": "Volunteer",
       "organization": "Singapore Cancer Society",
       "type": "service"
@@ -47,14 +47,14 @@ const About = () => {
       "organization": "SGBono",
       "type": "service"
     },
-    {
-      "event": "Race for Life 2024",
-      "period": "2024",
-      "duration": "7 Hours",
-      "role": "Volunteer",
-      "organization": "Singapore Cancer Society",
-      "type": "service"
-    },
+    // {
+    //   "event": "Race for Life 2024",
+    //   "period": "2024",
+    //   "duration": "7 Hours",
+    //   "role": "Volunteer",
+    //   "organization": "Singapore Cancer Society",
+    //   "type": "service"
+    // },
     {
       "event": "Race Against Cancer @ ACE",
       "period": "2023",
@@ -74,7 +74,7 @@ const About = () => {
       case "Proficient":
         return "bg-accent";
       default:
-        return "text-blue-500";
+        return "bg-blue-500";
     }
   };
 
