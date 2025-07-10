@@ -11,7 +11,7 @@ export interface ProjectProps {
   category: "Cybersecurity" | "Electronics" | "Engineering" | "MUN" | "Web Dev" | "Robotics" | "Research" | "AI/ML" | "Other";
   image: string;
   technologies: string[];
-  durationHours?: number;
+  durationHours?: number | "Ongoing";
   challenges?: string;
   outcomes?: string;
   links: {
@@ -173,7 +173,11 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           {project.durationHours && (
             <div className="flex items-center mb-4 text-xs text-muted-foreground">
               <Clock size={14} className="mr-1" />
-              <span>{project.durationHours} hours</span>
+              <span>
+                {typeof project.durationHours === "number"
+                  ? `${project.durationHours} hours`
+                  : project.durationHours}
+              </span>
             </div>
           )}
           <div className="flex flex-wrap gap-2 mb-4">
