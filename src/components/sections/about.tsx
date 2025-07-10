@@ -10,7 +10,7 @@ const About = () => {
       degree: "Engineering+ Student",
       institution: "School of Science and Technology, Singapore",
       type: "education",
-      description: "Currently pursuing a specialized engineering program with focus on electronics and cybersecurity. Participating in advanced projects and research in embedded systems and network security."
+      description: "Currently pursuing a specialised engineering program with focus on electronics, computing and cybersecurity. Participating in advanced projects and research in artifical intelligence, robotics and network security."
     },
     {
       period: "2017 - 2021",
@@ -26,34 +26,34 @@ const About = () => {
       degree: "Primary School Student",
       institution: "Queenstown Primary School",
       type: "education",
-      description: "Started primary education journey with focus on foundational subjects and extracurricular activities."
+      description: "Started primary education journey with focus on foundational subjects"
     }
   ];
 
   const serviceLearningData = [
     {
-      "event": "International Cybersecurity Olympiad @ NUS",
-      "period": "2025",
-      "duration": "56 Hours",
-      "role": "Volunteer",
-      "organization": "National University of Singapore",
-      "type": "service"
+      event: "International Cybersecurity Olympiad @ NUS",
+      period: "2025",
+      duration: "56 Hours",
+      role: "Volunteer",
+      organization: "National University of Singapore",
+      type: "service"
     },
     {
-      "event": "Race for Life",
-      "period": "2024/2025",
-      "duration": "14 Hours",
-      "role": "Volunteer",
-      "organization": "Singapore Cancer Society",
-      "type": "service"
+      event: "Race for Life",
+      period: "2024/2025",
+      duration: "14 Hours",
+      role: "Volunteer",
+      organization: "Singapore Cancer Society",
+      type: "service"
     },
     {
-      "event": "Laptop Refurbishment",
-      "period": "2024",
-      "duration": "4 Hours",
-      "role": "Volunteer",
-      "organization": "SGBono",
-      "type": "service"
+      event: "Laptop Refurbishment",
+      period: "2024",
+      duration: "4 Hours",
+      role: "Volunteer",
+      organization: "SGBono",
+      type: "service"
     },
     // {
     //   "event": "Race for Life 2024",
@@ -64,12 +64,12 @@ const About = () => {
     //   "type": "service"
     // },
     {
-      "event": "Race Against Cancer @ ACE",
-      "period": "2023",
-      "duration": "16 Hours",
-      "role": "Volunteer",
-      "organization": "Singapore Cancer Society",
-      "type": "service"
+      event: "Race Against Cancer @ ACE",
+      period: "2023",
+      duration: "16 Hours",
+      role: "Volunteer",
+      organization: "Singapore Cancer Society",
+      type: "service"
     }
   ];  
 
@@ -124,13 +124,16 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
             <p className="text-foreground mb-6 font-sans leading-relaxed">
-              I'm a student of engineering, electronics, and cybersecurity with a passion for building secure, efficient, and innovative solutions. My journey began with tinkering with electronics, which evolved into a deeper interest in embedded systems and security.
+              I'm a student of engineering, electronics, and cybersecurity with a passion for building secure, efficient, and innovative solutions. 
+              My journey began with tinkering with electronics, which evolved into a deeper interest in embedded systems and security.
             </p>
             <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              Currently focused on the intersection of hardware security and web technologies, I develop tools and frameworks that bridge the gap between electronic systems and modern web applications. My research interests include IoT security, embedded systems design, and secure software development practices.
+              Currently focused on the intersection of hardware security and web technologies, I develop tools and frameworks that bridge the gap between electronic systems and modern web applications. 
+              My research interests include IoT security, embedded systems design, and secure software development practices.
             </p>
             <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community. I believe in making technology more accessible through clear documentation and tutorials.
+              When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community. 
+              I believe in making technology more accessible through clear documentation and tutorials.
             </p>
           </div>
 
