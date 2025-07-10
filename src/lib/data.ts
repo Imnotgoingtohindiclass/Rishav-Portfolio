@@ -81,24 +81,24 @@ export const representationRoles: RepresentationRole[] = [
     duration: "2024",
     description: "Served as part of the Upper Sec House Committee, contributing to house events and promoting school spirit through leadership and coordination.",
   },
-  {
-    title: "SYFC Inter-School Aeromodelling Competitor",
-    organization: "Singapore Youth Flying Club, SYFC",
-    duration: "2022 - 2024",
-    description: "Represented school in multiple SYFC inter-school competitions including Launch Glider and Flight Simulation events.",
-  },
-  {
-    title: "SYFC Top Gun Programme Participant",
-    organization: "Singapore Youth Flying Club, SYFC",
-    duration: "2024",
-    description: "Selected for and completed the elite Top Gun programme, enhancing practical aeronautical knowledge and team collaboration in advanced projects.",
-  },
-  {
+    {
     title: "Leadership Module Graduate",
     organization: "School of Science and Technology, Singapore, SST",
     duration: "2023",
     description: "Completed two school-recognized leadership development modules including OEE training on group dynamics and outdoor education expeditions.",
-  }
+  },
+  // {
+  //   title: "SYFC Inter-School Aeromodelling Competitor",
+  //   organization: "Singapore Youth Flying Club, SYFC",
+  //   duration: "2022 - 2024",
+  //   description: "Represented school in multiple SYFC inter-school competitions including Launch Glider and Flight Simulation events.",
+  // },
+  // {
+  //   title: "SYFC Top Gun Programme Participant",
+  //   organization: "Singapore Youth Flying Club, SYFC",
+  //   duration: "2024",
+  //   description: "Completed the elite Top Gun programme, enhancing practical aeronautical knowledge and team collaboration in advanced projects.",
+  // },
 ];
 
 export const projectsData: ProjectProps[] = [
@@ -123,21 +123,21 @@ export const projectsData: ProjectProps[] = [
     category: "AI/ML",
     image: "",
     technologies: ["Python", "TensorFlow", "CNN", "Medical Imaging"],
-    durationHours: 200,
+    durationHours: "Ongoing",
     challenges: "Handling data variability and mitigating overfitting required rigorous experimentation and validation.",
     outcomes: "Achieved strong classification performance and gained practical experience in applying AI to healthcare challenges.",
     links: {
-      code: "https://github.com",
+      // code: "https://github.com",
     },
   },
   {
     title: "IDP Integrated Design Challenge",
     description: "Designed and built an autonomous robot capable of navigation, object manipulation, and QR code scanning.",
-    fullDescription: "Led the development of an autonomous robotics solution for a design competition. The system integrated custom computer vision models for QR code detection, line-tracing algorithms, and robotic actuators for object manipulation. Oversaw both hardware assembly and software development to deliver a fully functional prototype.",
+    fullDescription: "Led the development of an autonomous robotics solution for a school project. The system integrated custom computer vision models using Convolutional Neural Networks for object recognition, line-tracing algorithms, and robotic actuators for object manipulation. Oversaw both hardware assembly and software development to deliver a functional prototype.",
     category: "Robotics",
     image: "",
     technologies: ["Python", "OpenCV", "Arduino", "ML", "Sensors"],
-    durationHours: 250,
+    durationHours: 70,
     challenges: "Integrating multiple subsystems and achieving reliable performance under competition conditions demanded extensive testing and iterative refinement.",
     outcomes: "Successfully completed and demonstrated the prototype, strengthening my skills in interdisciplinary engineering and team collaboration.",
     links: {
@@ -151,7 +151,7 @@ export const projectsData: ProjectProps[] = [
     category: "Robotics",
     image: "",
     technologies: ["Arduino", "Wireless Comms", "Mechanical Design"],
-    durationHours: 160,
+    durationHours: 28,
     challenges: "Ensuring stable operation over uneven terrain while maintaining precise remote control required careful mechanical and electrical design.",
     outcomes: "Delivered a proof-of-concept robot that enhances safety and operational efficiency in emergency response efforts.",
     links: {
@@ -179,7 +179,7 @@ export const projectsData: ProjectProps[] = [
     category: "Engineering",
     image: "",
     technologies: ["Sensors", "Arduino", "Prototype Engineering"],
-    durationHours: 120,
+    durationHours: 10,
     challenges: "Achieving accurate detection while minimizing false positives and ensuring operational stability in water.",
     outcomes: "Created an innovative proof of concept aimed at improving maritime safety and emergency response times.",
     links: {
@@ -193,11 +193,11 @@ export const projectsData: ProjectProps[] = [
     category: "Electronics",
     image: "",
     technologies: ["Circuit Design", "Analog Electronics"],
-    durationHours: 110,
+    durationHours: 100,
     challenges: "Balancing effective stimulation intensity with strict safety standards and user comfort.",
     outcomes: "Delivered a reliable and user-friendly device that supports rehabilitation and mobility improvement.",
     links: {
-      documentation: "https://github.com",
+      documentation: "",
     },
   },
   {
@@ -207,7 +207,7 @@ export const projectsData: ProjectProps[] = [
     category: "Engineering",
     image: "",
     technologies: ["Arduino", "IoT", "Mobile App Development"],
-    durationHours: 100,
+    durationHours: 50,
     challenges: "Balancing system reliability with user convenience and avoiding excessive notifications.",
     outcomes: "Developed a functional prototype that empowers households to reduce waste and improve food management practices.",
     links: {
