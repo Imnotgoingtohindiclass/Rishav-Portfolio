@@ -32,6 +32,14 @@ const About = () => {
 
   const serviceLearningData = [
     {
+      "event": "International Cybersecurity Olympiad @ NUS",
+      "period": "2025",
+      "duration": "56 Hours",
+      "role": "Volunteer",
+      "organization": "National University of Singapore",
+      "type": "service"
+    },
+    {
       "event": "Race for Life",
       "period": "2024/2025",
       "duration": "14 Hours",
