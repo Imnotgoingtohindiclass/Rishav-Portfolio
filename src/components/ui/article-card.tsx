@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export interface ArticleProps {
   title: string;
   description: string;
-  category: "Cybersecurity" | "Research" ;
+  category: "Cybersecurity" | "Research" | "MUN";
   source: string;
   link: string;
   content?: string;
@@ -32,7 +32,7 @@ const ArticleCard = ({ article }: { article: ArticleProps }) => {
         return "bg-secondary/20 text-secondary";
       case "Research":
         return "bg-accent/20 text-accent";
-      case "Tutorial":
+      case "MUN":
         return "bg-primary/20 text-primary";
       default:
         return "bg-muted/20 text-muted";
