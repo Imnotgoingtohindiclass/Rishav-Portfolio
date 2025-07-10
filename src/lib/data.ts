@@ -37,7 +37,7 @@ export const achievements = [
     certificate: ""
   },
   {
-    title: "School of Science and Technology Capture the Flag 2025",
+    title: "Silver Award, School of Science and Technology Capture the Flag 2025",
     issuer: "Computing+ Department, SST",
     year: "2025",
     certificate: "/SSTCTFRishavGanguly.jpg"
