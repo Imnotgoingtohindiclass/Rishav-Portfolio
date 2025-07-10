@@ -327,7 +327,7 @@ export const technicalSkills = [
   },
     {
     name: "Cybersecurity",
-    level: "Intermediate",
+    level: "Novice",
     percentage: 55,
     explanation: "Im bad at ts"
   },
@@ -631,4 +631,78 @@ exploit_card_hex = C2.hex() + T2.hex()
 </p>
 `
   },
+  {
+    title: "House of Commons propose devolution plan amid conservative opposition",
+    description: "Press article discussing the House of Commons' proposal for devolution in the UK, highlighting the opposition from conservative members, written for RVMUN 2025, Associated Press.",
+    category: "MUN",
+    source: "Unpublished",
+    link: "",
+    content: `
+    <html>
+      <body class="c10 doc-content">
+        <p class="c1">
+          <span class="c6">
+            BY Tan Yu Kai James and Rishav Ganguly
+          </span>
+        </p>
+        <p class="c1"><span class="c4">
+          Updated 10:23 GMT+8, 19 March</span>
+        </p>
+        <p class="c1">
+          <span>UNITED NATIONS </span><span>(AP) &mdash; </span>
+          <span class="c2">Prime Minister Keir Starmer defended his government&rsquo;s English Devolution Bill, insisting that regional governments need greater autonomy to ensure economic growth and political stability. His comments come amid opposition from Conservative lawmakers, who argue that increased devolution could weaken national cohesion and create governance challenges.</span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            The push for English devolution is not new. The debate over regional autonomy has been a recurring issue in British politics for decades. The Local Government Act of 1972 restructured England&rsquo;s administrative divisions, but power remained largely centralized in Westminster. The late 1990s saw a shift toward devolution with the creation of the Scottish Parliament, Welsh Senedd, and Northern Ireland Assembly under Prime Minister Tony Blair. However, England&mdash;despite hosting the majority of the UK&rsquo;s population&mdash;never received a similar level of regional autonomy.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            Successive governments have introduced measures to empower local administrations, including metro mayors and regional combined authorities. However, critics argue that these efforts have been piecemeal and insufficient. Starmer&rsquo;s English Devolution Bill aims to create a more structured framework, granting more decision-making power to regional governments while maintaining oversight from Westminster. &ldquo;Devolution will strengthen, not weaken governance,&rdquo; states Starmer in an interview.
+          </span>
+        </p>
+        <p class="c1">
+          <span>
+            Starmer also rejected concerns that his plan would undermine parliamentary sovereignty, instead pointing to the Regional Development Board as a safeguard against fragmentation. &ldquo;With the government providing the initial funding, the Regional Development Board will act as a middleman between devolved agencies and Westminster,&rdquo; Starmer said. &ldquo;This ensures that both needs are met and a compromise is reached as soon as possible.&rdquo;
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            He further explained that funding distribution would be regulated through structured negotiations, using the BU formula as a &ldquo;fail-safe&rdquo; to ensure economic stability across regions. The formula, he said, would prevent financial mismanagement while allowing local governments to address regional economic disparities.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            The Conservative Party has pushed back against Starmer&rsquo;s proposal, arguing that excessive devolution could create inconsistencies in law enforcement, taxation, and economic policies across different regions.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            Chris Philp, the Shadow Home Secretary, made it clear that his party opposes further decentralization.</span></p><p class="c1"><span class="c2">&ldquo;Local government power should not be increased and should be limited,&rdquo; he said.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            Philp&rsquo;s statement reflects a broader Conservative concern that regional authorities might overstep their boundaries, leading to inefficiencies and a loss of central oversight.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            Robert Jenrick, the Shadow Justice Secretary, refused to comment on the bill. However, his past statements suggest skepticism toward large-scale devolution, particularly when it comes to legal matters and maintaining uniform judicial standards across the country.
+          </span>
+        </p>
+        <p class="c1">
+          <span class="c2">
+            The debate over English devolution is shaping up to be a defining issue in Starmer&rsquo;s administration. While Labour argues that stronger regional governments will lead to economic and political stability, the Conservatives warn of inefficiencies, increased bureaucracy, and a weakened central government.
+          </span>
+        </p>
+        <p class="c1">
+          <span>
+            With both sides holding firm, the bill&rsquo;s fate remains uncertain. However, as public demand for more regional autonomy grows, the question of how much power should be transferred from Westminster to local authorities is unlikely to disappear anytime soon.
+          </span>
+        </p>
+      </body>
+    </html>`
+  }
 ];
