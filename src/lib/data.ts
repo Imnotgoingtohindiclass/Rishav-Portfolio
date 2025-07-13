@@ -300,39 +300,6 @@ export const projectsData: ProjectProps[] = [
   },
 ];
 
-export const technicalSkills = [
-  {
-    name: "Programming",
-    level: "Proficient",
-    percentage: 79,
-    explanation: "Proficient experience in Python. Built a few full-stack applications, including web apps and IoT systems. Strong understanding of algorithms, data structures, and software design patterns."
-  },
-  {
-    name: "Data Science",
-    level: "Proficient",
-    percentage: 77,
-    explanation: "Proficient in data analysis, visualization, and statistical modeling. Experience with pandas, NumPy, and Matplotlib. Completed projects in data-driven decision making and predictive analytics."
-  },
-  {
-    name: "Hardware and Embedded Systems",
-    level: "Intermediate",
-    percentage: 63,
-    explanation: "Hands-on experience with Arduino, Raspberry Pi, and various sensors. Developed IoT devices and embedded systems for real-world applications"
-  },
-  {
-    name: "Machine Learning",
-    level: "Intermediate",
-    percentage: 62,
-    explanation: "Practical experience with TensorFlow and OpenCV. Developed computer vision models and implemented machine learning algorithms for some applications"
-  },
-    {
-    name: "Cybersecurity",
-    level: "Novice",
-    percentage: 55,
-    explanation: "Im bad at ts"
-  },
-];
-
 export const toolsAndLanguages = [
   { name: "Python", icon: "code" },
   { name: "Git", icon: "code" },
@@ -344,7 +311,6 @@ export const toolsAndLanguages = [
   { name: "Raspberry Pi", icon: "code" },
   { name: "Arduino", icon: "code" },
 ];
-
 
 export const articlesData: ArticleProps[] = [
   {
