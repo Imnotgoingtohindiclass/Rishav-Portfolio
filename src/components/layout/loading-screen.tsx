@@ -64,6 +64,30 @@ const quotes = [
   {
     text: "I have loved the stars too fondly to be fearful of the night.",
     author: "Sarah Williams, The Old Astronomer to His Pupil"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
+  },
+  {
+    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    author: "Pantheon"
   }
 ];
 
