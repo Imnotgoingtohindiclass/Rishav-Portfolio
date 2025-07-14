@@ -300,6 +300,51 @@ export const projectsData: ProjectProps[] = [
   },
 ];
 
+export const technicalSkills = [
+  {
+    name: "Python",
+    level: "Advanced",
+    percentage: 90,
+    explanation: "Experienced in scripting, automation, and data science using Python."
+  },
+  {
+    name: "JavaScript",
+    level: "Proficient",
+    percentage: 80,
+    explanation: "Well-versed in building interactive web apps and backend services."
+  },
+  {
+    name: "React",
+    level: "Intermediate",
+    percentage: 75,
+    explanation: "Comfortable with building UI components and using React hooks effectively."
+  },
+  {
+    name: "Git",
+    level: "Advanced",
+    percentage: 85,
+    explanation: "Experienced in version control, collaboration, and CI/CD workflows."
+  },
+  {
+    name: "OpenCV",
+    level: "Intermediate",
+    percentage: 70,
+    explanation: "Used for computer vision tasks in several personal and academic projects."
+  },
+  {
+    name: "TensorFlow",
+    level: "Intermediate",
+    percentage: 70,
+    explanation: "Applied for machine learning and deep learning experiments."
+  },
+  {
+    name: "C++",
+    level: "Proficient",
+    percentage: 80,
+    explanation: "Strong in algorithms, systems programming, and hardware interfacing."
+  },
+];
+
 export const toolsAndLanguages = [
   { name: "Python", icon: "code" },
   { name: "Git", icon: "code" },
