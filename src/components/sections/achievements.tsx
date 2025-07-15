@@ -1,6 +1,6 @@
 import React from "react";
 import { achievements, representationRoles } from "../../lib/data";
-import { Trophy, Award, Users, Plane, Award as AwardIcon, Medal, BookOpen, Rocket } from "lucide-react";
+import { Trophy, Award, Medal} from "lucide-react";
 
 const Achievements = () => {
     const certifications = [
@@ -79,21 +79,16 @@ const Achievements = () => {
                     ))}
                 </div> */}
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 mt-16 flex items-center">
-                        <Award className="mr-2 text-primary" /> REPRESENTATION
+                        <Award className="mr-2 text-primary" /> SPORTS
                 </h2>
                 <p className="text-muted-foreground mb-8 font-sans">
-                    Leadership and representation roles
+                    Representation roles and achievements in sports
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {representationRoles.map((role, index) => {
-                        let Icon = Users; // Default icon
+                        let Icon = Medal; // Default icon
                         
                         // Choose icon based on role content
-                        if (role.organization.includes('Handball')) Icon = Medal;
-                        else if (role.organization.includes('SYFC') && role.title.includes('Aeromodelling')) Icon = Plane;
-                        else if (role.title.includes('Top Gun')) Icon = Rocket;
-                        else if (role.title.includes('Leadership')) Icon = BookOpen;
-                        else if (role.title.includes('House Committee')) Icon = Users;
                         
                         return (
                         <div
