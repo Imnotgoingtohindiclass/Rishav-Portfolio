@@ -47,7 +47,7 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
           >
             <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative animate-scale-in">
-              <div className="absolute -inset-1 rounded-full bg-gradient-border animate-gradient-rotate"></div>
+              <div className="absolute -inset-0.5 rounded-full bg-gradient-border animate-gradient-rotate"></div>
               <div className="relative w-full h-full rounded-full p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-black">
                   <img
