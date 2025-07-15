@@ -5,195 +5,130 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export interface ProjectProps {
-  title: string;
-  description: string;
-  fullDescription?: string;
-  category: "Cybersecurity" | "Electronics" | "Engineering" | "MUN" | "Web Dev" | "Robotics" | "Research" | "AI/ML" | "Other";
-  image: string;
-  technologies: string[];
-  durationHours?: number | "Ongoing";
-  challenges?: string;
-  outcomes?: string;
-  links: {
-    demo?: string;
-    code?: string;
-    documentation?: string;
-    paper?: string;
-    video?: string;
+    title: string;
+    description: string;
+    fullDescription?: string;
+    category: "Cybersecurity" | "Electronics" | "Engineering" | "MUN" | "Web Dev" | "Robotics" | "Research" | "AI/ML" | "Other";
+    image: string;
+    technologies: string[];
+    durationHours?: number | "Ongoing";
     challenges?: string;
-  };
+    outcomes?: string;
+    links: {
+        demo?: string;
+        code?: string;
+        documentation?: string;
+        paper?: string;
+        video?: string;
+        challenges?: string;
+    };
 }
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  const [isHovering, setIsHovering] = useState(false);
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
+    const handleCardClick = () => {
+        const slug = project.title.toLowerCase().replace(/\s+/g, "-");
+        navigate(`/project/${slug}`);
+    };
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
+    const getCategoryColor = (category: string) => {
+        switch (category) {
+            case "Cybersecurity":
+                return "bg-red-900/50 text-red-300 border-red-700/80";
+            case "Electronics":
+                return "bg-blue-900/50 text-blue-300 border-blue-700/80";
+            case "Engineering":
+                return "bg-green-900/50 text-green-300 border-green-700/80";
+            case "MUN":
+                return "bg-yellow-900/50 text-yellow-300 border-yellow-700/80";
+            case "Web Dev":
+                return "bg-purple-900/50 text-purple-300 border-purple-700/80";
+            case "Robotics":
+                return "bg-indigo-900/50 text-indigo-300 border-indigo-700/80";
+            case "Research":
+                return "bg-pink-900/50 text-pink-300 border-pink-700/80";
+            case "AI/ML":
+                return "bg-gray-700/50 text-gray-300 border-gray-600/80";
+            default:
+                return "bg-violet-900/50 text-primary border-violet-700/80";
+        }
+    };
 
-  const handleCardClick = () => {
-    const slug = project.title.toLowerCase().replace(/\s+/g, "-");
-    navigate(`/project/${slug}`);
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      default:
-        return "bg-violet-900/50 text-primary";
-    }
-  };
-
-  const getLinks = () => {
-    const links = [];
-    
-    if (project.links.demo) {
-      links.push(
-        <a 
-          key="demo" 
-          href={project.links.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors"
-          onClick={(e) => e.stopPropagation()}
+    const renderLink = (key: string, href: string, icon: React.ReactNode, text: string) => (
+        <a
+            key={key}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary-foreground text-sm flex items-center gap-1.5 transition-colors"
+            onClick={(e) => e.stopPropagation()}
         >
-          <ExternalLink size={14} /> 
-          {project.category === "Cybersecurity" ? "Demo" : "Live Site"}
+            {icon} {text}
         </a>
-      );
-    }
-    
-    if (project.links.code) {
-      links.push(
-        <a 
-          key="code" 
-          href={project.links.code}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Github size={14} /> Code
-        </a>
-      );
-    }
-    
-    if (project.links.documentation) {
-      links.push(
-        <a 
-          key="docs" 
-          href={project.links.documentation}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <FileText size={14} /> Documentation
-        </a>
-      );
-    }
-    
-    if (project.links.paper) {
-      links.push(
-        <div 
-          key="paper" 
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors cursor-pointer"
-          onClick={(e) => {
-            e.stopPropagation();
-            window.open(project.links.paper, '_blank', 'noopener noreferrer');
-          }}
-        >
-          <FileText size={14} /> Research Paper
-        </div>
-      );
-    }
-    
-    if (project.links.video) {
-      links.push(
-        <div 
-          key="video" 
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors cursor-pointer"
-          onClick={(e) => {
-            e.stopPropagation();
-            window.open(project.links.video, '_blank', 'noopener noreferrer');
-          }}
-        >
-          <ExternalLink size={14} /> Demo Video
-        </div>
-      );
-    }
-    
-    if (project.links.challenges) {
-      links.push(
-        <div 
-          key="challenges" 
-          className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors cursor-pointer"
-          onClick={(e) => {
-            e.stopPropagation();
-            window.open(project.links.challenges, '_blank', 'noopener noreferrer');
-          }}
-        >
-          <Trophy size={14} /> Challenges
-        </div>
-      );
-    }
-    
-    return links;
-  };
+    );
 
-  return (
-    <div className="h-full">
-      <Card 
-        className="project-card h-full bg-transparent border-transparent hover:border-primary hover:bg-primary/10 transition overflow-hidden 
-                    transition-all duration-300 hover:shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)] cursor-pointer"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleCardClick}
-      >
-        <div className="h-48 bg-gradient-to-r from-background to-card flex items-center justify-center overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className={`w-full h-full object-cover ${isHovering ? 'opacity-90' : 'opacity-70'} 
-                        transition-all duration-500 ease-in-out`}
-          />
-        </div>
-        <CardContent className="p-6 flex flex-col h-[calc(100%-12rem)]">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl font-bold line-clamp-1">{project.title}</h3>
-            <Badge variant="outline" className={`font-mono text-xs ${getCategoryColor(project.category)}`}>
-              {project.category}
-            </Badge>
-          </div>
-          <p className="text-muted-foreground mb-4 text-sm font-sans line-clamp-3">{project.description}</p>
-          {project.durationHours && (
-            <div className="flex items-center mb-4 text-xs text-muted-foreground">
-              <Clock size={14} className="mr-1" />
-              <span>
-                {typeof project.durationHours === "number"
-                  ? `${project.durationHours} hours`
-                  : project.durationHours}
-              </span>
-            </div>
-          )}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary" className="bg-purple-500/50 text-muted-foreground text-xs">
-                {tech}
-              </Badge>
-            ))}
-          </div>
-          <div className="flex space-x-4 mt-auto">
-            {getLinks()}
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
+    const getLinks = () => {
+        const linkConfig = [
+            { key: 'demo', href: project.links.demo, icon: <ExternalLink size={14} />, text: project.category === "Cybersecurity" ? "Demo" : "Live Site" },
+            { key: 'code', href: project.links.code, icon: <Github size={14} />, text: 'Code' },
+            { key: 'documentation', href: project.links.documentation, icon: <FileText size={14} />, text: 'Docs' },
+            { key: 'paper', href: project.links.paper, icon: <FileText size={14} />, text: 'Paper' },
+            { key: 'video', href: project.links.video, icon: <ExternalLink size={14} />, text: 'Video' },
+            { key: 'challenges', href: project.links.challenges, icon: <Trophy size={14} />, text: 'Challenges' },
+        ];
+
+        return linkConfig
+            .filter(link => link.href)
+            .map(link => renderLink(link.key, link.href!, link.icon, link.text));
+    };
+
+    return (
+        <Card
+            className="project-card h-full bg-card/30 border border-slate-800 hover:border-primary/70
+                        transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.2)]
+                        cursor-pointer flex flex-col"
+            onClick={handleCardClick}
+        >
+            <CardContent className="p-6 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-xl font-bold text-primary pr-2 line-clamp-1">{project.title}</h3>
+                    <Badge variant="outline" className={`font-mono text-xs whitespace-nowrap ${getCategoryColor(project.category)}`}>
+                        {project.category}
+                    </Badge>
+                </div>
+
+                <p className="text-muted-foreground mb-4 text-sm font-sans h-20 overflow-hidden text-ellipsis">
+                    {project.description}
+                </p>
+
+                {project.durationHours && (
+                    <div className="flex items-center mb-4 text-xs text-muted-foreground/80">
+                        <Clock size={14} className="mr-1.5" />
+                        <span>
+                            {typeof project.durationHours === "number"
+                                ? `${project.durationHours} hours`
+                                : project.durationHours}
+                        </span>
+                    </div>
+                )}
+
+                <div className="flex flex-wrap gap-2 mb-5">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                        <Badge key={tech} variant="secondary" className="bg-primary/75 text-primary-foreground/80 text-xs font-normal">
+                            {tech}
+                        </Badge>
+                    ))}
+                </div>
+
+                <div className="flex-grow" /> 
+
+                <div className="flex items-center space-x-4 mt-auto border-t border-slate-800 pt-4">
+                    {getLinks()}
+                </div>
+            </CardContent>
+        </Card>
+    );
 };
 
 export default ProjectCard;
