@@ -55,50 +55,21 @@ export const achievements = [
     certificate: "/SPHLcert_page-0001 (1).jpg"
   }
 ];
-export interface RepresentationRole {
+export interface sports {
   title: string;
   organization: string;
   duration: string;
   description: string;
 }
 
-export const representationRoles: RepresentationRole[] = [
+export const sports: sports[] = [
   {
-    title: "International Delegate, Taichung Cup Handball Championship",
+    title: "Taichung Cup Handball Championship",
     organization: "Handball Federation Singapore, HFS",
     duration: "2024",
     description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship."
   },
-  {
-    title: "Aeromodelling Expert (Level 3)",
-    organization: "Singapore Youth Flying Club, SYFC",
-    duration: "2022 - 2024",
-    description: "Completed progressive training from Level 1 to Level 3 in aeromodelling, showcasing advanced understanding in aircraft design, flight principles, and simulation.",
-  },
-  {
-    title: "Upper Sec House Committee Member",
-    organization: "Student Leadership Board (House)",
-    duration: "2024",
-    description: "Served as part of the Upper Sec House Committee, contributing to house events and promoting school spirit through leadership and coordination.",
-  },
-    {
-    title: "Leadership Module Graduate",
-    organization: "School of Science and Technology, Singapore, SST",
-    duration: "2023",
-    description: "Completed two school-recognized leadership development modules including OEE training on group dynamics and outdoor education expeditions.",
-  },
-  // {
-  //   title: "SYFC Inter-School Aeromodelling Competitor",
-  //   organization: "Singapore Youth Flying Club, SYFC",
-  //   duration: "2022 - 2024",
-  //   description: "Represented school in multiple SYFC inter-school competitions including Launch Glider and Flight Simulation events.",
-  // },
-  // {
-  //   title: "SYFC Top Gun Programme Participant",
-  //   organization: "Singapore Youth Flying Club, SYFC",
-  //   duration: "2024",
-  //   description: "Completed the elite Top Gun programme, enhancing practical aeronautical knowledge and team collaboration in advanced projects.",
-  // },
+
 ];
 
 export const projectsData: ProjectProps[] = [

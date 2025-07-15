@@ -1,5 +1,5 @@
 import React from "react";
-import { achievements, representationRoles } from "../../lib/data";
+import { achievements, sports } from "../../lib/data";
 import { Trophy, Award, Medal} from "lucide-react";
 
 const Achievements = () => {
@@ -85,7 +85,7 @@ const Achievements = () => {
                     Representation roles and achievements in sports
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {representationRoles.map((role, index) => {
+                    {sports.map((role, index) => {
                         let Icon = Medal; // Default icon
                         
                         // Choose icon based on role content
