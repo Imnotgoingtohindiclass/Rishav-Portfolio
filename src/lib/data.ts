@@ -302,47 +302,35 @@ export const projectsData: ProjectProps[] = [
 
 export const technicalSkills = [
   {
-    name: "Python",
-    level: "Advanced",
-    percentage: 90,
-    explanation: "Experienced in scripting, automation, and data science using Python."
-  },
-  {
-    name: "JavaScript",
+    name: "Programming",
     level: "Proficient",
-    percentage: 80,
-    explanation: "Well-versed in building interactive web apps and backend services."
-  },
-  {
-    name: "React",
-    level: "Intermediate",
     percentage: 75,
-    explanation: "Comfortable with building UI components and using React hooks effectively."
+    explanation: "Comfortable across Python, C++, and Bash for scripting, automation, tooling, and low-level systems work. Familiar with algorithm design patterns, debugging, and performance optimisation in interpreted and compiled languages."
   },
   {
-    name: "Git",
-    level: "Advanced",
-    percentage: 85,
-    explanation: "Experienced in version control, collaboration, and CI/CD workflows."
-  },
-  {
-    name: "OpenCV",
-    level: "Intermediate",
-    percentage: 70,
-    explanation: "Used for computer vision tasks in several personal and academic projects."
-  },
-  {
-    name: "TensorFlow",
-    level: "Intermediate",
-    percentage: 70,
-    explanation: "Applied for machine learning and deep learning experiments."
-  },
-  {
-    name: "C++",
+    name: "Systems",
     level: "Proficient",
-    percentage: 80,
-    explanation: "Strong in algorithms, systems programming, and hardware interfacing."
+    percentage: 70,
+    explanation: "Daily Linux use (I use Arch, btw), self-hosting, Docker, remote server management, and CLI-based workflows. Confident setting up servers, managing services, and maintaining efficient development environments."
   },
+  {
+    name: "Cybersecurity",
+    level: "Intermediate",
+    percentage: 65,
+    explanation: "Hands-on experience with CTFs, web exploitation, forensics, and cryptography. Skilled in building and solving challenges, focusing on binary exploitation, OSINT, and custom challenge development."
+  },
+  {
+    name: "Hardware Systems",
+    level: "Intermediate",
+    percentage: 60,
+    explanation: "Experience with robotics, embedded systems, and hardware integration using Raspberry Pi, Arduino, and custom circuits. Comfortable with motor control, sensor integration, and firmware tinkering."
+  },
+  {
+    name: "Data Science",
+    level: "Novice",
+    percentage: 40,
+    explanation: "Foundational knowledge of machine learning and AI using PyTorch. Familiar with building small-scale models for prediction tasks and exploring areas like computer vision and data analysis."
+  }
 ];
 
 export const toolsAndLanguages = [
