@@ -79,7 +79,7 @@ const AllProjects: React.FC = () => {
               aria-pressed={selectedTag === tag}
               className="hover:bg-secondary/80 transition-colors border-secondary/50 hover:border-secondary"
             >
-              {tag} ({tagCounts[tag]})
+              {tag}
             </Button>
           ))}
         </div>
