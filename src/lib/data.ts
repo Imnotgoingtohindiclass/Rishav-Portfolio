@@ -57,7 +57,6 @@ export const achievements = [
 ];
 export interface sports {
   title: string;
-  organization: string;
   duration: string;
   description: string;
 }
@@ -65,11 +64,24 @@ export interface sports {
 export const sports: sports[] = [
   {
     title: "Taichung Cup Handball Championship",
-    organization: "Handball Federation Singapore, HFS",
     duration: "2024",
     description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship."
   },
-
+  {
+    title: "National Development Team Member",
+    duration: "2024",
+    description: "Selected as a member of the National Development Team, contributing to the growth and development of handball in Singapore."
+  },
+  {
+    title: "Silver Medal, Pesta Sukan Handball",
+    duration: "2024",
+    description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication."
+  },
+  {
+    title: "Bronze Medal, National Youth Handball League (NYHL)",
+    duration: "2024",
+    description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication."
+  }
 ];
 
 export const projectsData: ProjectProps[] = [

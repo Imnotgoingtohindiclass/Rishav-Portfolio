@@ -3,20 +3,20 @@ import { achievements, sports } from "../../lib/data";
 import { Trophy, Award, Medal} from "lucide-react";
 
 const Achievements = () => {
-    const certifications = [
-        {
-            title: "Cybersecurity Fundamentals",
-            issuer: "Cisco Networking Academy",
-            year: "2023",
-            certificate: "/certificates/cybersecurity-fundamentals.jpg"
-        },
-        {
-            title: "Embedded Systems Design",
-            issuer: "Coursera - University of Colorado Boulder",
-            year: "2022",
-            certificate: "/certificates/embedded-systems.jpg"
-        }
-    ];
+    // const certifications = [
+    //     {
+    //         title: "Cybersecurity Fundamentals",
+    //         issuer: "Cisco Networking Academy",
+    //         year: "2023",
+    //         certificate: "/certificates/cybersecurity-fundamentals.jpg"
+    //     },
+    //     {
+    //         title: "Embedded Systems Design",
+    //         issuer: "Coursera - University of Colorado Boulder",
+    //         year: "2022",
+    //         certificate: "/certificates/embedded-systems.jpg"
+    //     }
+    // ];
 
     return (
         <section id="achievements" className="py-20 bg-background/30">
@@ -86,20 +86,15 @@ const Achievements = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {sports.map((role, index) => {
-                        let Icon = Medal; // Default icon
-                        
-                        // Choose icon based on role content
-                        
                         return (
                         <div
                             key={index}
                             className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative group"
                         >
                             <div className="absolute top-4 right-4 p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-                                <Icon className="h-5 w-5 text-primary" />
+                                <Medal className="h-5 w-5 text-primary" />
                             </div>
                             <h4 className="text-foreground font-bold text-lg mb-2 pr-8">{role.title}</h4>
-                            <p className="text-muted-foreground">{role.organization}</p>
                             <p className="text-muted-foreground text-sm">{role.duration}</p>
                             <p className="text-muted-foreground mt-2">{role.description}</p>
                         </div>
