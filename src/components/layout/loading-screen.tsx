@@ -66,27 +66,27 @@ const quotes = [
     author: "Sarah Williams, The Old Astronomer to His Pupil"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   },
   {
-    text: "A low-entropy, self replicating phenomenon that generates a binding force called compassion",
+    text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
   }
 ];
