@@ -79,7 +79,7 @@ export const sports: sports[] = [
   },
   {
     title: "Bronze Medal, National Youth Handball League (NYHL)",
-    duration: "2024",
+    duration: "2025",
     description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication."
   }
 ];
