@@ -3,9 +3,6 @@ node_modules
 /.pnp
 .pnp.js
 
-# Testing
-/coverage
-
 # Production
 /build
 /dist
@@ -27,25 +24,6 @@ postcss.config.js
 .env.production.local
 .env*.local
 
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/settings.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
 # Cache
 .cache
 .npm
@@ -53,48 +31,13 @@ lerna-debug.log*
 .stylelintcache
 *.tsbuildinfo
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional stylelint cache
-.stylelintcache
-
-# Yarn Integrity file
-.yarn-integrity
-
-# Next.js
-.next/
-out/
-
 # Vercel
 .vercel
 
-# Local Netlify folder
-.netlify
 
-# TypeScript cache
-*.tsbuildinfo
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
-
-# Thumbnails
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
 
 # Windows shortcuts
 *.lnk
 sim-diagnostics.txt
+package-lock.json
 package-lock.json
