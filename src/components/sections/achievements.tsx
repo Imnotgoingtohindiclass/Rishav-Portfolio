@@ -85,7 +85,7 @@ const Achievements = () => {
                     Representation roles and achievements in sports
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {sports.map((role, index) => {
+                    {sports.map((event, index) => {
                         return (
                         <div
                             key={index}
@@ -94,9 +94,19 @@ const Achievements = () => {
                             <div className="absolute top-4 right-4 p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
                                 <Medal className="h-5 w-5 text-primary" />
                             </div>
-                            <h4 className="text-foreground font-bold text-lg mb-2 pr-8">{role.title}</h4>
-                            <p className="text-muted-foreground text-sm">{role.duration}</p>
-                            <p className="text-muted-foreground mt-2">{role.description}</p>
+                            <h4 className="text-foreground font-bold text-lg mb-2 pr-8">{event.title}</h4>
+                            <p className="text-muted-foreground text-sm">{event.duration}</p>
+                            <p className="text-muted-foreground mt-2">{event.description}</p>
+
+                            <div className="absolute top-full left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-50">
+                                <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
+                                    <img
+                                        src={event.image}
+                                        alt={`Image of ${event.description}`}
+                                        className="w-75 h-auto rounded-lg"
+                                    />
+                                </div>
+                            </div>
                         </div>
                         );
                     })}

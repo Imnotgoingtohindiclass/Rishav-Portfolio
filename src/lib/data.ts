@@ -59,28 +59,33 @@ export interface sports {
   title: string;
   duration: string;
   description: string;
+  image: string;
 }
 
 export const sports: sports[] = [
   {
     title: "Taichung Cup Handball Championship",
     duration: "2024",
-    description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship."
+    description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship.",
+    image: "/Item-5_Taiwan-Trip24.jpg"
   },
   {
     title: "National Development Team Member",
-    duration: "2024",
-    description: "Selected as a member of the National Development Team, contributing to the growth and development of handball in Singapore."
+    duration: "2024-Present",
+    description: "Selected as a member of the National Development Team, contributing to the growth and development of handball in Singapore.",
+    image: "/NDT.png"
   },
   {
     title: "Silver Medal, Pesta Sukan Handball",
     duration: "2024",
-    description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication."
+    description: "Achieved a Silver Medal in the national-wide Pesta Sukan Handball tournament, demonstrating skill and dedication.",
+    image: ""
   },
   {
     title: "Bronze Medal, National Youth Handball League (NYHL)",
     duration: "2025",
-    description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication."
+    description: "Achieved a Silver Medal in the Pesta Sukan Handball tournament, demonstrating skill and dedication.",
+    image: ""
   }
 ];
 
@@ -301,45 +306,45 @@ export const technicalSkills = [
   {
     name: "Programming",
     level: "Proficient",
-    percentage: 75,
-    explanation: "Comfortable across Python, C++, and Bash for scripting, automation, tooling, and low-level systems work. Familiar with algorithm design patterns, debugging, and performance optimisation in interpreted and compiled languages."
+    percentage: 72,
+    explanation: "Comfortable with Python and C++, automation, tooling, and low-level systems work. Familiar with algorithm design patterns, debugging, and performance optimisation in interpreted and compiled languages."
   },
   {
-    name: "Systems",
-    level: "Proficient",
-    percentage: 70,
-    explanation: "Daily Linux use (I use Arch, btw), self-hosting, Docker, remote server management, and CLI-based workflows. Confident setting up servers, managing services, and maintaining efficient development environments."
-  },
-  {
-    name: "Cybersecurity",
+    name: "DevOps",
     level: "Intermediate",
-    percentage: 65,
-    explanation: "Hands-on experience with CTFs, web exploitation, forensics, and cryptography. Skilled in building and solving challenges, focusing on binary exploitation, OSINT, and custom challenge development."
+    percentage: 67,
+    explanation: "Daily Linux use (I use Arch, btw), self-hosting, Docker, remote server management, and CLI-based workflows. Confident setting up servers, managing services, and maintaining efficient development and testing environments."
   },
   {
     name: "Hardware Systems",
     level: "Intermediate",
-    percentage: 60,
+    percentage: 63,
     explanation: "Experience with robotics, embedded systems, and hardware integration using Raspberry Pi, Arduino, and custom circuits. Comfortable with motor control, sensor integration, and firmware tinkering."
   },
   {
     name: "Data Science",
     level: "Novice",
-    percentage: 40,
+    percentage: 60,
     explanation: "Foundational knowledge of machine learning and AI using PyTorch. Familiar with building small-scale models for prediction tasks and exploring areas like computer vision and data analysis."
-  }
+  },
+  {
+    name: "Cybersecurity",
+    level: "Novice",
+    percentage: 55,
+    explanation: "Hands-on experience with CTFs, web exploitation, forensics, and cryptography. Skilled in building and solving challenges, focusing on binary exploitation, OSINT, and custom challenge development."
+  },
 ];
 
 export const toolsAndLanguages = [
-  { name: "Python", icon: "code" },
-  { name: "Git", icon: "code" },
-  { name: "React", icon: "code" },
-  { name: "OpenCV", icon: "code" },
-  { name: "Matplotlib", icon: "code" },
-  { name: "TensorFlow", icon: "code" },
-  { name: "NumPy", icon: "code" },
-  { name: "Raspberry Pi", icon: "code" },
-  { name: "Arduino", icon: "code" },
+  { name: "Python" },
+  { name: "C++" },
+  { name: "PyTorch" },
+  { name: "NumPy" },
+  { name: "Burp Suite" },
+  { name: "Autopsy" },
+  { name: "Arduino" },
+  { name: "Raspberry Pi" },
+  { name: "KiCad" },
 ];
 
 export const articlesData: ArticleProps[] = [
