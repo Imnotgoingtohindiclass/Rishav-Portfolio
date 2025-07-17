@@ -1,4 +1,4 @@
-import { User, GraduationCap, Calendar, MapPin, Code2, GitBranch, Atom, Pi, Brain, LineChart, Eye, Grape, CircuitBoard, Code, HeartHandshake } from "lucide-react";
+import { User, GraduationCap, Calendar, MapPin, Code2, Pi, Grape, CircuitBoard, Code, HeartHandshake, Bug, Flame, ShieldHalf,  FolderSearch, Cpu } from "lucide-react";
 import { technicalSkills, toolsAndLanguages } from "../../lib/data";
 import SkillBar from "../ui/skill-bar";
 
@@ -90,26 +90,25 @@ const About = () => {
     switch (name) {
       case "Python":
         return <Code2 className="text-primary" />;
-      case "Git":
-        return <GitBranch className="text-primary" />;
-      case "React":
-        return <Atom className="text-primary" />;
+      case "C++":
+        return <Bug className="text-primary" />;
+      case "PyTorch":
+        return <Flame className="text-orange-500" />;
       case "NumPy":
-        return <Pi className="text-blue-500/100" />;
-      case "TensorFlow":
-        return <Brain className="text-blue-500/100" />;
-      case "Matplotlib":
-        return <LineChart className="text-blue-500/100" />;
-      case "OpenCV":
-        return <Eye className="text-blue-500/100" />;
-      case "Raspberry Pi":
-        return <Grape className="text-accent" />;
+        return <Pi className="text-sky-500" />;
+      case "Burp Suite":
+        return <ShieldHalf className="text-amber-500" />;
+      case "Autopsy":
+        return <FolderSearch className="text-muted-foreground" />;
       case "Arduino":
         return <CircuitBoard className="text-accent" />;
-      default:
-        return <Code className="text-primary" />;
+      case "Raspberry Pi":
+        return <Grape className="text-accent" />;
+      case "KiCad":
+        return <Cpu className="text-blue-400" />;
     }
   };
+
 
   return (
     <section id="about" className="py-20 bg-background/30">
