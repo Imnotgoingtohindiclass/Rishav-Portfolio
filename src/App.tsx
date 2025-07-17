@@ -10,6 +10,7 @@ import NotFound from "./pages/404";
 import ProjectDetail from "./pages/project-detail";
 import ArticleDetail from "./pages/article-detail";
 import AllProjects from "./pages/AllProjects"; 
+import Secret from "./pages/secret/secret"
 import LoadingScreen from "./components/layout/loading-screen";
 
 const imagesToPreload: string[] = [
@@ -129,6 +130,7 @@ function App(): JSX.Element {
               <Route path="/project/:slug" element={<ProjectDetail />} />
               <Route path="/article/:slug" element={<ArticleDetail />} />
               <Route path="/projects" element={<AllProjects />} />
+              <Route path="/secret/secret" element={<Secret />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
