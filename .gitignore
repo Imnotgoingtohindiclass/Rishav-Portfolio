@@ -40,4 +40,4 @@ postcss.config.js
 *.lnk
 sim-diagnostics.txt
 package-lock.json
-package-lock.json
+./package-lock.json
