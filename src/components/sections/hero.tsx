@@ -93,31 +93,21 @@ const Hero = () => {
                   )}
 
                   {/* Song Info + Controls */}
-                  <div className={`flex flex-col justify-between w-full ${song && song.isPlaying ? 'ml-3' : ''}`}>
-                    {song && song.isPlaying ? (
+                  <div className={`flex flex-col justify-between w-full ${song?.isPlaying ? 'ml-3' : ''}`}>
+                    {song?.isPlaying ? (
                       <>
-                        <div className="truncate text-left">
-                          <p className="text-white text-sm font-bold truncate">{song.title}</p>
-                          <p className="text-zinc-300 text-xs truncate">{song.artist}</p>
-                        </div>
-                        <div className="flex justify-end mt-2 items-center justify-center">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              // play/pause logic here
-                            }}
-                            className="w-5 h-5 flex items-center justify-center bg-white rounded-full hover:scale-105 transition-transform shadow-md"
-                          >
-                            <FaPause className="w-2.5 h-2.5 text-black" />
-                          </button>
+                        <div className="flex-grow h-full flex flex-col justify-center text-left">
+                          <p className="text-white font-bold truncate">{song.title}</p>
+                          <p className="text-zinc-300 text-sm truncate">{song.artist}</p>
                         </div>
                       </>
                     ) : (
                       <div className="flex items-center justify-center h-full w-full">
-                        <p className="text-zinc-400 text-xs">not playing anyth rn...</p>
+                        <p className="text-zinc-400 text-xs">not playing anything rn...</p>
                       </div>
                     )}
                   </div>
+
                 </div>
               </div>
             )}
