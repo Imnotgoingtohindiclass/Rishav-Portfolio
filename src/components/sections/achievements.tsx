@@ -102,7 +102,7 @@ const Achievements = () => {
                                 <div className="bg-background rounded-lg p-2 border border-primary/35 shadow-xl mt-2 hover:border-primary/50 transition-all duration-300">
                                     <img
                                         src={event.image}
-                                        alt={`Image of ${event.description}`}
+                                        alt={`Image of ${event.title}`}
                                         className="w-75 h-auto rounded-lg"
                                     />
                                 </div>
