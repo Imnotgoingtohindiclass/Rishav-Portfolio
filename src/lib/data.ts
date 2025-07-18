@@ -105,6 +105,20 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
+  title: "KiloLang Compiler",
+  description: "Built a garbage-collected native-code compiler from scratch in under a week, turning custom code into real ELF binaries.",
+  fullDescription: "Over six caffeine-fueled days, I hand-built a tiny end-to-end compiler for KiloLang — a minimalist C-style language — that transforms high-level code like recursive functions into real, native machine code. The compilation pipeline spans from source parsing to AST generation, type-checked IR, C11 code emission, and finally an ELF binary via GCC or Clang. I tackled everything from writing a lexer with a hand-coded finite-state machine to implementing a mark-and-sweep garbage collector. The project demanded total control over memory, scope resolution, and code generation, resulting in a clean, working compiler that could generate efficient native executables — with tail recursion and garbage collection to boot.",
+  category: "Systems",
+  image: "",
+  technologies: ["C", "GCC", "AST", "Garbage Collection", "Parsing", "Type Systems"],
+  durationHours: "Ongoing",
+  challenges: "Understanding how compilers actually work — beyond theory — was the first hurdle. I wrestled with parsing ambiguities, memory management bugs, string literal pitfalls, and symbol table edge cases. A rogue off-by-one in the lexer corrupted heap memory, and my garbage collector happily swept away live variables until I implemented root scanning. Debugging `malloc: free list is damaged` at 3 a.m. taught me more than any textbook ever could.",
+  outcomes: "This project demystified compilers for me. I learned that building one is a blend of theory, pointer arithmetic, and sheer stubbornness. I mastered recursive-descent parsing, built a working garbage collector, debugged memory corruption with Valgrind and gdb, and came away with a working native-code compiler written entirely in C. What started as 'compilers are magic' became 'magic is just code you haven't written' yet.",
+  links: {
+    code: "https://github.com/imnotgoingtohindiclass/kilolang",
+    },
+  },
+  {
     title: "Colorectal Cancer Detection using CNN",
     description: "Built a deep learning model to detect colorectal cancer from histological images.",
     fullDescription: "With the goal of applying AI to a critical medical need, I developed a Convolutional Neural Network (CNN) from the ground up to classify colorectal cancer in histological images. I managed the entire machine learning pipeline, from sourcing and preprocessing a large dataset of medical images to designing and training the model using TensorFlow. A key focus was on creating an interpretable model, ensuring that its predictions could be understood and trusted in a clinical context.",
@@ -307,7 +321,7 @@ export const technicalSkills = [
     name: "Programming",
     level: "Proficient",
     percentage: 72,
-    explanation: "Comfortable with Python and C++, automation, tooling, and low-level systems work. Familiar with algorithm design patterns, debugging, and performance optimisation in interpreted and compiled languages."
+    explanation: "Comfortable with Python and C/C++, automation, tooling, and low-level systems work. Familiar with algorithm design patterns, debugging, and performance optimisation in interpreted and compiled languages."
   },
   {
     name: "DevOps",
@@ -337,7 +351,7 @@ export const technicalSkills = [
 
 export const toolsAndLanguages = [
   { name: "Python" },
-  { name: "C++" },
+  { name: "C/C++" },
   { name: "PyTorch" },
   { name: "NumPy" },
   { name: "Burp Suite" },

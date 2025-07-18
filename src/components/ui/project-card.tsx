@@ -8,7 +8,7 @@ export interface ProjectProps {
     title: string;
     description: string;
     fullDescription?: string;
-    category: "Cybersecurity" | "Electronics" | "Engineering" | "MUN" | "Web Dev" | "Robotics" | "Research" | "AI/ML" | "Other";
+    category: "Systems" | "Cybersecurity" | "Electronics" | "Engineering" | "MUN" | "Web Dev" | "Robotics" | "Research" | "AI/ML" | "Other";
     image: string;
     technologies: string[];
     durationHours?: number | "Ongoing";
