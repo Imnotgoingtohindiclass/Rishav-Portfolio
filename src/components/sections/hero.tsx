@@ -72,18 +72,15 @@ const Hero = () => {
                   transform: "translate(0%, -100%)",
                   minWidth: "17rem",
                   width: "max-content",
-                  maxWidth: "24rem", // Optional cap to avoid excessive width
+                  maxWidth: "24rem",
                 }}                
               >
-                {/* Header */}
                 <div className="bg-purple-700/50 text-white text-xs font-semibold border-none flex items-center px-3 py-1.5 backdrop-blur-md">
                   <span className="mr-1">🎧</span>
                   Current Spotify Song:
                 </div>
 
-                {/* Main Content */}
                 <div className="flex p-3">
-                  {/* Album Art - Only show when song is playing */}
                   {song && song.isPlaying && (
                     <img
                       src={song.albumImageUrl}
@@ -92,7 +89,6 @@ const Hero = () => {
                     />
                   )}
 
-                  {/* Song Info + Controls */}
                   <div className={`flex flex-col justify-between w-full ${song?.isPlaying ? 'ml-3' : ''}`}>
                     {song?.isPlaying ? (
                       <>
