@@ -83,8 +83,8 @@ const SkillBar = ({ name, level, percentage, colorClass, explanation }: SkillBar
           style={{
             left: `${tooltip.x}px`,
             top: `${tooltip.y}px`,
-            transform: "translate(0%, -100%)", // Keeps the tooltip above the cursor
-            width: "250px", // Fixed width for consistent appearance
+            transform: "translate(0%, -100%)",
+            width: "300px",
           }}
         >
           <div className="font-medium mb-1 border-b border-white/20 pb-1">
