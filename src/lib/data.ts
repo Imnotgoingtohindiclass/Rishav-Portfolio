@@ -101,7 +101,7 @@ export const projectsData: ProjectProps[] = [
     challenges: "The core challenge was making the honeypot convincing enough to attract meaningful interactions beyond simple automated scans, while simultaneously ensuring it was completely sandboxed from my network. This required a deep dive into network segmentation and container security. Deciphering obfuscated commands and correlating seemingly random IP addresses into coordinated campaigns was a significant analytical hurdle.",
     outcomes: "This project transformed my understanding of security from theoretical to practical. I developed a threat-intelligence mindset, learning to anticipate attacker moves. It sharpened my skills in network forensics, log analysis, and building secure, isolated environments, providing a rich dataset of insights that can't be learned from a textbook.",
     links: {
-      code: "https://github.com",
+      // code: "https://github.com",
     },
   },
   {
@@ -129,7 +129,7 @@ export const projectsData: ProjectProps[] = [
     challenges: "The primary technical challenge was the inherent class imbalance in medical datasets, which risked creating a model biased towards negative diagnoses. I overcame this by implementing advanced data augmentation techniques and experimenting with weighted loss functions. Mitigating overfitting to ensure the model could generalize to new, unseen images required rigorous cross-validation and hyperparameter tuning.",
     outcomes: "The resulting model achieved high classification accuracy, demonstrating the potential of AI to augment diagnostic workflows and improve patient outcomes. This project solidified my passion for AI in healthcare and provided invaluable, hands-on experience in building, validating, and optimizing deep learning models for mission-critical applications.",
     links: {
-      // code: "https://github.com",
+      code: "https://github.com/Imnotgoingtohindiclass/CNN-Cancer-Detection",
     },
   },
   {
@@ -143,7 +143,7 @@ export const projectsData: ProjectProps[] = [
     challenges: "The greatest challenge was the seamless integration of disparate subsystems—the vision module, the navigation algorithm, and the physical actuators—into one cohesive, real-time system. Ensuring the robot could make split-second decisions under the unpredictable conditions of a live competition required countless hours of testing, debugging, and iterative refinement of both the code and the hardware.",
     outcomes: "We successfully delivered a robust prototype that performed flawlessly during the final demonstration. This project was a masterclass in interdisciplinary engineering, strengthening my ability to bridge the gap between software and hardware. It honed my skills in collaborative problem-solving, system architecture, and delivering a functional product under pressure.",
     links: {
-      code: "https://github.com",
+      code: "https://github.com/haizhehai/IDC-Grp5",
     },
   },
   {
