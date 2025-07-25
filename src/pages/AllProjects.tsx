@@ -68,7 +68,7 @@ const AllProjects: React.FC = () => {
             aria-pressed={selectedTag === null}
             className="hover:bg-secondary/80 transition-colors border-secondary/50 hover:border-secondary"
           >
-            All Projects ({projectsData.length})
+            All Projects
           </Button>
           {topTags.map((tag) => (
             <Button
