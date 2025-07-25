@@ -73,10 +73,7 @@ const ProjectDetail = () => {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                 <h1 className="text-3xl md:text-4xl font-bold">{project.title}</h1>
                 <Badge
-                  className={`${getCategoryColor(
-                    project.category
-                  )} text-sm px-3 py-1`}
-                >
+                  className={"bg-accent/20 text-accent text-sm px-3 py-1"}>
                   {project.category}
                 </Badge>
               </div>
@@ -151,7 +148,7 @@ const Sidebar = ({ project }: { project: ProjectProps }) => (
       <SidebarDetail title="Technologies">
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <Badge key={tech} variant="secondary" className="bg-background/50">
+            <Badge key={tech} variant="secondary" className="text-slate bg-secondary">
               {tech}
             </Badge>
           ))}
@@ -162,7 +159,7 @@ const Sidebar = ({ project }: { project: ProjectProps }) => (
         <SidebarDetail title="Duration">
           <div className="flex items-center">
             <Clock size={16} className="text-primary mr-2" />
-            <span>{project.durationHours} hours</span>
+            <span>{project.durationHours}</span>
           </div>
         </SidebarDetail>
       )}
