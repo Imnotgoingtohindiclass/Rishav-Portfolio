@@ -10,7 +10,7 @@ const About = () => {
       degree: "Engineering+ Student",
       institution: "School of Science and Technology, Singapore",
       type: "education",
-      description: "Currently pursuing a specialised engineering program with focus on electronics, computing and cybersecurity. Participating in advanced projects and research in artifical intelligence, robotics and network security."
+      description: "Currently pursuing a specialised engineering program with focus on electronics, computing. Participating in advanced projects and research in artifical intelligence and robotics."
     },
     {
       period: "2017 - 2021",
@@ -18,7 +18,7 @@ const About = () => {
       degree: "Primary School Student",
       institution: "Xingnan Primary School",
       type: "education",
-      description: "Completed primary education with distinction in mathematics and science. Participated in various STEM-related activities and competitions."
+      description: "Completed primary education with distinction in Mathematics and Science. Participated in various STEM-related activities and competitions."
     },
     {
       period: "2016 - 2017",
@@ -90,7 +90,7 @@ const About = () => {
     switch (name) {
       case "Python":
         return <Code2 className="text-primary" />;
-      case "C++":
+      case "C/C++":
         return <Bug className="text-primary" />;
       case "PyTorch":
         return <Flame className="text-orange-500" />;
