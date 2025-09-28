@@ -90,20 +90,20 @@ export const sports: sports[] = [
 ];
 
 export const projectsData: ProjectProps[] = [
-  {
-    title: "Honeypot",
-    description: "Designed a custom honeypot to study real-world cyberattacks and analyze threat behavior.",
-    fullDescription: "Driven by a fascination with defensive security, I independently designed, built, and deployed a low-interaction honeypot to capture and analyse real-world cyberattacks. I Dockerised vulnerable services like SSH and Telnet to create an alluring target, implementing a robust logging pipeline to capture every interaction. By monitoring network traffic and analysing attacker payloads in real-time, I gained a frontline perspective on threat actor TTPs (Tactics, Techniques, and Procedures).",
-    category: "Cybersecurity",
-    image: "",
-    technologies: ["Python", "Docker", "Networking", "Cybersecurity"],
-    durationHours: 150,
-    challenges: "The core challenge was making the honeypot convincing enough to attract meaningful interactions beyond simple automated scans, while simultaneously ensuring it was completely sandboxed from my network. This required a deep dive into network segmentation and container security. Deciphering obfuscated commands and correlating seemingly random IP addresses into coordinated campaigns was a significant analytical hurdle.",
-    outcomes: "This project transformed my understanding of security from theoretical to practical. I developed a threat-intelligence mindset, learning to anticipate attacker moves. It sharpened my skills in network forensics, log analysis, and building secure, isolated environments, providing a rich dataset of insights that can't be learned from a textbook.",
-    links: {
-      // code: "https://github.com",
-    },
-  },
+  // {
+  //   title: "Honeypot",
+  //   description: "Designed a custom honeypot to study real-world cyberattacks and analyze threat behavior.",
+  //   fullDescription: "Driven by a fascination with defensive security, I independently designed, built, and deployed a low-interaction honeypot to capture and analyse real-world cyberattacks. I Dockerised vulnerable services like SSH and Telnet to create an alluring target, implementing a robust logging pipeline to capture every interaction. By monitoring network traffic and analysing attacker payloads in real-time, I gained a frontline perspective on threat actor TTPs (Tactics, Techniques, and Procedures).",
+  //   category: "Cybersecurity",
+  //   image: "",
+  //   technologies: ["Python", "Docker", "Networking", "Cybersecurity"],
+  //   durationHours: 150,
+  //   challenges: "The core challenge was making the honeypot convincing enough to attract meaningful interactions beyond simple automated scans, while simultaneously ensuring it was completely sandboxed from my network. This required a deep dive into network segmentation and container security. Deciphering obfuscated commands and correlating seemingly random IP addresses into coordinated campaigns was a significant analytical hurdle.",
+  //   outcomes: "This project transformed my understanding of security from theoretical to practical. I developed a threat-intelligence mindset, learning to anticipate attacker moves. It sharpened my skills in network forensics, log analysis, and building secure, isolated environments, providing a rich dataset of insights that can't be learned from a textbook.",
+  //   links: {
+  //     // code: "https://github.com",
+  //   },
+  // },
   {
   title: "KiloLang Compiler",
   description: "Built a garbage-collected native-code compiler from scratch in under a week, turning custom code into real ELF binaries.",
@@ -133,20 +133,6 @@ export const projectsData: ProjectProps[] = [
     },
   },
   {
-    title: "IDP Integrated Design Challenge",
-    description: "Designed and built an autonomous robot capable of navigation, object manipulation, and QR code scanning.",
-    fullDescription: "As a key member of the design team, I spearheaded the development of a fully autonomous robot for a competitive engineering challenge. My role focused on architecting the software, integrating computer vision for object recognition and line tracing, and programming the robotic actuators for precise object manipulation. The system was designed to navigate a complex course, identify and interact with objects, and scan QR codes to receive new instructions, all without human intervention.",
-    category: "Robotics",
-    image: "",
-    technologies: ["Python", "OpenCV", "Arduino", "ML", "Sensors"],
-    durationHours: 70,
-    challenges: "The greatest challenge was the seamless integration of disparate subsystems—the vision module, the navigation algorithm, and the physical actuators—into one cohesive, real-time system. Ensuring the robot could make split-second decisions under the unpredictable conditions of a live competition required countless hours of testing, debugging, and iterative refinement of both the code and the hardware.",
-    outcomes: "We successfully delivered a robust prototype that performed flawlessly during the final demonstration. This project was a masterclass in interdisciplinary engineering, strengthening my ability to bridge the gap between software and hardware. It honed my skills in collaborative problem-solving, system architecture, and delivering a functional product under pressure.",
-    links: {
-      code: "https://github.com/haizhehai/IDC-Grp5",
-    },
-  },
-  {
     title: "AI to assist the detection of ReBL",
     description: "Currently researching and developing an AI model to assist in the detection of Ring-enhancing Brain Lesions (ReBL).",
     fullDescription: "Currently researching and developing an AI model to assist in the detection of Ring-enhancing Brain Lesions (ReBL). This project involves collecting and annotating a dataset of medical images, training a deep learning model to identify ReBLs, and evaluating its performance against existing diagnostic methods. The goal is to create a tool that can aid radiologists in making more accurate and timely diagnoses.",
@@ -158,6 +144,20 @@ export const projectsData: ProjectProps[] = [
     outcomes: "",
     links: {
       documentation: "https://github.com",
+    },
+  },
+  {
+    title: "IDP Integrated Design Challenge",
+    description: "Designed and built an autonomous robot capable of navigation, object manipulation, and QR code scanning.",
+    fullDescription: "As a key member of the design team, I spearheaded the development of a fully autonomous robot for a competitive engineering challenge. My role focused on architecting the software, integrating computer vision for object recognition and line tracing, and programming the robotic actuators for precise object manipulation. The system was designed to navigate a complex course, identify and interact with objects, and scan QR codes to receive new instructions, all without human intervention.",
+    category: "Robotics",
+    image: "",
+    technologies: ["Python", "OpenCV", "Arduino", "ML", "Sensors"],
+    durationHours: 70,
+    challenges: "The greatest challenge was the seamless integration of disparate subsystems—the vision module, the navigation algorithm, and the physical actuators—into one cohesive, real-time system. Ensuring the robot could make split-second decisions under the unpredictable conditions of a live competition required countless hours of testing, debugging, and iterative refinement of both the code and the hardware.",
+    outcomes: "We successfully delivered a robust prototype that performed flawlessly during the final demonstration. This project was a masterclass in interdisciplinary engineering, strengthening my ability to bridge the gap between software and hardware. It honed my skills in collaborative problem-solving, system architecture, and delivering a functional product under pressure.",
+    links: {
+      code: "https://github.com/haizhehai/IDC-Grp5",
     },
   },
   {
@@ -486,7 +486,7 @@ This gives us the flag xsstctf{v1gen3re_15_the_be+t3r_ca3s4r_4lth0ugh_b0+h_ar3_i
 
 <h3>Introduction to the Challenge</h3>
 <p>
-    The "CyberCard" challenge provides participants with a pseudo-credit card system where you can either generate a test card or submit a card for validation. The goal is to submit a valid card with a balance of exactly <strong>13371337</strong> dollars to obtain the flag. 
+    The "CyberCard" challenge provides participants with a pseudo-credit card system where you can either generate a test card or submit a card for validation. The goal is to submit a valid card with a balance of exactly <strong>13371337</strong> dollars to obtain the flag.
 </p>
 
 <h3>Key Technologies Explained</h3>
@@ -546,8 +546,8 @@ This gives us the flag xsstctf{v1gen3re_15_the_be+t3r_ca3s4r_4lth0ugh_b0+h_ar3_i
 
 <h4>Step 4: Forge Target Ciphertext</h4>
 <p>
-    Now comes the magic: 
-    <code>C2 = C1 XOR P1 XOR P2</code> 
+    Now comes the magic:
+    <code>C2 = C1 XOR P1 XOR P2</code>
     This works because of the nature of stream cipher-like modes (like AES-GCM encryption without auth). XORing the original ciphertext with the original plaintext removes the effect of the plaintext, and applying the target plaintext effectively "re-encrypts" it correctly.
 </p>
 
