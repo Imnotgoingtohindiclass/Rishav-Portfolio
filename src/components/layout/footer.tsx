@@ -7,10 +7,10 @@ const Footer = () => {
             <span className="text-primary font-bold text-xl">R/</span>
             <p className="text-muted-foreground text-sm mt-2">© {new Date().getFullYear()} Rishav. All rights reserved.</p>
           </div>
-          
+
           <div>
             <p className="text-muted-foreground text-sm">
-              Designed & Built with <span className="text-primary">♥</span> using Vite.js
+              Built with <span className="text-primary">♥</span> using Vite.js
             </p>
           </div>
         </div>
