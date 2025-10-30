@@ -63,17 +63,17 @@ export interface sports {
 }
 
 export const sports: sports[] = [
+    {
+    title: "National Development Team Member",
+    duration: "2024-Present",
+    description: "Selected as a member of the National Development Team, contributing to the growth and development of handball in Singapore.",
+    image: "/NDT.png"
+  },
   {
     title: "Taichung Cup Handball Championship",
     duration: "2024",
     description: "Represented Singapore in the Taichung Cup Handball Championship, showcasing teamwork and sportsmanship.",
     image: "/Item-5_Taiwan-Trip24.jpg"
-  },
-  {
-    title: "National Development Team Member",
-    duration: "2024-Present",
-    description: "Selected as a member of the National Development Team, contributing to the growth and development of handball in Singapore.",
-    image: "/NDT.png"
   },
   {
     title: "Silver Medal, Pesta Sukan Handball",
@@ -104,6 +104,48 @@ export const projectsData: ProjectProps[] = [
   //     // code: "https://github.com",
   //   },
   // },
+    // {
+  //   title: "Search Engine",
+  //   description: "",
+  //   fullDescription: "",
+  //   category: "Other",
+  //   image: "",
+  //   technologies: [],
+  //   durationHours: ,
+  //   challenges: "",
+  //   outcomes: "",
+  //   links: {
+  //     // code: "https://github.com",
+  //   },
+  // },
+    // {
+  //   title: "Small/Large Language Model",
+  //   description: "",
+  //   fullDescription: "",
+  //   category: "AI/ML",
+  //   image: "",
+  //   technologies: ["Python", "TensorFlow", "PyTorch"],
+  //   durationHours: ,
+  //   challenges: ",
+  //   outcomes: "",
+  //   links: {
+  //     // code: "https://github.com",
+  //   },
+  // },
+  {
+  title: "Chess Engine",
+  description: "Built a custome chess engine from scratch using optimised tree search algorithms",
+  fullDescription: "I developed a fully functional chess engine from the ground up, including the board, chess pieces, and chess rules, implementing advanced tree search algorithms like Minimax with Alpha-Beta pruning to evaluate potential moves efficiently. The engine features a simple evaluation function that considers material balance, piece activity through piece-square tables, and passed pawns. I also integrated iterative deepening and transposition tables to enhance search performance. The engine can play at a beginner-intermediate level, capable of analyzing positions and making strategic decisions quickly.",
+  category: "Other",
+  image: "",
+  technologies: ["C", "SDL2"],
+  durationHours: "Ongoing",
+  challenges: "Understanding and implementing the complex rules of chess, such as castling, en passant, and promotion, was a significant challenge. Optimizing the search algorithm to balance depth and breadth while maintaining reasonable computation times required careful tuning of the evaluation function and search parameters. Debugging the engine to ensure legal move generation and accurate position evaluation was an iterative process that demanded meticulous attention to detail.",
+  outcomes: "This project deepened my understanding of algorithm design, particularly in the context of game theory and artificial intelligence. I gained hands-on experience with search algorithms, optimization techniques, and performance tuning. The chess engine serves as a testament to my ability to tackle complex problems and implement efficient solutions from scratch.",
+  links: {
+    code: "https://github.com/imnotgoingtohindiclass/chess_bot",
+    },
+  },
   {
   title: "KiloLang Compiler",
   description: "Built a garbage-collected native-code compiler from scratch in under a week, turning custom code into real ELF binaries.",
