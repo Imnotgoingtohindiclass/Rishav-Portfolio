@@ -5,28 +5,28 @@ import SkillBar from "../ui/skill-bar";
 const About = () => {
   const educationData = [
     {
-      period: "2022 - Present",
+      period: "2026 - Present",
+      duration: "3 years",
+      degree: "Biomedical Engineering",
+      institution: "Ngee Ann Polytechnic",
+    },
+    {
+      period: "2022 - 2025",
       duration: "4 years",
       degree: "Engineering+ Student",
       institution: "School of Science and Technology, Singapore",
-      type: "education",
-      description: "Currently pursuing a specialised engineering program with focus on electronics, computing. Participating in advanced projects and research in artifical intelligence and robotics."
     },
     {
       period: "2017 - 2021",
       duration: "4.5 years",
       degree: "Primary School Student",
       institution: "Xingnan Primary School",
-      type: "education",
-      description: "Completed primary education with distinction in Mathematics and Science. Participated in various STEM-related activities and competitions."
     },
     {
       period: "2016 - 2017",
       duration: "18 months",
       degree: "Primary School Student",
       institution: "Queenstown Primary School",
-      type: "education",
-      description: "Started primary education journey with focus on foundational subjects"
     }
   ];
 
@@ -71,7 +71,7 @@ const About = () => {
       organization: "Singapore Cancer Society",
       type: "service"
     }
-  ];  
+  ];
 
   const getColorClassByLevel = (level: string) => {
     switch (level) {
@@ -119,19 +119,19 @@ const About = () => {
         <p className="text-muted-foreground mb-12 font-sans">
           Background and experience
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
             <p className="text-foreground mb-6 font-sans leading-relaxed">
-              I'm a student of engineering, electronics, and cybersecurity with a passion for building secure, efficient, and innovative solutions. 
+              I'm a student of engineering, electronics, and cybersecurity with a passion for building secure, efficient, and innovative solutions.
               My journey began with tinkering with electronics, which evolved into a deeper interest in embedded systems and security.
             </p>
             <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              Currently focused on the intersection of hardware security and web technologies, I develop tools and frameworks that bridge the gap between electronic systems and modern web applications. 
+              Currently focused on the intersection of hardware security and web technologies, I develop tools and frameworks that bridge the gap between electronic systems and modern web applications.
               My research interests include IoT security, embedded systems design, and secure software development practices.
             </p>
             <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community. 
+              When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community.
               I believe in making technology more accessible through clear documentation and tutorials.
             </p>
           </div>
@@ -140,8 +140,8 @@ const About = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg transform -rotate-3"></div>
               <div className="relative z-10 rounded-lg overflow-hidden">
-                <img 
-                  src="/Item-1_SUTD-Camp_Team-3.jpg" 
+                <img
+                  src="/Item-1_SUTD-Camp_Team-3.jpg"
                   alt="Profile"
                   className="w-full h-auto object-cover aspect-[4/3]"
                 />
@@ -149,7 +149,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        
+
 
         <div className="mt-16">
           <h3 className="text-xl font-bold mb-6 flex items-center">
