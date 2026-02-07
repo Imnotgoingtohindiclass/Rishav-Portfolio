@@ -19,11 +19,11 @@ const quotes = [
   },
   {
     text: "If the going is tough and the pressure is on, if the reserves of strength have been drained and the summit is still not in sight, then the quality to seek in the person is neither great strength nor quickness of hand, but rather a resolute mind firmly set on its purpose that refuses to let its body slack or rest.",
-    author: "Sir Edmund Henry",
+    author: "Sir Edmund Hillary",
   },
   {
     text: "The only thing we have to fear is fear itself.",
-    author: "Benjamin Franklin",
+    author: "Franklin D. Roosevelt",
   },
   {
     text: "I took a deep breath and listened to the old brag of my heart: I am, I am, I am.",
@@ -88,6 +88,10 @@ const quotes = [
   {
     text: "A low-entropy, self-replicating phenomenon that generates a binding force called compassion",
     author: "Pantheon"
+  },
+  {
+    text: "Tell me, what is it you plan to do with your one wild and precious life?",
+    author: "Mary Oliver"
   }
 ];
 
