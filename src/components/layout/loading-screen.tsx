@@ -105,7 +105,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ fadeOut }) => {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center bg-black text-white px-6 text-center transition-opacity duration-1000 ${
+      className={`min-h-screen flex items-center justify-center bg-background text-foreground px-6 text-center transition-opacity duration-1000 ${
         fadeOut ? "opacity-0" : "opacity-100"
       } font-centaur`}
     >

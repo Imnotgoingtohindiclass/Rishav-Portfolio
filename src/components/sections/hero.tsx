@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Github, Linkedin, Instagram } from "lucide-react";
-import { FaPause } from "react-icons/fa";
-// import { Button } from "../ui/button";
 import type { SongData } from "../../lib/data";
 
 const Hero = () => {
   const [song, setSong] = useState<SongData | null>(null);
-  const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
+  const [showSong, setShowSong] = useState(false);
 
   useEffect(() => {
     const fetchSong = async () => {
@@ -20,187 +18,87 @@ const Hero = () => {
     };
 
     fetchSong();
-    const interval = setInterval(fetchSong, 15000); // refresh every 30 sec
-
+    const interval = setInterval(fetchSong, 15000);
     return () => clearInterval(interval);
   }, []);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    setHoverPosition({
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoverPosition(null);
-  };
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative bg-background/30">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center">
-          <div
-            className="mb-8 relative group animate-fade-in"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="w-64 h-64 md:w-64 md:h-64 rounded-full relative animate-scale-in">
-              <div className="absolute -inset-0.5 rounded-full bg-gradient-border animate-gradient-rotate"></div>
-              <div className="relative w-full h-full rounded-full p-0.5">
-                <div className="w-full h-full rounded-full overflow-hidden bg-black">
-                  <img
-                    src='Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg'
-                    alt="Rishav Ganguly"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            {hoverPosition && (
-              <div
-                className={`
-                  absolute pointer-events-none rounded-2xl shadow-lg overflow-hidden
-                  transition-all duration-300 ease-out
-                  backdrop-blur-md border border-white/20
-                  bg-black/30
-                `}
-                style={{
-                  top: hoverPosition.y + 20,
-                  left: hoverPosition.x,
-                  transform: "translate(0%, -100%)",
-                  minWidth: "17rem",
-                  width: "max-content",
-                  maxWidth: "24rem",
-                }}                
+    <section id="home" className="min-h-screen flex items-center pt-28 pb-16 relative overflow-hidden">
+      <div className="container mx-auto px-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7">
+            <p className="field-label mb-6">Engineering student — Singapore</p>
+
+            <h1 className="font-serif text-[18vw] leading-[0.92] sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-foreground">
+              Rishav
+              <br />
+              Ganguly
+            </h1>
+
+            <div className="mt-12 flex items-center gap-6 flex-wrap">
+              <a
+                href="https://github.com/imnotgoingtohindiclass"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-mono text-foreground hover:text-primary transition-colors"
               >
-                <div className="bg-purple-700/50 text-white text-xs font-semibold border-none flex items-center px-3 py-1.5 backdrop-blur-md">
-                  <span className="mr-1">🎧</span>
-                  Current Spotify Song:
-                </div>
+                <Github size={18} /> github
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rishav-ganguly-174960348/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-mono text-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin size={18} /> linkedin
+              </a>
+              <a
+                href="https://instagram.com/r.15.hav"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-mono text-foreground hover:text-primary transition-colors"
+              >
+                <Instagram size={18} /> instagram
+              </a>
 
-                <div className="flex p-3">
-                  {song && song.isPlaying && (
-                    <img
-                      src={song.albumImageUrl}
-                      alt={`Album cover for ${song.title}`}
-                      className="w-16 h-16 rounded-lg object-cover shadow-sm"
-                    />
-                  )}
-
-                  <div className={`flex flex-col justify-between w-full ${song?.isPlaying ? 'ml-3' : ''}`}>
-                    {song?.isPlaying ? (
-                      <>
-                        <div className="flex-grow h-full flex flex-col justify-center text-left">
-                          <p className="text-white font-bold truncate">{song.title}</p>
-                          <p className="text-zinc-300 text-sm truncate">{song.artist}</p>
-                        </div>
-                      </>
-                    ) : (
-                      <div className="flex items-center justify-center h-full w-full">
-                        <p className="text-zinc-400 text-xs">not playing anything rn...</p>
+              {song?.isPlaying && (
+                <button
+                  type="button"
+                  onMouseEnter={() => setShowSong(true)}
+                  onMouseLeave={() => setShowSong(false)}
+                  className="relative flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  now playing
+                  {showSong && (
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border p-3 flex gap-3 text-left shadow-lg z-50">
+                      {song.albumImageUrl && (
+                        <img src={song.albumImageUrl} alt="" className="w-10 h-10 object-cover flex-shrink-0" />
+                      )}
+                      <div className="min-w-0">
+                        <p className="text-foreground text-xs font-sans truncate">{song.title}</p>
+                        <p className="text-muted-foreground text-xs font-sans truncate">{song.artist}</p>
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
 
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="mb-6 animate-fade-in-delay">
-            <h1 className="text-3xl md:text-5xl font-bold mb-2 font-mono animate-slide-up">Rishav Ganguly</h1>
-            <p className="text-primary text-xl mt-2 font-sans opacity-95 animate-slide-up-delay">ENGINEER</p>
-          </div>
-          {/* <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button
-              variant="outline"
-              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-black"
-              asChild
-            >
-              <a href="#projects">View Projects</a>
-            </Button>
-          </div> */}
-          <div className="mt-16 flex space-x-6 animate-fade-in-delay-2">
-            <a
-              href="https://github.com/imnotgoingtohindiclass"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon text-muted-foreground hover:text-primary"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rishav-ganguly-174960348/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon text-muted-foreground hover:text-secondary"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://instagram.com/r.15.hav"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon text-muted-foreground hover:text-accent"
-            >
-              <Instagram size={24} />
-            </a>
+          <div className="md:col-span-5 relative">
+            <div className="relative aspect-[4/5] w-full max-w-sm mx-auto md:mx-0 md:ml-auto">
+              <div className="absolute inset-0 translate-x-3 translate-y-3 border border-primary/30" />
+              <img
+                src="/Item-6_Jakarta-Trip24_GOJEK-Presentation.jpg"
+                alt="Rishav Ganguly"
+                className="relative w-full h-full object-cover grayscale-[15%] contrast-[1.05] shadow-sm"
+              />
+              <span className="field-label absolute -bottom-8 left-0">Jakarta, 2026</span>
+            </div>
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fadeIn 1s ease-out forwards;
-        }
-        .animate-scale-in {
-          animation: scaleIn 1.2s ease-out forwards;
-        }
-        .animate-fade-in-delay {
-          animation: fadeIn 1s ease-out 0.3s forwards;
-          opacity: 0;
-        }
-        .animate-fade-in-delay-2 {
-          animation: fadeIn 1s ease-out 0.6s forwards;
-          opacity: 0;
-        }
-        .animate-slide-up {
-          animation: slideUp 1s ease-out 0.4s forwards;
-          opacity: 0;
-        }
-        .animate-slide-up-delay {
-          animation: slideUp 1s ease-out 0.5s forwards;
-          opacity: 0;
-        }
-      `}</style>
     </section>
   );
 };

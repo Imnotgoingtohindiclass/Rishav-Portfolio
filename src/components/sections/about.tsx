@@ -1,248 +1,97 @@
-import { User, GraduationCap, Calendar, MapPin, Code2, Pi, Grape, CircuitBoard, Code, HeartHandshake, Bug, Flame, ShieldHalf,  FolderSearch, Cpu } from "lucide-react";
-import { technicalSkills, toolsAndLanguages } from "../../lib/data";
-import SkillBar from "../ui/skill-bar";
+import { GraduationCap, HeartHandshake } from "lucide-react";
 
 const About = () => {
   const educationData = [
     {
-      period: "2026 - Present",
-      duration: "3 years",
+      period: "2026 – Present",
       degree: "Biomedical Engineering",
       institution: "Ngee Ann Polytechnic",
     },
     {
-      period: "2022 - 2025",
-      duration: "4 years",
-      degree: "Engineering+ Student",
+      period: "2022 – 2025",
+      degree: "Engineering+",
       institution: "School of Science and Technology, Singapore",
     },
-    {
-      period: "2017 - 2021",
-      duration: "4.5 years",
-      degree: "Primary School Student",
-      institution: "Xingnan Primary School",
-    },
-    {
-      period: "2016 - 2017",
-      duration: "18 months",
-      degree: "Primary School Student",
-      institution: "Queenstown Primary School",
-    }
   ];
 
   const serviceLearningData = [
     {
       event: "International Cybersecurity Olympiad @ NUS",
-      period: "2025",
-      duration: "56 Hours",
-      role: "Volunteer",
+      period: "2025 · 56 hrs",
       organization: "National University of Singapore",
-      type: "service"
     },
     {
       event: "Race for Life",
-      period: "2024/2025",
-      duration: "14 Hours",
-      role: "Volunteer",
+      period: "2024/2025 · 14 hrs",
       organization: "Singapore Cancer Society",
-      type: "service"
     },
     {
       event: "Laptop Refurbishment",
-      period: "2024",
-      duration: "4 Hours",
-      role: "Volunteer",
+      period: "2024 · 4 hrs",
       organization: "SGBono",
-      type: "service"
     },
-    // {
-    //   "event": "Race for Life 2024",
-    //   "period": "2024",
-    //   "duration": "7 Hours",
-    //   "role": "Volunteer",
-    //   "organization": "Singapore Cancer Society",
-    //   "type": "service"
-    // },
     {
       event: "Race Against Cancer @ ACE",
-      period: "2023",
-      duration: "16 Hours",
-      role: "Volunteer",
+      period: "2023 · 16 hrs",
       organization: "Singapore Cancer Society",
-      type: "service"
-    }
+    },
   ];
 
-  const getColorClassByLevel = (level: string) => {
-    switch (level) {
-      case "Advanced":
-        return "bg-primary";
-      case "Intermediate":
-        return "bg-secondary";
-      case "Proficient":
-        return "bg-accent";
-      default:
-        return "bg-blue-500";
-    }
-  };
-
-  const getIconByName = (name: string) => {
-    switch (name) {
-      case "Python":
-        return <Code2 className="text-primary" />;
-      case "C/C++":
-        return <Bug className="text-primary" />;
-      case "PyTorch":
-        return <Flame className="text-orange-500" />;
-      case "NumPy":
-        return <Pi className="text-sky-500" />;
-      case "Burp Suite":
-        return <ShieldHalf className="text-amber-500" />;
-      case "Autopsy":
-        return <FolderSearch className="text-muted-foreground" />;
-      case "Arduino":
-        return <CircuitBoard className="text-accent" />;
-      case "Raspberry Pi":
-        return <Grape className="text-accent" />;
-      case "KiCad":
-        return <Cpu className="text-blue-400" />;
-    }
-  };
-
-
   return (
-    <section id="about" className="py-20 bg-background/30">
+    <section id="about" className="py-20 md:py-28 border-t hairline">
       <div className="container mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center">
-          <User size={24} className="mr-2 text-primary" /> ABOUT ME
-        </h2>
-        <p className="text-muted-foreground mb-12 font-sans">
-          Background and experience
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <p className="text-foreground mb-6 font-sans leading-relaxed">
-              I'm a student of engineering, electronics, and cybersecurity with a passion for building secure, efficient, and innovative solutions.
-              My journey began with tinkering with electronics, which evolved into a deeper interest in embedded systems and security.
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          <div className="md:col-span-7">
+            <p className="field-label mb-4">About</p>
+            <p className="font-serif text-2xl md:text-3xl leading-snug text-foreground mb-6">
+              I'm an engineering student who'd rather build the thing than read
+              about it.
             </p>
-            <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              Currently focused on the intersection of hardware security and web technologies, I develop tools and frameworks that bridge the gap between electronic systems and modern web applications.
-              My research interests include IoT security, embedded systems design, and secure software development practices.
+            <p className="text-muted-foreground font-sans leading-relaxed mb-4">
+              My work sits at the intersection of hardware security and software —
+              I'm comfortable dropping into C/C++ for low-level systems work, and
+              into Python and modern ML frameworks when the problem calls for it.
+              Recently that's meant writing a compiler, building a chess engine,
+              and applying deep learning to medical imaging.
             </p>
-            <p className="text-muted-foreground mb-6 font-sans leading-relaxed">
-              When I'm not coding or soldering, I write technical articles to share knowledge and contribute to the community.
-              I believe in making technology more accessible through clear documentation and tutorials.
+            <p className="text-muted-foreground font-sans leading-relaxed">
+              I've picked most of this up the same way: hands-on, through
+              cybersecurity competitions and side projects I
+              didn't strictly need to finish, but did anyway.
             </p>
-          </div>
-
-          <div className="order-1 md:order-2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg transform -rotate-3"></div>
-              <div className="relative z-10 rounded-lg overflow-hidden">
-                <img
-                  src="/Item-1_SUTD-Camp_Team-3.jpg"
-                  alt="Profile"
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                />
-              </div>
-            </div>
           </div>
         </div>
 
-
-        <div className="mt-16">
-          <h3 className="text-xl font-bold mb-6 flex items-center">
-            <Code2 size={22} className="mr-2 text-primary" /> Skills
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-              <h4 className="text-foreground font-bold text-lg mb-6">Technical Skills</h4>
-              {technicalSkills.map((skill, index) => (
-                <SkillBar
-                  key={index}
-                  name={skill.name}
-                  level={skill.level}
-                  percentage={skill.percentage}
-                  colorClass={getColorClassByLevel(skill.level)}
-                  explanation={skill.explanation}
-                />
-              ))}
-            </div>
-
-            <div>
-              <h4 className="text-foreground font-bold text-lg mb-6">Languages & Tools</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {toolsAndLanguages.map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded text-center flex flex-col items-center"
-                  >
-                    <div className="mb-2 text-3xl">{getIconByName(item.name)}</div>
-                    <p>{item.name}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           <div>
-            <h3 className="text-xl font-bold mb-6 flex items-center">
-              <GraduationCap size={22} className="mr-2 text-primary" /> Education
-            </h3>
-            <div className="relative">
-              <div className="absolute left-0 top-[4rem] h-[calc(100%_-_8rem)] w-0.5 bg-primary/30"></div>
+            <p className="field-label mb-6 flex items-center gap-2">
+              <GraduationCap size={14} /> Education
+            </p>
+            <div className="divide-y hairline border-t border-b hairline">
               {educationData.map((item, index) => (
-                <div key={index} className="relative z-10 mb-12 pl-8 group">
-                  <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
-                      <GraduationCap size={20} className="text-primary" />
-                    </div>
+                <div key={index} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                  <div>
+                    <p className="font-sans text-foreground">{item.degree}</p>
+                    <p className="font-sans text-sm text-muted-foreground">{item.institution}</p>
                   </div>
-                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
-                    <div className="flex items-center text-primary font-mono text-sm mb-2">
-                      <Calendar size={16} className="mr-2" />
-                      <span>{item.period}</span>
-                      <span className="mx-2">•</span>
-                      <span className="text-muted-foreground">{item.duration}</span>
-                    </div>
-                    <h4 className="text-foreground font-bold text-lg mb-2">{item.degree}</h4>
-                    <div className="flex items-center text-muted-foreground">
-                      <MapPin size={16} className="mr-2" />
-                      {item.institution}
-                    </div>
-                  </div>
+                  <span className="font-mono text-xs text-muted-foreground flex-shrink-0">{item.period}</span>
                 </div>
               ))}
             </div>
           </div>
+
           <div>
-            <h3 className="text-xl font-bold mb-6 flex items-center">
-              <HeartHandshake size={22} className="mr-2 text-primary" /> Service Learning
-            </h3>
-            <div className="relative">
-              <div className="absolute left-0 top-[4rem] h-[calc(100%_-_8rem)] w-0.5 bg-primary/30"></div>
+            <p className="field-label mb-6 flex items-center gap-2">
+              <HeartHandshake size={14} /> Service learning
+            </p>
+            <div className="divide-y hairline border-t border-b hairline">
               {serviceLearningData.map((item, index) => (
-                <div key={index} className="relative z-10 mb-12 pl-8">
-                  <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-background border-2 border-primary/50 rounded-full p-2 z-10">
-                      <HeartHandshake size={20} className="text-primary" />
-                    </div>
+                <div key={index} className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                  <div>
+                    <p className="font-sans text-foreground">{item.event}</p>
+                    <p className="font-sans text-sm text-muted-foreground">{item.organization}</p>
                   </div>
-                  <div className="bg-violet-900/10 rounded-lg p-6 border border-primary/35 shadow-md hover:border-primary/50 transition-all duration-300 relative">
-                    <div className="flex items-center text-primary font-mono text-sm mb-2">
-                      <Calendar size={16} className="mr-2" />
-                      <span>{item.period}</span>
-                      <span className="mx-2">•</span>
-                      <span className="text-muted-foreground">{item.duration}</span>
-                    </div>
-                    <h4 className="text-foreground font-bold text-lg mb-2">{item.event}</h4>
-                    <div className="flex items-center text-muted-foreground">
-                      <MapPin size={16} className="mr-2" />
-                      {item.organization}
-                    </div>
-                  </div>
+                  <span className="font-mono text-xs text-muted-foreground flex-shrink-0">{item.period}</span>
                 </div>
               ))}
             </div>

@@ -41,10 +41,6 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        penis: {
-          DEFAULT: "hsl(var(--penis))",
-          foreground: "hsl(var(--penis))",
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

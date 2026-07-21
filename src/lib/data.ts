@@ -49,7 +49,7 @@ export const achievements = [
   //   certificate: "/illustratum.jpg"
   // },
   {
-    title: "Honorable Mention, Singapore Physics League (SPhL)",
+    title: "Honourable Mention, Singapore Physics League (SPhL)",
     issuer: "Institute of Physics Singapore, ISP",
     year: "2024",
     certificate: "/SPHLcert_page-0001 (1).jpg"
@@ -89,10 +89,18 @@ export const sports: sports[] = [
   }
 ];
 
+// Titles of the projects to feature as large story cards on the homepage.
+// Everything else still lives on /projects.
+export const featuredProjectTitles = [
+  "blunderrr",
+  "KiloLang Compiler",
+  "Colorectal Cancer Detection using CNN",
+];
+
 export const projectsData: ProjectProps[] = [
   // {
   //   title: "Honeypot",
-  //   description: "Designed a custom honeypot to study real-world cyberattacks and analyze threat behavior.",
+  //   description: "Designed a custom honeypot to study real-world cyberattacks and analyse threat behaviour.",
   //   fullDescription: "Driven by a fascination with defensive security, I independently designed, built, and deployed a low-interaction honeypot to capture and analyse real-world cyberattacks. I Dockerised vulnerable services like SSH and Telnet to create an alluring target, implementing a robust logging pipeline to capture every interaction. By monitoring network traffic and analysing attacker payloads in real-time, I gained a frontline perspective on threat actor TTPs (Tactics, Techniques, and Procedures).",
   //   category: "Cybersecurity",
   //   image: "",
@@ -133,17 +141,18 @@ export const projectsData: ProjectProps[] = [
   //   },
   // },
   {
-  title: "Chess Engine",
-  description: "Built a custome chess engine from scratch using optimised tree search algorithms",
-  fullDescription: "I developed a fully functional chess engine from the ground up, including the board, chess pieces, and chess rules, implementing advanced tree search algorithms like Minimax with Alpha-Beta pruning to evaluate potential moves efficiently. The engine features a simple evaluation function that considers material balance, piece activity through piece-square tables, and passed pawns. I also integrated iterative deepening and transposition tables to enhance search performance. The engine can play at a beginner-intermediate level, capable of analyzing positions and making strategic decisions quickly.",
-  category: "Other",
+  title: "blunderrr",
+  description: "A chess engine written in C, with a web front-end to play against it in the browser.",
+  fullDescription: "I developed a fully functional chess engine from the ground up, including the board, chess pieces, and chess rules, implementing advanced tree search algorithms like Minimax with Alpha-Beta pruning to evaluate potential moves efficiently. The engine features a simple evaluation function that considers material balance, piece activity through piece-square tables, and passed pawns. I also integrated iterative deepening and transposition tables to enhance search performance, then built blunderrr-web so anyone can play it in a browser.",
+  category: "Systems",
   image: "",
-  technologies: ["C", "SDL2"],
+  technologies: ["C", "TypeScript", "SDL2"],
   durationHours: "Ongoing",
   challenges: "Understanding and implementing the complex rules of chess, such as castling, en passant, and promotion, was a significant challenge. Optimizing the search algorithm to balance depth and breadth while maintaining reasonable computation times required careful tuning of the evaluation function and search parameters. Debugging the engine to ensure legal move generation and accurate position evaluation was an iterative process that demanded meticulous attention to detail.",
   outcomes: "This project deepened my understanding of algorithm design, particularly in the context of game theory and artificial intelligence. I gained hands-on experience with search algorithms, optimization techniques, and performance tuning. The chess engine serves as a testament to my ability to tackle complex problems and implement efficient solutions from scratch.",
   links: {
-    code: "https://github.com/imnotgoingtohindiclass/chess_bot",
+    code: "https://github.com/Imnotgoingtohindiclass/blunderrr",
+    demo: "https://github.com/Imnotgoingtohindiclass/blunderrr-web",
     },
   },
   {
@@ -261,13 +270,13 @@ export const projectsData: ProjectProps[] = [
   {
     title: "RefrigeReminder",
     description: "Developed an IoT system and mobile application to reduce food waste through smart reminders.",
-    fullDescription: "As part of a team effort to tackle household food waste, I helped develop 'RefrigeReminder,' an IoT system that intelligently tracks food items. The system used sensors to detect when the fridge was opened and closed, syncing with a mobile app that cataloged contents and expiry dates. The goal was to send timely notifications to users, encouraging them to use food before it spoiled.",
+    fullDescription: "As part of a team effort to tackle household food waste, I helped develop 'RefrigeReminder,' an IoT system that intelligently tracks food items. The system used sensors to detect when the fridge was opened and closed, syncing with a mobile app that catalogued contents and expiry dates. The goal was to send timely notifications to users, encouraging them to use food before it spoiled.",
     category: "Engineering",
     image: "",
     technologies: ["Arduino", "IoT", "Mobile App Development"],
     durationHours: 50,
     challenges: "From a technical standpoint, ensuring low-power, reliable communication between the IoT device in the fridge and the user's home network was a key hurdle. From a user-experience perspective, the challenge was to make the reminders helpful, not annoying. We spent significant time designing the notification logic to be smart and context-aware.",
-    outcomes: "Our team delivered a functional end-to-end prototype that successfully demonstrated the concept. The project was a great lesson in user-centered design and collaborative development. It showed me how a simple, well-designed IoT solution can empower people to make more sustainable choices in their daily lives.",
+    outcomes: "Our team delivered a functional end-to-end prototype that successfully demonstrated the concept. The project was a great lesson in user-centred design and collaborative development. It showed me how a simple, well-designed IoT solution can empower people to make more sustainable choices in their daily lives.",
     links: {
       documentation: "https://github.com",
     },
@@ -288,7 +297,7 @@ export const projectsData: ProjectProps[] = [
   },
   {
     title: "Smart Home Lighting System",
-    description: "Developed an automated home system to optimize lighting and cooling based on environmental conditions.",
+    description: "Developed an automated home system to optimise lighting and cooling based on environmental conditions.",
     fullDescription: "With a focus on energy efficiency, I built a smart home automation system using an Arduino. The system utilized a network of light-dependent resistors (LDRs) and temperature sensors to gather real-time environmental data. Based on this input, it autonomously controlled the home's lighting and a cooling fan, turning them on only when needed and adjusting their intensity to match conditions.",
     category: "Engineering",
     image: "",
@@ -303,12 +312,12 @@ export const projectsData: ProjectProps[] = [
   {
     title: "Tsunagu Research Project",
     description: "Investigated plant-based pH indicators as safer alternatives for food industry applications.",
-    fullDescription: "This research project explored the potential of natural, plant-based extracts to replace synthetic pH indicators in the food industry. I conducted a systematic investigation into indicators derived from butterfly pea flowers and red cabbage, preparing extracts and testing their sensitivity and color-fastness across a range of pH levels. The goal was to find a viable, safer, and more sustainable alternative for food safety testing.",
+    fullDescription: "This research project explored the potential of natural, plant-based extracts to replace synthetic pH indicators in the food industry. I conducted a systematic investigation into indicators derived from butterfly pea flowers and red cabbage, preparing extracts and testing their sensitivity and colour-fastness across a range of pH levels. The goal was to find a viable, safer, and more sustainable alternative for food safety testing.",
     category: "Research",
     image: "",
     technologies: ["Plant Chemistry", "Food Science", "Spectroscopy"],
     durationHours: 90,
-    challenges: "The core scientific challenge was achieving consistency. Natural products have inherent variability, so I had to develop a rigorous extraction and standardization protocol to ensure my results were repeatable. Overcoming the gradual degradation of the natural pigments and accurately measuring color changes using spectroscopy required meticulous lab technique.",
+    challenges: "The core scientific challenge was achieving consistency. Natural products have inherent variability, so I had to develop a rigorous extraction and standardization protocol to ensure my results were repeatable. Overcoming the gradual degradation of the natural pigments and accurately measuring colour changes using spectroscopy required meticulous lab technique.",
     outcomes: "My research successfully demonstrated that butterfly pea extract, in particular, is a highly effective and viable natural pH indicator. I produced a comprehensive report with recommendations for its adoption in certain food industry applications. The project was a deep dive into the scientific method, from hypothesis and experimentation to data analysis and conclusion.",
     links: {
       documentation: "https://github.com",
@@ -323,7 +332,7 @@ export const projectsData: ProjectProps[] = [
     technologies: ["Python", "Pandas", "Statistics"],
     durationHours: 70,
     challenges: "The raw survey data was noisy and incomplete. A significant portion of the project was dedicated to data cleaning, imputation of missing values, and feature engineering to prepare the dataset for rigorous analysis. Ensuring that my conclusions were statistically sound and not just artifacts of the data required careful validation of assumptions for each statistical test I performed.",
-    outcomes: "The analysis yielded clear, evidence-based insights, highlighting specific degree specializations that had a strong positive correlation with employment rates. This project significantly strengthened my practical data analysis skills, from data wrangling to advanced statistical modeling, and taught me how to extract a compelling narrative from a complex dataset.",
+    outcomes: "The analysis yielded clear, evidence-based insights, highlighting specific degree specialisations that had a strong positive correlation with employment rates. This project significantly strengthened my practical data analysis skills, from data wrangling to advanced statistical modeling, and taught me how to extract a compelling narrative from a complex dataset.",
     links: {
       documentation: "https://github.com",
     },

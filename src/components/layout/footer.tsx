@@ -1,17 +1,32 @@
+import { Github, Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="py-12 bg-background">
+    <footer className="py-10 border-t hairline">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <span className="text-primary font-bold text-xl">R/</span>
-            <p className="text-muted-foreground text-sm mt-2">© {new Date().getFullYear()} Rishav. All rights reserved.</p>
-          </div>
-
-          <div>
-            <p className="text-muted-foreground text-sm">
-              Built with <span className="text-primary">♥</span> using Vite.js
-            </p>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="font-mono text-xs text-muted-foreground">
+            Rishav Ganguly, {new Date().getFullYear()}. Singapore.
+          </p>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://github.com/imnotgoingtohindiclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rishav-ganguly-174960348/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} />
+            </a>
           </div>
         </div>
       </div>

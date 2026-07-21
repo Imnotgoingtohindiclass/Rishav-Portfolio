@@ -17,7 +17,7 @@
   }
 
   html, body {
-    @apply bg-zinc-900 text-white;
+    @apply bg-background text-foreground;
   }
 
   html, body {
@@ -25,53 +25,51 @@
   }  
 
   body {
-    /* @apply font-sans antialiased bg-background text-foreground; */
-    /* background: linear-gradient(135deg, #0f0f12 0%, #0A0A15 100%); */
+    @apply font-sans antialiased;
   }
   
   ::selection {
-    background-color: #8a00c440;
-    color: white;
+    background-color: hsl(var(--primary) / 0.18);
+    color: hsl(var(--foreground));
   }
 
   :root {
-    --background: 240 30% 5%;
-    --foreground: 0 0% 95%;
-    
-    --card: 240 30% 7%;
-    --card-foreground: 0 0% 95%;
-    
-    --popover: 240 30% 7%;
-    --popover-foreground: 0 0% 95%;
-    
-    --primary: 273 80% 59%;
-    --primary-foreground: 240 30% 3%;
-    
-    --secondary: 270 60% 65%;
-    --secondary-foreground: 0 0% 98%;
-    
-    --muted: 240 30% 15%;
-    --muted-foreground: 0 0% 73%;
-    
-    --accent: 45 95% 70%;
-    --accent-foreground: 240 30% 3%;
+    /* Editorial / lab-notebook palette: cool paper, ink, deep teal signature, brass tag accent */
+    --background: 40 18% 96%;
+    --foreground: 220 22% 12%;
 
-    --penis: 270 60% 65%;
-    
-    --destructive: 0 63% 43%;
-    --destructive-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 22% 12%;
 
-    --border: 240 30% 12%;
-    --input: 240 30% 12%;
-    --ring: 273 80% 59%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 22% 12%;
 
-    --chart-1: 273 80% 59%;
-    --chart-2: 270 60% 65%;
-    --chart-3: 45 95% 70%;
-    --chart-4: 0 0% 95%;
-    --chart-5: 220 13% 91%;
-    
-    --radius: 0.375rem;
+    --primary: 176 46% 22%;
+    --primary-foreground: 40 18% 97%;
+
+    --secondary: 34 52% 44%;
+    --secondary-foreground: 40 18% 97%;
+
+    --muted: 40 12% 90%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 34 52% 44%;
+    --accent-foreground: 40 18% 97%;
+
+    --destructive: 6 55% 42%;
+    --destructive-foreground: 40 18% 97%;
+
+    --border: 220 14% 84%;
+    --input: 220 14% 84%;
+    --ring: 176 46% 22%;
+
+    --chart-1: 176 46% 22%;
+    --chart-2: 34 52% 44%;
+    --chart-3: 6 55% 42%;
+    --chart-4: 220 22% 12%;
+    --chart-5: 220 13% 60%;
+
+    --radius: 0.25rem;
   }
 }
 
@@ -87,11 +85,11 @@
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .font-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
 }
 
 .font-sans {
@@ -99,7 +97,16 @@
 }
 
 .terminal-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* eyebrow / field-label style used for spec-sheet metadata */
+.field-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
 }
 
 html {
@@ -161,10 +168,10 @@ html {
 }
 
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   will-change: transform;
   transform-origin: center center;
-  border: 1px solid hsl(var(--border) / 0.5);
+  border: 1px solid hsl(var(--border));
 }
 
 .perspective-500 {
@@ -172,22 +179,6 @@ html {
 }
 
 .project-card:hover {
-  box-shadow: 0 10px 25px -5px hsl(var(--primary) / 0.15);
-}
-
-/* Add glow effect on hover
-@keyframes subtle-glow {
-  0% {
-    box-shadow: 0 0 5px 0px hsl(var(--primary) / 0.1);
-  }
-  50% {
-    box-shadow: 0 0 15px 2px hsl(var(--primary) / 0.15);
-  }
-  100% {
-    box-shadow: 0 0 5px 0px hsl(var(--primary) / 0.1);
-  }
-} */
-
-.project-card:hover {
-  animation: subtle-glow 3s infinite;
+  border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 4px 20px -8px hsl(220 22% 12% / 0.12);
 }

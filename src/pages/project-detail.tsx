@@ -104,11 +104,13 @@ const ProjectDetail = () => {
             {/* Sidebar - RIGHT COLUMN */}
             <div className="lg:w-1/3 space-y-6">
               <div className="bg-card/30 border border-border rounded-lg p-4">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-auto object-contain rounded-md mb-4"
-                />
+                {project.image && (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-auto object-contain rounded-md mb-4"
+                  />
+                )}
                 <Sidebar project={project} />
               </div>
             </div>
