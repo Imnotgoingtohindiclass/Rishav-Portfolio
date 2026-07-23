@@ -21,7 +21,7 @@ const About = () => {
       organization: "National University of Singapore",
     },
     {
-      event: "Race for Life",
+      event: "Relay for Life",
       period: "2024/2025 · 14 hrs",
       organization: "Singapore Cancer Society",
     },
